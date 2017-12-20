@@ -1,0 +1,312 @@
+
+header{
+	height: 70px;
+	background: #000403;
+}
+.user-head{
+	width: 63px;
+	border-radius: 50% 50%;
+	margin: 0 20px;
+	float: left;
+}
+.user-name{
+	font-size: 18px;
+	line-height: 70px;
+	color: #ffae01;
+	white-space: nowrap;
+	float: left;
+}
+.user-info{
+	height: 40px;
+	background: #fff;
+	line-height: 40px;
+	border-radius: 5px;
+	margin: 15px 0;
+	font-size: 18px;
+	color: #ffae01;
+}
+.user-info-img{
+	width: 36px;
+	font-size: 16px;
+}
+.user-grade{
+	margin-right: 20px;
+}
+.head-button{
+	line-height: 70px;
+	width: 13%;
+}
+.head-button img{
+	width: 45px;
+	margin: 0 5px;
+}
+.store-info{
+	color: #fff;
+	font-size: 15px;
+	line-height: 70px;
+}
+.store-name{
+	margin-right: 10px;
+}
+.store-time{
+	margin-right: 10px;
+}
+.head-cart{
+	line-height: 70px;
+}
+.main-left{
+	height: 699px;
+	padding: 0;
+}
+.left-search{
+	height: 34px;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: 18px 15px;
+	padding: 0 5px;
+	position: relative;
+}
+.left-search input{
+	height: 34px;
+	width: 80%;
+	outline: none;
+	border: none;
+	padding: 0 10px;
+}
+.left-search i{
+	height:30px;
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	background: url(../img/main/left-search.png) no-repeat 0 12px;
+	background-size: 100% 30%;
+}
+.left-main{
+	height: 480px;
+	border-bottom: 2px solid #ececec;
+	position: relative;
+}
+.left-info{
+	height: 400px;
+	overflow-y: scroll;
+}
+.left-info table{
+	max-height: 400px;
+}
+.left-info td{
+	text-align: center;
+	color: #666666;
+}
+.left-info tr{
+	height: 30px;
+}
+.left-info th{
+	text-align: center;
+	font-weight: 800;
+}
+.jiang,.jia{
+	height:16px;
+	width:16px;
+	background-size: 100% 100%;
+}
+.jiang{
+	background: url(../img/main/jiang.png) no-repeat;
+	float: left;
+}
+.jia{
+	background: url(../img/main/jia.png) no-repeat;
+	float: right;
+}
+.left-delete{
+	height:16px;
+	width:18px;
+	display:block;
+	background: url(../img/main/shan.png) no-repeat;
+	background-size: 100% 100%;
+}
+.left-main-bottom{
+	width: 90%;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	font-size: 18px;
+	color: #ec6941;
+}
+.left-button{
+	padding: 0 40px;
+}
+.left-button img{
+	width: 45%;
+}
+.total{
+	float: right;
+}
+.zekou,.gaijia,.xiadan,.jiaoyi{
+	margin: 10px 0;
+	width: 40%;
+}
+.zekou{
+	float: left;
+}
+.gaijia{
+	float: right
+}
+.xiadan{
+	float: left;
+}
+.jiaoyi{
+	float: right
+}
+.qingchu,.jiezhang{
+	width: 49%;
+	line-height: 38px;
+	float: left;
+	font-size: 18px;
+	text-align: center;
+	background: #ffae01;
+	color: #fff;
+}
+.qingchu{
+	border-right: 1px solid #fff;
+}
+.main-right{
+	height: 690px;
+	background: #ececec;
+	padding: 0;
+}
+.right-head{
+	height: 80px;
+	padding: 20px;
+	background: #FFFFFF;
+}
+.right-search{
+	width: 90%;
+	height: 30px;
+	outline: none;
+	border: 1px solid #ccc;
+	padding: 0 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.classify li{
+	float: left;
+	font-size: 18px;
+	padding: 0 20px;
+	border-right: 1px solid #CCCCCC;
+}
+.current{
+	color: #ec6941;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #ec6941;
+}
+.right-main{
+	max-height: 560px;
+	overflow-y: scroll;
+}
+.goods{
+	width: 30%;
+	margin: 15px 0 0 20px;
+	background: #FFFFFF;
+	float: left;
+}
+.goods img{
+	width: 50%;
+	float: left;
+}
+.goods-info{
+	float: left;
+	height: 70px;
+	padding: 20px;
+}
+.goods-info p{
+	color: #ec6941;
+	font-size: 15px;
+}
+.goods-name{
+	font-size: 16px;
+	font-weight: 800;
+	margin: 10px 0;
+}
+@media only screen and (min-width: 1200px) {
+	.store-info{
+		width: 28%;
+	}
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+	.head-user{
+		width: 19%;
+	}
+	.user-name{
+		font-size: 16px;
+	}
+	.user-info-img{
+		width: 24px;
+	}
+	.user-info{
+		font-size: 16px;
+	}
+	.head-button img{
+		width: 36px;
+	}
+	.store-info{
+		line-height: normal;
+		margin-top: 10px;
+	}
+	.goods img{
+		width: 100%;
+	}
+	.left-button{
+		padding: 0 15px;
+	}
+}
+
+@media only screen and (max-width: 991px) and (min-width: 767px) {
+	.head-user{
+		width: 21%;
+	}
+	.user-head{
+	width: 50px;
+	margin: 10px 10px;
+	}
+	.user-info{
+	font-size: 12px;
+	}
+	.user-name{
+	font-size: 14px;
+	}
+	.head-button{
+		margin-left: 20px;
+	}
+	.head-button img{
+	width: 37px;
+	margin: 0 5px;
+	}
+	.user-grade{
+		margin-right: 10px;
+	}
+	.head-button{
+		padding: 0;
+	}
+	.store-info{
+		line-height: normal;
+		margin-top: 10px;
+		font-size: 12px;
+	}
+	.classify li{
+		font-size: 15px;
+		padding: 0 10px;
+	}
+	.right-head {
+		padding: 10px;
+	}
+	.goods{
+		width: 40%;
+	}
+	.goods img{
+		width: 100%;
+	}
+	.left-button{
+		padding: 0 15px;
+	}
+}
