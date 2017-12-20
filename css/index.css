@@ -57,6 +57,8 @@ header{
 .main-left{
 	height: 699px;
 	padding: 0;
+	box-shadow: 2px 0px 1px #CCCCCC;
+	z-index: 10;
 }
 .left-search{
 	height: 34px;
@@ -80,7 +82,7 @@ header{
 	right: 10px;
 	top: 0;
 	background: url(../img/main/left-search.png) no-repeat 0 12px;
-	background-size: 100% 30%;
+	background-size: 100% 20%;
 }
 .left-main{
 	height: 480px;
@@ -121,9 +123,10 @@ header{
 .left-delete{
 	height:16px;
 	width:18px;
-	display:block;
-	background: url(../img/main/shan.png) no-repeat;
-	background-size: 100% 100%;
+	background: #8cdd16;
+	border: none;
+	color: #FFFFFF;
+	border-radius: 50% 50%;
 }
 .left-main-bottom{
 	width: 90%;
@@ -136,27 +139,34 @@ header{
 .left-button{
 	padding: 0 40px;
 }
-.left-button img{
-	width: 45%;
-}
 .total{
 	float: right;
 }
 .zekou,.gaijia,.xiadan,.jiaoyi{
+	width: 45%;
+	height: 30px;
 	margin: 10px 0;
-	width: 40%;
+	border: none;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-weight: 600;
+	font-size: 15px;
 }
 .zekou{
 	float: left;
+	background: #8cdd16;
 }
 .gaijia{
-	float: right
+	float: right;
+	background: #8cdd16;
 }
 .xiadan{
 	float: left;
+	background: #ff7f2e;
 }
 .jiaoyi{
-	float: right
+	float: right;
+	background: #ff7f2e;
 }
 .qingchu,.jiezhang{
 	width: 49%;
@@ -194,6 +204,7 @@ header{
 	font-size: 18px;
 	padding: 0 20px;
 	border-right: 1px solid #CCCCCC;
+	cursor: pointer;
 }
 .current{
 	color: #ec6941;
@@ -205,10 +216,11 @@ header{
 	overflow-y: scroll;
 }
 .goods{
-	width: 30%;
-	margin: 15px 0 0 20px;
+	width: 23%;
+	margin: 15px 0 0 2%;
 	background: #FFFFFF;
 	float: left;
+	box-shadow: 2px 2px 8px #CCCCCC;
 }
 .goods img{
 	width: 50%;
@@ -216,8 +228,7 @@ header{
 }
 .goods-info{
 	float: left;
-	height: 70px;
-	padding: 20px;
+	padding: 5%;
 }
 .goods-info p{
 	color: #ec6941;
@@ -244,7 +255,7 @@ header{
 		width: 24px;
 	}
 	.user-info{
-		font-size: 16px;
+		font-size: 15px;
 	}
 	.head-button img{
 		width: 36px;
@@ -253,8 +264,8 @@ header{
 		line-height: normal;
 		margin-top: 10px;
 	}
-	.goods img{
-		width: 100%;
+	.goods{
+		width: 30%;
 	}
 	.left-button{
 		padding: 0 15px;
@@ -303,8 +314,8 @@ header{
 	.goods{
 		width: 40%;
 	}
-	.goods img{
-		width: 100%;
+	.goods{
+		width: 45%;
 	}
 	.left-button{
 		padding: 0 15px;

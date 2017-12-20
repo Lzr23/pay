@@ -1,0 +1,87 @@
+.modal-dialog{
+	width: 80%;
+}
+.vip-tital{
+	text-align: center;
+	height:37px;
+	background: #f2f2f2;
+	padding: 0;
+	font-weight: 600;
+}
+.modal-header .close{
+	top: 5px;
+}
+.vip-body{
+	background: #fffbf2;
+}
+.vip-section1{
+	display: flex;
+}
+.vip-section1 p{
+	width: 10%;
+	height: 40px;
+	line-height: 40px;
+	background: #ffae01;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 3px;
+	margin-right: 10%;
+}
+.vip-search{
+	height: 30px;
+	width: 25%;
+	position: relative;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+}
+.vip-nav{
+	margin: 20px 0;
+	overflow: hidden;
+}
+.vip-nav li{
+	float: left;
+	font-size: 15px;
+	padding: 0 20px;
+}
+.vip-section2{
+	display: flex;
+	justify-content: flex-end;
+}
+.vip-section2 select{
+	height: 30px;
+	width: 10%;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+.vip-section2 p{
+	line-height: 30px;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.vip-section2 p span{
+	color: #ffae01;
+}
+.vip-section3{
+	margin: 25px 0;
+	display: flex;
+}
+.section3-item{
+	width: 23%;
+	padding: 0 1%;
+	border-top: 2px solid #8cdd16;
+	margin-right: 3%;
+}
+.section3-item h3{
+	margin: 10px 0;
+	font-size: 16px;
+	color: #8cdd16;
+}
+.section3-item p{
+	margin: 10px 0;
+	font-size: 15px;
+}
+.section3-item p span{
+	font-size: 17px;
+	color: #ffae01;
+}
