@@ -54,6 +54,22 @@ header{
 .head-cart{
 	line-height: 70px;
 }
+.head-cart img{
+	position: relative;
+	z-index: 10;
+}
+.head-cart-num{
+	line-height: 22px;
+	position: absolute;
+	right: -20px;
+	top: 10px;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 0 7px;
+	background: #ff0000;
+	border-radius: 50% 50%;
+	z-index: 8;
+}
 .main-left{
 	height: 699px;
 	padding: 0;
@@ -83,6 +99,7 @@ header{
 	top: 0;
 	background: url(../img/main/left-search.png) no-repeat 0 12px;
 	background-size: 100% 20%;
+	cursor: pointer;
 }
 .left-main{
 	height: 480px;
@@ -115,10 +132,17 @@ header{
 .jiang{
 	background: url(../img/main/jiang.png) no-repeat;
 	float: left;
+	cursor: pointer;
 }
 .jia{
+	line-height: 16px;
+	color: #FFFFFF;
+	font-style: normal;
+	font-size: 14px;
 	background: url(../img/main/jia.png) no-repeat;
 	float: right;
+	cursor: pointer;
+	-webkit-user-select: none;
 }
 .left-delete{
 	height:16px;
@@ -176,6 +200,7 @@ header{
 	text-align: center;
 	background: #ffae01;
 	color: #fff;
+	cursor: pointer;
 }
 .qingchu{
 	border-right: 1px solid #fff;
@@ -239,6 +264,8 @@ header{
 	font-weight: 800;
 	margin: 10px 0;
 }
+
+
 @media only screen and (min-width: 1200px) {
 	.store-info{
 		width: 28%;

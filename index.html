@@ -51,7 +51,10 @@
 						<span class="order-number">25</span>
 					</div>
 					<div class="col-md-1 col-sm-1 head-cart">
-						<img src="img/main/cart.png" />
+						<div style="position: relative;display: inline-block">
+							<span class="head-cart-num">4</span>
+							<img src="img/main/cart.png" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -65,7 +68,7 @@
 				<div class="col-lg-3 col-md-3 col-sm-4 main-left">
 					<div class="left-search">
 						<input type="text" placeholder="会员手机号码/卡号/快速扫码" />
-						<i></i>
+						<i data-toggle="modal" data-target="#vipChoice"></i>
 					</div>
 					<div class="left-main">
 						<div class="left-info">
@@ -81,7 +84,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -92,7 +95,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -103,7 +106,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -114,7 +117,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -125,7 +128,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -136,7 +139,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -147,7 +150,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -158,7 +161,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -169,7 +172,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -180,7 +183,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -191,7 +194,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -202,7 +205,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -213,7 +216,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -224,7 +227,7 @@
 									<td>
 										<i class="jiang"></i>
 										<span class="num">1</span>
-										<i class="jia"></i>
+										<i class="jia">+</i>
 									</td>
 									<td>128</td>
 									<td>118</td>
@@ -312,7 +315,7 @@
 				<!--主题内容右侧结束-->
 			</div>
 		</div>
-		<!-- 会员管理弹框 -->
+		<!-- 会员管理弹框开始 -->
 		<div class="modal fade" id="vipManage" tabindex="-1" role="dialog" aria-labelledby="VIPMange">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -324,20 +327,23 @@
 					<div class="modal-body vip-body">
 						<div class="vip-section1">
 							<p>会员列表</p>
-							<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+							<div class="vip-search-content">
+								<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+								<i class="vip-search-icon"></i>
+							</div>
 						</div>
 						<ul class="vip-nav">
-							<li>账号充值<i></i></li>
-							<li>新增会员<i></i></li>
-							<li>重置密码<i></i></li>
-							<li>修改密码<i></i></li>
-							<li>导出<i></i></li>
-							<li>导入<i></i></li>
-							<li>挂失<i></i></li>
-							<li>删除<i></i></li>
-							<li>补卡<i></i></li>
-							<li>刷新<i></i></li>
-							<li>筛选会员<i></i></li>
+							<li>账号充值<i class="vip-nav1"></i></li>
+							<li>新增会员<i class="vip-nav2"></i></li>
+							<li>重置密码<i class="vip-nav3"></i></li>
+							<li>修改密码<i class="vip-nav4"></i></li>
+							<li>导出<i class="vip-nav5"></i></li>
+							<li>导入<i class="vip-nav6"></i></li>
+							<li>挂失<i class="vip-nav7"></i></li>
+							<li>删除<i class="vip-nav8"></i></li>
+							<li>补卡<i class="vip-nav9"></i></li>
+							<li>刷新<i class="vip-nav10"></i></li>
+							<li>筛选会员<i class="vip-nav11"></i></li>
 						</ul>
 						<div class="vip-section2">
 							<select name="sex">
@@ -348,7 +354,7 @@
 							<select name="oprate">
 								<option style="display: none;" selected="selected">操作员</option>
 								<option>阿萨德</option>
-								<option>请问</option>
+								<option>卡萨丁</option>
 							</select>
 							<select name="source">
 								<option style="display: none;" selected="selected">注册来源</option>
@@ -356,6 +362,7 @@
 								<option>微信</option>
 							</select>
 							<p>会员总数<span class="vip-total">10</span>&nbsp;本月还有<span class="vip-birthday">5</span>个会员过生日</p>
+							<i class="vip-eyes"></i>
 						</div>
 						<div class="vip-section3">
 							<div class="section3-item">
@@ -380,12 +387,229 @@
 								<p>3.李艳     ￥：888</p>
 							</div>
 						</div>
+						<table class="vip-info" border="" cellspacing="" cellpadding="">
+							<tr>
+								<th></th>
+								<th>卡号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>号码</th>
+								<th>等级</th>
+								<th>标签</th>
+								<th>所属店铺</th>
+								<th>积分</th>
+								<th>余额</th>
+								<th>过期时间</th>
+								<th>注册来源</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>25456897</td>
+								<td>肖晓</td>
+								<td>女</td>
+								<td>130582501</td>
+								<td>金卡</td>
+								<td>高端消费</td>
+								<td>总店</td>
+								<td>254</td>
+								<td class="vip-balance">￥：245</td>
+								<td>永久有效</td>
+								<td>线上</td>
+								<td class="vip-handle">
+									<img src="img/VIPManage/vip-operate3.png" />
+									<img src="img/VIPManage/vip-operate2.png" />
+									<img src="img/VIPManage/vip-operate1.png" />
+								</td>
+							</tr>
+						</table>
+						<div class="vip-operate">
+							<img src="img/VIPManage/vip-message.png" />
+							<img src="img/VIPManage/vip-discount.png" />
+							<img src="img/VIPManage/vip-label.png" />
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- 会员管理弹框结束 -->
+		
+		<!-- 会员选择弹框开始 -->
+			<div class="modal fade" id="vipChoice" tabindex="-1" role="dialog" aria-labelledby="VIPMange">
+			<div class="modal-dialog vipChoice-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipChoice-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">会员快速选择</h4>
+					</div>
+					<div class="modal-body vipChoice-body">
+						<div class="vip-section1" style="margin-bottom: 20px;">
+							<div class="vip-search-content" style="width: 100%;">
+								<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+								<i class="vip-search-icon"></i>
+							</div>
+						</div>
+						<table class="vip-info" style="border: none;" border="0" cellspacing="" cellpadding="">
+							<tr>
+								<th>会员卡号</th>
+								<th>会员姓名</th>
+								<th>电话号码</th>
+								<th>会员等级等级</th>
+								<th>卡内积分</th>
+								<th>卡内余额</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td>25456897</td>
+								<td>李稀松</td>
+								<td>13014528521</td>
+								<td>金卡</td>
+								<td>12465</td>
+								<td class="vip-balance">￥：245</td>
+								<td class="vip-handle">选择</td>
+							</tr>
+							<tr>
+								<td>25456897</td>
+								<td>李稀松</td>
+								<td>13014528521</td>
+								<td>金卡</td>
+								<td>12465</td>
+								<td class="vip-balance">￥：245</td>
+								<td class="vip-handle">选择</td>
+							</tr>
+							<tr>
+								<td>25456897</td>
+								<td>李稀松</td>
+								<td>13014528521</td>
+								<td>金卡</td>
+								<td>12465</td>
+								<td class="vip-balance">￥：245</td>
+								<td class="vip-handle">选择</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员选择弹框结束 -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/h-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.fly.min.js" ></script>
 		<script type="text/javascript" src="js/index.js"></script>
 
 	</body>
