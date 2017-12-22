@@ -262,8 +262,10 @@
 }
 
 /*vip会员管理--充值弹框*/
+#vipRecharge .modal-backdrop{
+	top: 70px;
+}
 .vipRecharge-container{
-	margin-top: 120px;
 	width: 60%;
 }
 .vipRecharge-container>div{

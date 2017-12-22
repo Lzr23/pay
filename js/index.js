@@ -3,7 +3,7 @@ $(function() {
 	numAdd()
 	navToggle()
 	fly()
-
+	closeVIPModal()
 	/////////////////商品数量加减功能
 	function numSub() {
 		$(".jiang").click(function() {
@@ -51,5 +51,11 @@ $(function() {
 				}
 			});
 		});
+	}
+	////////////////////关闭会员管理时同时关闭所有子级弹框
+	function closeVIPModal() {
+		$(".closeVIPManage").click(function() {
+			$('#vipRecharge').modal('hide')
+		})
 	}
 })
