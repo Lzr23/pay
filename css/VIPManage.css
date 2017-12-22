@@ -59,7 +59,7 @@
 }
 .vip-nav li{
 	float: left;
-	font-size: 15px;
+	font-size: 14px;
 	padding: 0 15px 10px 25px;
 	position: relative;
 	cursor: pointer;
@@ -251,7 +251,7 @@
 	margin-top: 150px;
 }
 .vipChoice-container>div{
-	height: 380px;
+	height: 400px;
 }
 .vipChoice-tital,.vipChoice-body{
 	background: #ffffff;
@@ -260,11 +260,122 @@
 .vipChoice-body{
 	padding: 20px 50px;
 }
-@media only screen and (min-width: 1200px){
-	
+
+/*vip会员管理--充值弹框*/
+.vipRecharge-container{
+	margin-top: 120px;
+	width: 60%;
+}
+.vipRecharge-container>div{
+	height: 590px;
+}
+.vipRecharge-tital{
+	-webkit-box-shadow: 0px 2px 4px #CCCCCC;
+	box-shadow: 0px 2px 4px #CCCCCC;
+}
+.vipRecharge-body{
+	display: flex;
+	padding: 0;
+}
+.vipRecharge-left{
+	width: 40%;
+	height: 550px;
+	-webkit-box-shadow: 0 2px 4px #CCCCCC;
+	box-shadow: 2px 0 4px #CCCCCC;
+}
+.vipRecharge-head{
+	width: 100px;
+	height: 100px;
+	border-radius: 50% 50%;
+}
+.vipRecharge-leftBottom{
+	padding: 20px 20px;
+}
+.vipRecharge-leftBottom p{
+	margin: 10px 0;
+	width: 50%;
+	white-space: nowrap;
+	float: left;
+}
+.vipRecharge-right{
+	width: 60%;
+	padding: 0 20px;
+}
+.vipRecharge-search{
+	padding-left: 30px;
+}
+.vipRecharge-search em{
+	height: 20px;
+	width: 20px;
+	background: url(../img/VIPRecharge/vipRecharge1.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 7px;
+	left: 8px;
+}
+.vipRecharge-search i{
+	background: url(../img/VIPRecharge/vipRecharge2.png) no-repeat;
+	background-size: 100% 20%;
+	top: 12px;
+}
+.vipRecharge-payWay{
+	display: flex;
+	margin-top: 20px;
+	flex-wrap:wrap;
+	align-content: center;
+}
+.vipRecharge-payWay img{
+	margin-right: 30px;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+.vipRecharge-payWay1{
+	height: 23px;
+}
+.vipRecharge-payWay2{
+	height: 21px;
+}
+.vipRecharge-payWay3{
+	height: 16px;
+}
+.vipRecharge-payWay4{
+	height: 27px;
+}
+.vipRecharge-payWay5{
+	height: 24px;
+}
+.counter{
+	display: flex;
+}
+.counter-left{
+	width: 70%;
+}
+.counter-left img{
+	width: 30%;
+	margin: 1% 0;
+	cursor: pointer;
+}
+.counter-right{
+	width: 30%;
+}
+.counter-right img{
+	width: 100%;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 1365px){
+	.vipRecharge-leftBottom p{
+		margin: 5px 0;
+		float: none;
+	}
 }
 @media only screen and (max-width: 1199px) and (min-width: 992px){
-	
+	.vipRecharge-payWay p{
+		background-size: 80% 80%;
+	}
+	.counter{
+		margin-top: 20px;
+	}
 }
 @media only screen and (max-width: 991px) and (min-width: 767px){
 	
