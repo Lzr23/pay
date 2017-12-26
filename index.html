@@ -31,31 +31,36 @@
 		<header>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-2 col-md-3 col-sm-3 head-user">
-						<img class="img-responsive center-block user-head" src="img/main/head.png" />
-						<p class="user-name">李小建</p>
-					</div>
-					<div class="col-md-4 col-sm-4 user-info">
-						<img src="img/main/xingxing.png" class="user-info-img" />
-						<span class="user-grade">金卡会员</span> 积分：
-						<span>1025</span> ￥:
-						<span>588.00</span>
-					</div>
-					<div class="col-md-2 col-sm-2 head-button">
-						<img src="img/main/huiyuan.png" data-toggle="modal" data-target="#vipManage" />
-						<img src="img/main/kuaishou.png" />
-					</div>
-					<div class="col-md-3 col-sm-2 store-info">
-						<span class="store-name">三毛流浪记店</span>
-						<span class="store-time">2017-12-2 13:24</span> 单号：
-						<span class="order-number">25</span>
-					</div>
-					<div class="col-md-1 col-sm-1 head-cart">
-						<div style="position: relative;display: inline-block">
-							<span class="head-cart-num">4</span>
-							<img src="img/main/cart.png" />
+					<div class="col-md-7 col-sm-7 head-left">
+						<div class="head-user">
+							<img class="img-responsive center-block user-head" src="img/main/head.png" />
+							<p class="user-name">李小建</p>
+						</div>
+						<div class="user-info">
+							<img src="img/main/xingxing.png" class="user-info-img" />
+							<span class="user-grade">金卡会员</span> 积分：
+							<span>1025</span> ￥:
+							<span>588.00</span>
+						</div>
+						<div class="head-button">
+							<img src="img/main/huiyuan.png" data-toggle="modal" data-target="#vipManage" />
+							<img src="img/main/kuaishou.png" />
 						</div>
 					</div>
+					<div class="col-md-5 col-sm-5 head-right">
+						<div class="store-info">
+							<span class="store-name">三毛流浪记店</span>
+							<span class="store-time">2017-12-2 13:24</span>
+							<p>单号：<span class="order-number">25</span></p>
+						</div>
+						<div class="head-cart">
+							<div style="position: relative;display: inline-block">
+								<span class="head-cart-num">4</span>
+								<img src="img/main/cart.png" />
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</header>
@@ -852,7 +857,9 @@
 						<div class="vip-operate">
 							<img src="img/VIPManage/vip-message.png" />
 							<img src="img/VIPManage/vip-discount.png" />
-							<img src="img/VIPManage/vip-label.png" />
+							<div>
+								<img class="VIPLabelBt" src="img/VIPManage/vip-label.png" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -1008,7 +1015,7 @@
 		</div>
 		<!-- 会员管理--新增会员弹框结束 -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/h-ui.js"></script>
+		<script type="text/javascript" src="js/H-ui.js"></script>
 		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/VIPManage.js" ></script>

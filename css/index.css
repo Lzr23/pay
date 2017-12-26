@@ -1,13 +1,28 @@
 
 header{
 	height: 70px;
-	background: #000403;
+	background: #041622;
+}
+.head-left{
+	display: flex;
+}
+.head-right{
+	height: 70px;
+	padding-right: 20px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.head-user{
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
 }
 .user-head{
 	width: 63px;
+	height: 63px;
 	border-radius: 50% 50%;
-	margin: 0 20px;
-	float: left;
+	margin: 0 10px;
 }
 .user-name{
 	font-size: 18px;
@@ -21,9 +36,11 @@ header{
 	background: #fff;
 	line-height: 40px;
 	border-radius: 5px;
+	padding-right: 20px;
 	margin: 15px 0;
-	font-size: 18px;
+	font-size: 16px;
 	color: #ffae01;
+	white-space: nowrap;
 }
 .user-info-img{
 	width: 36px;
@@ -34,17 +51,21 @@ header{
 }
 .head-button{
 	line-height: 70px;
-	width: 13%;
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
 }
 .head-button img{
-	width: 45px;
-	margin: 0 5px;
+	width: 58px;
+	height: 42px;
+	margin: 0 10px;
 	cursor: pointer;
 }
 .store-info{
 	color: #fff;
 	font-size: 15px;
-	line-height: 70px;
+	/*line-height: 70px;*/
+	display: flex;
 }
 .store-name{
 	margin-right: 10px;
@@ -53,7 +74,7 @@ header{
 	margin-right: 10px;
 }
 .head-cart{
-	line-height: 70px;
+	margin: 0 20px;
 }
 .head-cart img{
 	position: relative;
@@ -61,16 +82,18 @@ header{
 	cursor: pointer;
 }
 .head-cart-num{
-	line-height: 22px;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
 	position: absolute;
-	right: -20px;
-	top: 10px;
+	right: -18px;
+	top: -10px;
 	color: #FFFFFF;
-	font-size: 14px;
-	padding: 0 7px;
+	padding: 2px;
 	background: #ff0000;
 	border-radius: 50% 50%;
 	z-index: 8;
+	text-align: center;
 }
 .main-left{
 	height: 699px;
@@ -398,14 +421,8 @@ header{
 }
 
 @media only screen and (min-width: 1200px) {
-	.store-info{
-		width: 28%;
-	}
 }
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
-	.head-user{
-		width: 19%;
-	}
 	.user-name{
 		font-size: 16px;
 	}
@@ -416,11 +433,8 @@ header{
 		font-size: 15px;
 	}
 	.head-button img{
-		width: 36px;
-	}
-	.store-info{
-		line-height: normal;
-		margin-top: 10px;
+		width: 37px;
+		height: 31px;
 	}
 	.goods{
 		width: 30%;
@@ -431,13 +445,6 @@ header{
 }
 
 @media only screen and (max-width: 991px) and (min-width: 767px) {
-	.head-user{
-		width: 21%;
-	}
-	.user-head{
-	width: 50px;
-	margin: 10px 10px;
-	}
 	.user-info{
 	font-size: 12px;
 	}
@@ -449,6 +456,7 @@ header{
 	}
 	.head-button img{
 	width: 37px;
+	height: 31px;
 	margin: 0 5px;
 	}
 	.user-grade{
@@ -459,7 +467,6 @@ header{
 	}
 	.store-info{
 		line-height: normal;
-		margin-top: 10px;
 		font-size: 12px;
 	}
 	.classify li{
