@@ -15,10 +15,10 @@
 <script type="text/javascript" src="Lib/html5shiv.js"></script>
 <script type="text/javascript" src="Lib/respond.min.js"></script>
 <![endif]-->
-		<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
 		<link rel="stylesheet" href="css/H-ui.reset.css" />
-		<link href="css/iconfont.css" rel="stylesheet" type="text/css" />
-		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="css/index.css" type="text/css" />
 		<link rel="stylesheet" href="css/VIPManage.css" />
 		<!--[if IE 6]> 
 <script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
@@ -233,6 +233,61 @@
 									<td>118</td>
 									<td><button class="left-delete">X</button></td>
 								</tr>
+								<tr>
+									<td>机身清洗</td>
+									<td>
+										<i class="jiang"></i>
+										<span class="num">1</span>
+										<i class="jia">+</i>
+									</td>
+									<td>128</td>
+									<td>118</td>
+									<td><button class="left-delete">X</button></td>
+								</tr>
+								<tr>
+									<td>机身清洗</td>
+									<td>
+										<i class="jiang"></i>
+										<span class="num">1</span>
+										<i class="jia">+</i>
+									</td>
+									<td>128</td>
+									<td>118</td>
+									<td><button class="left-delete">X</button></td>
+								</tr>
+								<tr>
+									<td>机身清洗</td>
+									<td>
+										<i class="jiang"></i>
+										<span class="num">1</span>
+										<i class="jia">+</i>
+									</td>
+									<td>128</td>
+									<td>118</td>
+									<td><button class="left-delete">X</button></td>
+								</tr>
+								<tr>
+									<td>机身清洗</td>
+									<td>
+										<i class="jiang"></i>
+										<span class="num">1</span>
+										<i class="jia">+</i>
+									</td>
+									<td>128</td>
+									<td>118</td>
+									<td><button class="left-delete">X</button></td>
+								</tr>
+								<tr>
+									<td>机身清洗</td>
+									<td>
+										<i class="jiang"></i>
+										<span class="num">1</span>
+										<i class="jia">+</i>
+									</td>
+									<td>128</td>
+									<td>118</td>
+									<td><button class="left-delete">X</button></td>
+								</tr>
 							</table>
 						</div>
 						<p class="left-main-bottom">
@@ -247,7 +302,7 @@
 							<button class="jiaoyi" />交易记录</button>
 						</div>
 						<p class="qingchu">清除</p>
-						<p class="jiezhang">结账</p>
+						<p class="jiezhang" data-toggle="modal" data-target="#deal">结账</p>
 					</div>
 
 				</div>
@@ -315,350 +370,9 @@
 				<!--主题内容右侧结束-->
 			</div>
 		</div>
-		<!-- 会员管理弹框开始 -->
-		<div class="modal fade" id="vipManage" tabindex="-1" role="dialog" aria-labelledby="VIPMange">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header vip-tital">
-						<button type="button" class="close closeVIPManage" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">会员管理</h4>
-					</div>
-					<div class="modal-body vip-body">
-						<div class="vip-section1">
-							<p>会员列表</p>
-							<div class="vip-search-content">
-								<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
-								<i class="vip-search-icon"></i>
-							</div>
-						</div>
-						<ul class="vip-nav">
-							<li data-toggle="modal" data-target="#vipRecharge">账号充值<i class="vip-nav1"></i></li>
-							<li>新增会员<i class="vip-nav2"></i></li>
-							<li>重置密码<i class="vip-nav3"></i></li>
-							<li>修改密码<i class="vip-nav4"></i></li>
-							<li>导出<i class="vip-nav5"></i></li>
-							<li>导入<i class="vip-nav6"></i></li>
-							<li>挂失<i class="vip-nav7"></i></li>
-							<li>删除<i class="vip-nav8"></i></li>
-							<li>补卡<i class="vip-nav9"></i></li>
-							<li>刷新<i class="vip-nav10"></i></li>
-							<li>筛选会员<i class="vip-nav11"></i></li>
-						</ul>
-						<div class="vip-section2">
-							<select name="sex">
-								<option style="display: none;" selected="selected">性别</option>
-								<option>男</option>
-								<option>女</option>
-							</select>
-							<select name="oprate">
-								<option style="display: none;" selected="selected">操作员</option>
-								<option>阿萨德</option>
-								<option>卡萨丁</option>
-							</select>
-							<select name="source">
-								<option style="display: none;" selected="selected">注册来源</option>
-								<option>线下</option>
-								<option>微信</option>
-							</select>
-							<p>会员总数<span class="vip-total">10</span>&nbsp;本月还有<span class="vip-birthday">5</span>个会员过生日</p>
-							<i class="vip-eyes"></i>
-						</div>
-						<div class="vip-section3">
-							<div class="section3-item">
-								<h3>今天过生日的会员</h3>
-								<p><span>5</span>位</p>
-								<p>本月还有<span>2</span>位过生日</p>
-							</div>
-							<div class="section3-item">
-								<h3>会员总数</h3>
-								<p><span>88</span>位</p>
-								<p>平均每日新增会员<span>0.25</span>位会员</p>
-							</div>
-							<div class="section3-item">
-								<h3>累计消费</h3>
-								<p><span>2500</span>元</p>
-								<p>共<span>2</span>笔&nbsp;平均每位会员消费<span>214</span>元</p>
-							</div>
-							<div class="section3-item">
-								<h3>消费TOP3的会员</h3>
-								<p>1.肖潇 ￥：1020</p>
-								<p>2.肖迦里 ￥：888</p>
-								<p>3.李艳 ￥：888</p>
-							</div>
-						</div>
-						<div style="height: 250px;overflow-y: scroll;">
-							<table class="vip-info" border="" cellspacing="" cellpadding="">
-								<tr>
-									<th></th>
-									<th>卡号</th>
-									<th>姓名</th>
-									<th>性别</th>
-									<th>号码</th>
-									<th>等级</th>
-									<th>标签</th>
-									<th>所属店铺</th>
-									<th>积分</th>
-									<th>余额</th>
-									<th>过期时间</th>
-									<th>注册来源</th>
-									<th>操作</th>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>25456897</td>
-									<td>肖晓</td>
-									<td>女</td>
-									<td>130582501</td>
-									<td>金卡</td>
-									<td>高端消费</td>
-									<td>总店</td>
-									<td>254</td>
-									<td class="vip-balance">￥：245</td>
-									<td>永久有效</td>
-									<td>线上</td>
-									<td class="vip-handle">
-										<img src="img/VIPManage/vip-operate3.png" />
-										<img src="img/VIPManage/vip-operate2.png" />
-										<img src="img/VIPManage/vip-operate1.png" />
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="vip-operate">
-							<img src="img/VIPManage/vip-message.png" />
-							<img src="img/VIPManage/vip-discount.png" />
-							<img src="img/VIPManage/vip-label.png" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 会员管理弹框结束 -->
-
-		<!-- 会员管理--充值弹框开始 -->
-		<div style="overflow: visible;top: 100px;" class="modal fade" id="vipRecharge" tabindex="-1" role="dialog" aria-labelledby="vipRecharge">
-			<div class="modal-dialog vipRecharge-container" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header vip-tital vipRecharge-tital">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">会员充值</h4>
-					</div>
-					<div class="modal-body vipRecharge-body">
-						<div class="vipRecharge-left">
-							<div class="left-search vipRecharge-search">
-								<em></em>
-								<input type="text" placeholder="会员手机号码/卡号/快速扫码" />
-								<i data-toggle="modal" data-target="#vipChoice"></i>
-							</div>
-							<div class="left-search vipRecharge-search">
-								<input type="text" placeholder="请输入充值金额" />
-							</div>
-							<div class="left-search vipRecharge-search">
-								<input type="text" placeholder="请输入赠送金额" />
-							</div>
-							<div style="display: flex;justify-content: center;">
-								<img  class="vipRecharge-head" src="img/main/head.png" />
-							</div>
-							<div class="vipRecharge-leftBottom">
-								<p>会员卡号：2135464</p>
-								<p>手机号码：18349852156</p>
-								<p>会员生日：1996年5月21日</p>
-								<p>卡内余额：￥245.00</p>
-								<p>累计消费：20178.00</p>
-								<p>会员积分：2345</p>
-								<p>过期时间：2018年5月20日</p>
-							</div>
-						</div>
-						<div class="vipRecharge-right">
-							<div class="vipRecharge-payWay">
-								<img class="vipRecharge-payWay1" src="img/VIPRecharge/vipRecharge-type1.png" />
-								<img class="vipRecharge-payWay2" src="img/VIPRecharge/vipRecharge-type2.png" />
-								<img class="vipRecharge-payWay3" src="img/VIPRecharge/vipRecharge-type3.png" />
-								<img class="vipRecharge-payWay4" src="img/VIPRecharge/vipRecharge-type4.png" />
-								<img class="vipRecharge-payWay5" src="img/VIPRecharge/vipRecharge-type5.png" />
-							</div>
-							<div class="counter">
-								<div class="counter-left">
-									<img src="img/VIPRecharge/vipRecharge-num7.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num8.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num9.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num4.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num5.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num6.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num1.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num2.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num3.png"/>
-									<img style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num10.png"/>
-								</div>
-								<div class="counter-right">
-									<img src="img/VIPRecharge/vipRecharge-num12.png"/>
-									<img src="img/VIPRecharge/vipRecharge-num11.png"/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 会员管理--充值弹框结束 -->
-
+		
 		<!-- 会员选择弹框开始 -->
-		<div class="modal fade" id="vipChoice" tabindex="-1" role="dialog" aria-labelledby="vipChoice">
+		<div style="z-index: 1050;" class="modal fade" id="vipChoice" tabindex="-1" role="dialog" aria-labelledby="vipChoice">
 			<div class="modal-dialog vipChoice-container" role="document">
 				<div class="modal-content">
 
@@ -781,11 +495,523 @@
 			</div>
 		</div>
 		<!-- 会员选择弹框结束 -->
+		
+		<!--结账弹框开始-->
+		<div class="modal fade" id="deal" tabindex="-1" role="dialog" aria-labelledby="deal">
+			<div class="modal-dialog vipRecharge-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header deal-tital vipRecharge-tital">
+						<button type="button" class="close dealClose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">
+							<img class="vipRecharge-payWay1" src="img/VIPRecharge/vipRecharge-type1.png" />
+							<img src="img/deal/deal1.png" />
+							<img style="margin-top: 2px;" class="vipRecharge-payWay2" src="img/VIPRecharge/vipRecharge-type2.png" />
+							<img style="margin-top: 4px;" class="vipRecharge-payWay3" src="img/VIPRecharge/vipRecharge-type3.png" />
+							<img class="vipRecharge-payWay4" src="img/VIPRecharge/vipRecharge-type4.png" />
+							<img src="img/deal/deal2.png" />
+							<img class="vipRecharge-payWay5" src="img/VIPRecharge/vipRecharge-type5.png" />
+							<img src="img/deal/deal3.png" />
+						</h4>
+					</div>
+					<div class="modal-body vipRecharge-body">
+						<div class="vipRecharge-left deal-left">
+							<div class="deal-section1">
+								<h6><p>现金</p><p>154.00</p></h6>
+								<h6><p>折扣</p><p style="color: #ff0000;">100.00%</p></h6>
+								<h6><p>实收</p><p>154.00</p></h6>
+								<h6><p>找零</p><p>0.00</p></h6>
+							</div>
+							<div class="left-search vipRecharge-search">
+								<em></em>
+								<input type="text" placeholder="手机号/卡号/快速扫码" />
+								<i data-toggle="modal" data-target="#vipChoice"></i>
+							</div>
+							<div class="deal-lef1">
+								<span>充值</span>
+								<img style="margin-bottom: 20px;" src="img/deal/deal4.png" />
+								<div style="margin-right: 20px;margin-bottom: 15px;">
+									<p class="deal-name">李星</p>
+									<p class="deal-phone">13024876214</p>
+									<p>折扣：<span class="deal-discount">100%</span></p>
+									<p></p>
+								</div>
+								<div class="deal-info">
+									<div class="deal-infoItem">
+										<p>积分</p>
+										<p>102</p>
+									</div>
+									<div class="deal-infoItem">
+										<p>余额</p>
+										<p>2583</p>
+									</div>
+									<div class="deal-infoItem">
+										<p>累计消费数</p>
+										<p>25</p>
+									</div>
+									<div class="deal-infoItem">
+										<p>生日</p>
+										<p>2-25</p>
+									</div>
+								</div>
+							</div>
+							<div style="margin: 5% 2%;">
+								<input class="myCheckbox" style="margin-right: 10px;" type="checkbox" id="deal-points" />
+								<label for="deal-points">可使用<span class="deal-points1">102</span>积分抵<span class="deal-points2">1.02</span>元</label>
+							</div>
+						</div>
+						<div class="vipRecharge-right deal-right">
+							<div class="counter deal-counter">
+								<img src="img/VIPRecharge/vipRecharge-num1.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num2.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num3.png"/>
+								<img src="img/deal/deal9.png" />
+								<img src="img/VIPRecharge/vipRecharge-num4.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num5.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num6.png"/>
+								<img src="img/deal/deal8.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num7.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num8.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num9.png"/>
+								<img src="img/deal/deal7.png"/>
+								<img src="img/deal/deal11.png"/>
+								<img src="img/VIPRecharge/vipRecharge-num10.png"/>
+								<img src="img/deal/deal10.png"/>
+								<img src="img/deal/deal6.png"/>
+								<img style="width: 95%;height:95%;margin: 10px;" src="img/deal/deal5.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--结账弹框结束-->
+		
+		<!-- 会员管理弹框开始 -->
+		<div style="overflow: hidden;" class="modal fade" id="vipManage" tabindex="-1" role="dialog" aria-labelledby="VIPMange">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital">
+						<button type="button" class="close closeVIPManage" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">会员管理</h4>
+					</div>
+					<div class="modal-body vip-body">
+						<div class="vip-section1">
+							<p>会员列表</p>
+							<div class="vip-search-content">
+								<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+								<i class="vip-search-icon"></i>
+							</div>
+						</div>
+						<ul class="vip-nav">
+							<li data-toggle="modal" data-target="#vipRecharge">账号充值<i class="vip-nav1"></i></li>
+							<li data-toggle="modal" data-target="#VIPManage-add">新增会员<i class="vip-nav2"></i></li>
+							<li>重置密码<i class="vip-nav3"></i></li>
+							<li data-toggle="modal" data-target="#VIPManage-modify">修改密码<i class="vip-nav4"></i></li>
+							<li>导出<i class="vip-nav5"></i></li>
+							<li>导入<i class="vip-nav6"></i></li>
+							<li>挂失<i class="vip-nav7"></i></li>
+							<li>删除<i class="vip-nav8"></i></li>
+							<li>补卡<i class="vip-nav9"></i></li>
+							<li>刷新<i class="vip-nav10"></i></li>
+							<li>筛选会员<i class="vip-nav11"></i></li>
+						</ul>
+						<div class="vip-section2">
+							<select name="sex">
+								<option style="display: none;" selected="selected">性别</option>
+								<option>男</option>
+								<option>女</option>
+							</select>
+							<select name="oprate">
+								<option style="display: none;" selected="selected">操作员</option>
+								<option>阿萨德</option>
+								<option>卡萨丁</option>
+							</select>
+							<select name="source">
+								<option style="display: none;" selected="selected">注册来源</option>
+								<option>线下</option>
+								<option>微信</option>
+							</select>
+							<p>会员总数<span class="vip-total">10</span>&nbsp;本月还有<span class="vip-birthday">5</span>个会员过生日</p>
+							<i class="vip-eyes"></i>
+						</div>
+						<div class="vip-section3">
+							<div class="section3-item">
+								<h3>今天过生日的会员</h3>
+								<p><span>5</span>位</p>
+								<p>本月还有<span>2</span>位过生日</p>
+							</div>
+							<div class="section3-item">
+								<h3>会员总数</h3>
+								<p><span>88</span>位</p>
+								<p>平均每日新增会员<span>0.25</span>位会员</p>
+							</div>
+							<div class="section3-item">
+								<h3>累计消费</h3>
+								<p><span>2500</span>元</p>
+								<p>共<span>2</span>笔&nbsp;平均每位会员消费<span>214</span>元</p>
+							</div>
+							<div class="section3-item">
+								<h3>消费TOP3的会员</h3>
+								<p>1.肖潇 ￥：1020</p>
+								<p>2.肖迦里 ￥：888</p>
+								<p>3.李艳 ￥：888</p>
+							</div>
+						</div>
+						<div style="height: 250px;overflow-y: scroll;">
+							<table class="vip-info" border="" cellspacing="" cellpadding="">
+								<tr>
+									<th></th>
+									<th>卡号</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>号码</th>
+									<th>等级</th>
+									<th>标签</th>
+									<th>所属店铺</th>
+									<th>积分</th>
+									<th>余额</th>
+									<th>过期时间</th>
+									<th>注册来源</th>
+									<th>操作</th>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="vip-operate">
+							<img src="img/VIPManage/vip-message.png" />
+							<img src="img/VIPManage/vip-discount.png" />
+							<img src="img/VIPManage/vip-label.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理弹框结束 -->
+
+		<!-- 会员管理--充值弹框开始 -->
+		<div style="overflow: visible;top: 100px;" class="modal fade lowModal" id="vipRecharge" tabindex="-1" role="dialog" aria-labelledby="vipRecharge">
+			<div class="modal-dialog vipRecharge-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipRecharge-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">会员充值</h4>
+					</div>
+					<div class="modal-body vipRecharge-body">
+						<div class="vipRecharge-left">
+							<div class="left-search vipRecharge-search">
+								<em></em>
+								<input type="text" placeholder="手机号/卡号/快速扫码" />
+								<i data-toggle="modal" data-target="#vipChoice"></i>
+							</div>
+							<div class="left-search vipRecharge-search">
+								<input type="text" placeholder="请输入充值金额" />
+							</div>
+							<div class="left-search vipRecharge-search">
+								<input type="text" placeholder="请输入赠送金额" />
+							</div>
+							<div style="display: flex;justify-content: center;margin-bottom: 30px;">
+								<img  class="vipRecharge-head" src="img/main/head.png" />
+							</div>
+							<div class="vipRecharge-leftBottom">
+								<p>会员卡号：2135464</p>
+								<p>手机号码：18349852156</p>
+								<p>会员生日：1996年5月21日</p>
+								<p>卡内余额：￥245.00</p>
+								<p>累计消费：20178.00</p>
+								<p>会员积分：2345</p>
+								<p>过期时间：2018年5月20日</p>
+							</div>
+						</div>
+						<div class="vipRecharge-right">
+							<div class="vipRecharge-payWay">
+								<img class="vipRecharge-payWay1" src="img/VIPRecharge/vipRecharge-type1.png" />
+								<img style="margin-top: 2px;" class="vipRecharge-payWay2" src="img/VIPRecharge/vipRecharge-type2.png" />
+								<img style="margin-top: 4px;" class="vipRecharge-payWay3" src="img/VIPRecharge/vipRecharge-type3.png" />
+								<img class="vipRecharge-payWay4" src="img/VIPRecharge/vipRecharge-type4.png" />
+								<img class="vipRecharge-payWay5" src="img/VIPRecharge/vipRecharge-type5.png" />
+							</div>
+							<div class="counter">
+								<div class="counter-left">
+									<img src="img/VIPRecharge/vipRecharge-num7.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num8.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num9.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num4.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num5.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num6.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num1.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num2.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num3.png"/>
+									<img style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num10.png"/>
+								</div>
+								<div class="counter-right">
+									<img src="img/VIPRecharge/vipRecharge-num12.png"/>
+									<img src="img/VIPRecharge/vipRecharge-num11.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--充值弹框结束 -->
+
+		<!-- 会员管理--删除弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-delete" tabindex="-1" role="dialog" aria-labelledby="VIPManage-delete">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>删除会员将删除掉该会员所有信息，确定删除吗？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--删除弹框结束 -->
+		
+		<!-- 会员管理--修改密码弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-modify" tabindex="-1" role="dialog" aria-labelledby="VIPManage-modify">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">修改密码</h4>
+					</div>
+					<div class="modal-body vipModify-body">
+						<div class="myInput"><p>原密码：</p><input type="password" /></div>
+						<div class="myInput"><p>新密码：</p><input type="password" /></div>
+						<div class="myInput"><p>确认密码：</p><input type="password" /></div>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt" data-dismiss="modal">保存</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--修改密码弹框结束 -->
+		
+		<!-- 会员管理--新增会员弹框开始 -->
+		<div style="overflow: visible;top: 100px;" class="modal fade lowModal" id="VIPManage-add" tabindex="-1" role="dialog" aria-labelledby="VIPManage-add">
+			<div class="modal-dialog vipAdd-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">新增会员</h4>
+					</div>
+					<div class="modal-body vipAdd-body">
+						<div class="vipAdd-left">
+							<img src="img/main/head.png" />
+							<p>点击上传头像<br/>建议尺寸：300*300px</p>
+						</div>
+						<div class="vipAdd-right">
+							<div class="myInput"><p><span>*</span>会员卡号：</p><input type="text" /></div>
+							<div class="myInput"><p><span>*</span>会员姓名：</p><input type="text" /></div>
+							<div class="myInput"><p><span>*</span>手机号码：</p><input type="text" /></div>
+							<div class="myInput"><p>会员生日：</p><input type="text" /></div>
+							<div class="myInput"><p>会员等级：</p><input type="text" /></div>
+							<div class="myInput"><p>售卡金额：</p><input type="text" /></div>
+							<div class="myInput"><p>推荐人：</p><input type="text" /></div>
+							<div class="myInput"><p>地址：</p><input type="text" /></div>
+							<div class="myInput"><p>备注：</p><input type="text" /></div>
+							<div class="vipDelete-bottom vipAdd-bottom">
+								<button class="confirmBt vipAdd-save" data-dismiss="modal">保存</button>
+								<button class="cancelBt" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--新增会员弹框结束 -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/h-ui.js"></script>
 		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-
+		<script type="text/javascript" src="js/VIPManage.js" ></script>
 	</body>
 
 </html>

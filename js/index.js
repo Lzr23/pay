@@ -1,11 +1,12 @@
-$(function() {
-	numSub()
-	numAdd()
+$(function () {
+	goodsNumSub()
+	goodsNumAdd()
+	goodsDelete()
 	navToggle()
 	fly()
 	closeVIPModal()
-	/////////////////商品数量加减功能
-	function numSub() {
+	/////////////////商品数量加、减、删除功能
+	function goodsNumSub () {
 		$(".jiang").click(function() {
 			var num = parseInt($(this).siblings('.num').text())
 			if(num == 1) {
@@ -16,15 +17,21 @@ $(function() {
 		})
 	}
 
-	function numAdd() {
+	function goodsNumAdd () {
 		$(".jia").click(function() {
 			var num = parseInt($(this).siblings('.num').text());
 			$(this).siblings('.num').text(num + 1)
 		})
 	}
+	
+	function goodsDelete () {
+		$(".left-delete").closest("td").click(function () {
+			$(this).closest("tr").remove()
+		})
+	}
 	///////////////////导航栏当前分类切换
 	function navToggle() {
-		$(".classify li").click(function() {
+		$(".classify li").click(function () {
 			$(this).siblings().children().removeClass("current")
 			$(this).children().addClass("current")
 		})
@@ -32,7 +39,7 @@ $(function() {
 	///////////////////加入购物车小球动画
 	function fly() {
 		var offset = $('.head-cart-num').offset();
-		$('.jia').click(function(event) {
+		$('.jia').click(function (event) {
 			var thisItem = $(this);
 			var flyer = thisItem.clone().text('');
 			flyer.fly({
@@ -56,6 +63,17 @@ $(function() {
 	function closeVIPModal() {
 		$(".closeVIPManage").click(function() {
 			$('#vipRecharge').modal('hide')
+			$('#VIPManage-add').modal('hide')
+			$('#VIPManage-modify').modal('hide')
+			$('#VIPManage-delete').modal('hide')
+		})
+	}
+	
+	////////////////////快速选择会员搜索
+	function vipSearch () {
+		
+		var searchTimer = setTimeout(function () {
+			
 		})
 	}
 })

@@ -225,15 +225,12 @@
 	height: 30px;
 	font-size:13px
 }
-.vip-info td input{
-	height: 15px;
-	width: 15px;
-}
 .vip-balance{
 	color: #fd0000;
 }
 .vip-handle img{
 	margin: 0 3px;
+	cursor: pointer;
 }
 .vip-operate{
 	margin: 20px 0 5px 0;
@@ -262,18 +259,15 @@
 }
 
 /*vip会员管理--充值弹框*/
-#vipRecharge .modal-backdrop{
+.lowModal .modal-backdrop{
 	top: 70px;
 }
 .vipRecharge-container{
 	width: 60%;
 }
-.vipRecharge-container>div{
-	height: 590px;
-}
 .vipRecharge-tital{
-	-webkit-box-shadow: 0px 2px 4px #CCCCCC;
-	box-shadow: 0px 2px 4px #CCCCCC;
+	-webkit-box-shadow: 0px 1px 10px #EDEDED;
+	box-shadow: 0px 1px 10px #EDEDED;
 }
 .vipRecharge-body{
 	display: flex;
@@ -281,9 +275,8 @@
 }
 .vipRecharge-left{
 	width: 40%;
-	height: 550px;
-	-webkit-box-shadow: 0 2px 4px #CCCCCC;
-	box-shadow: 2px 0 4px #CCCCCC;
+	-webkit-box-shadow: 1px 0 10px #CCCCCC;
+	box-shadow: 1px 0 10px #CCCCCC;
 }
 .vipRecharge-head{
 	width: 100px;
@@ -291,12 +284,13 @@
 	border-radius: 50% 50%;
 }
 .vipRecharge-leftBottom{
-	padding: 20px 20px;
+	padding: 20px 0 0 10px;
 }
 .vipRecharge-leftBottom p{
 	margin: 10px 0;
 	width: 50%;
 	white-space: nowrap;
+	font-size: 14px;
 	float: left;
 }
 .vipRecharge-right{
@@ -316,19 +310,22 @@
 	left: 8px;
 }
 .vipRecharge-search i{
-	background: url(../img/VIPRecharge/vipRecharge2.png) no-repeat;
+	background: url(../img/VIPRecharge/vipRecharge2.png) no-repeat 0px 14px;
 	background-size: 100% 20%;
-	top: 12px;
+	top: 0;
 }
 .vipRecharge-payWay{
 	display: flex;
 	margin-top: 20px;
 	flex-wrap:wrap;
 	align-content: center;
+	vertical-align: middle;
 }
 .vipRecharge-payWay img{
 	margin-right: 30px;
 	margin-bottom: 15px;
+	-webkit-align-content: center;
+	align-content: center;
 	cursor: pointer;
 }
 .vipRecharge-payWay1{
@@ -365,6 +362,104 @@
 	cursor: pointer;
 }
 
+/*会员删除弹框*/
+.vipDelete-container{
+	width: 30%;
+}
+.vipDelete-tital{
+	-webkit-box-shadow: 0px 1px 10px #EDEDED;
+	box-shadow: 0px 1px 10px #EDEDED;
+	background: #FFFFFF;
+}
+.vipDelete-body{
+	padding:20px;
+}
+.vipDelete-body p{
+	margin-bottom: 25px;
+}
+.vipDelete-bottom{
+	display: flex;
+	justify-content: flex-end;
+}
+.confirmBt,.cancelBt{
+	width: 42px;
+	height: 24px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.confirmBt{
+	background: #ffae01;
+	color: #FFFFFF;
+}
+.cancelBt{
+	background: #FFFFFF;
+	color: #ffae01;
+	border: 1px solid #dcdcdc;
+	margin-left: 10px;
+}
+
+/*会员修改密码弹框*/
+.myInput{
+	width: 100%;
+	display: flex;
+	margin-bottom: 10px;
+}
+.myInput p{
+	width: 20%;
+	height: 27px;
+	line-height: 27px;
+	white-space: nowrap;
+	text-align: center;
+}
+.myInput input{
+	width: 60%;
+	border: 1px solid #cccccc;
+	outline: none;
+	height: 27px;
+	border-radius: 5px;
+	padding-left: 3%;
+}
+.myInput span{
+	line-height: 24px;
+	color: #FF0000;
+	margin-right: 3px;
+}
+
+/*新增会员弹框*/
+.vipAdd-container{
+	width: 56%;
+}
+.vipAdd-body{
+	display: flex;
+}
+.vipAdd-left, .vipAdd-right{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.vipAdd-left{
+	width: 38%;
+	padding-top: 15px;
+}
+.vipAdd-left img{
+	width: 120px;
+	height: 120px;
+}
+.vipAdd-left p{
+	margin-top: 10px;
+	color: #ff0000;
+	cursor: pointer;
+}
+.vipAdd-right{
+	width: 62%;
+	font-size: 14px;
+}
+.vipAdd-bottom button{
+	width:60px;
+	height: 35px;
+	font-size: 14px;
+}
 @media only screen and (max-width: 1365px){
 	.vipRecharge-leftBottom p{
 		margin: 5px 0;
