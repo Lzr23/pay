@@ -312,12 +312,13 @@
 }
 .vipRecharge-search i{
 	background: url(../img/VIPRecharge/vipRecharge2.png) no-repeat 0px 14px;
-	background-size: 100% 20%;
+	background-size: 100% 19%;
 	top: 0;
 }
 .vipRecharge-payWay{
 	display: flex;
 	margin-top: 20px;
+	padding-left: 12px;
 	flex-wrap:wrap;
 	align-content: center;
 	vertical-align: middle;
@@ -379,6 +380,8 @@
 	margin-bottom: 25px;
 }
 .vipDelete-bottom{
+	width: 100%;
+	padding-right: 33%;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -397,10 +400,17 @@
 	background: #FFFFFF;
 	color: #ffae01;
 	border: 1px solid #dcdcdc;
-	margin-left: 10px;
+	margin-left: 20px;
 }
 
 /*会员修改密码弹框*/
+.vipModify-body{
+	padding-left: 40px;
+}
+.vipModify-bottom{
+	width: auto;
+	padding-right: 17%;
+}
 .myInput{
 	width: 100%;
 	display: flex;
