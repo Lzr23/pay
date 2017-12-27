@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fl {
+  float: left;
+}
+.box {
+	width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  text-align: center;
+}
+.box button {
+  margin: 8px 10px;
+  float: left;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  background-color: #ffffff;
+}
+.box .first-page,
+.box .last-page {
+	float: left;
+  margin: 0 5px;
+}
+.turnPage{
+	float: left;
+}
+.box .pageWrap {
+  height: 40px;
+  float: left;
+  overflow: hidden;
+}
+.box .pageWrap ul {
+  width: 100000px;
+  height: 40px;
+  margin-top: 5px;
+  float: left;
+}
+.box .pageWrap ul li {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #ebebeb;
+  line-height: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+}
+.box .pageWrap ul .sel-page {
+  background-color: #ffae01;
+}
+.box .jump-text {
+  width: 60px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 5px;
+  float: left;
+}
+.box .jump-button {
+  margin: 0;
+  float: left;
+}
+.box .total-pages,
+.box .total-count {
+  margin-left: 10px;
+  float: left;
+  font-size: 12px;
+}
+.pagination-left{
+	float: left;
+}
+.pagination-right{
+	float: right;
+	margin-right: 20px;
+}
+.pagination{
+	position: relative;
+	height: 50px;
+	margin-top: 10px;
+}

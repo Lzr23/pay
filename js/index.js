@@ -40,6 +40,7 @@ $(function () {
 	function fly() {
 		var offset = $('.head-cart-num').offset();
 		$('.jia').click(function (event) {
+			event = event || window.event
 			var thisItem = $(this);
 			var flyer = thisItem.clone().text('');
 			flyer.fly({

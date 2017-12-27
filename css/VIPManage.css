@@ -20,21 +20,23 @@
 }
 .vip-section1{
 	display: flex;
+	justify-content: flex-start;
 }
-.vip-section1 p{
-	width: 10%;
+.vip-section1 div p{
+	width: 72px;
 	height: 40px;
 	line-height: 40px;
 	background: #ffae01;
+	padding: 0 10px;
 	color: #FFFFFF;
 	text-align: center;
-	font-size: 15px;
+	font-size: 14px;
 	letter-spacing: 3px;
-	margin-right: 10%;
 }
 .vip-search-content{
+	width: 250px;
 	position: relative;
-	width: 25%;
+	margin-left: 70px;
 }
 .vip-search{
 	height: 32px;
@@ -53,6 +55,35 @@
 	background: url(../img/VIPManage/vip-search.png) no-repeat;
 	background-size: 100% 100%;
 }
+.vip-section2{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+.vip-section2 select{
+	height: 34px;
+	border-radius: 5px;
+	margin-right: 10px;
+	color: #CCCCCC;
+}
+.vip-section2 p{
+	line-height: 30px;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.vip-section2 p span{
+	color: #ffae01;
+}
+/*.vip-eyes
+{
+	width: 20px;
+	height: 17px;
+	display: block;
+	background: url(../img/VIPManage/vip-eye.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 3px;
+}*/
+
 .vip-nav{
 	margin: 20px 0;
 	overflow: hidden;
@@ -161,34 +192,8 @@
 .vip-nav li:hover .vip-nav11{
 	background: url(../img/VIPManage/vip-nav11.1.png) no-repeat;
 }
-.vip-section2{
-	display: flex;
-	justify-content: flex-end;
-}
-.vip-section2 select{
-	height: 30px;
-	width: 10%;
-	border-radius: 5px;
-	margin-right: 10px;
-}
-.vip-section2 p{
-	line-height: 30px;
-	font-size: 14px;
-	letter-spacing: 2px;
-}
-.vip-section2 p span{
-	color: #ffae01;
-}
-.vip-eyes
-{
-	width: 20px;
-	height: 17px;
-	display: block;
-	background: url(../img/VIPManage/vip-eye.png) no-repeat;
-	background-size: 100% 100%;
-	margin-top: 3px;
-}
-.vip-section3{
+
+/*.vip-section3{
 	margin: 25px 0;
 	display: flex;
 }
@@ -210,8 +215,12 @@
 .section3-item p span{
 	font-size: 17px;
 	color: #ffae01;
+}*/
+.vipInfo-container{
+	overflow-x: auto;
 }
 .vip-info{
+	min-width: 700px;
 	text-align: center;
 	border: 1px solid #CCCCCC;
 }
@@ -233,15 +242,15 @@
 	cursor: pointer;
 }
 .vip-operate{
-	margin: 20px 0 5px 0;
+	margin: 20px 0 20px 0;
 	display: flex;
 	justify-content: flex-start;
+	position: relative;
 }
 .vip-operate img{
 	margin-right: 20px;
 	cursor: pointer;
 }
-
 
 /*vip快速选择弹框*/
 .vipChoice-container{

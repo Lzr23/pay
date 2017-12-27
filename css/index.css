@@ -170,12 +170,13 @@ header{
 	-webkit-user-select: none;
 }
 .left-delete{
-	height:16px;
+	height:18px;
 	width:18px;
 	background: #8cdd16;
 	border: none;
 	color: #FFFFFF;
 	border-radius: 50% 50%;
+	cursor: pointer;
 }
 .left-main-bottom{
 	width: 90%;
@@ -263,7 +264,7 @@ header{
 }
 .right-main{
 	max-height: 560px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .goods{
 	width: 23%;

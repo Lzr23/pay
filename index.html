@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
 		<link rel="stylesheet" href="css/H-ui.reset.css" />
 		<link rel="stylesheet" href="css/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="css/paging.css" />
 		<link rel="stylesheet" href="css/index.css" type="text/css" />
 		<link rel="stylesheet" href="css/VIPManage.css" />
 		<!--[if IE 6]> 
@@ -370,6 +371,62 @@
 								<p>￥<span class="goods-price">128</span></p>
 							</div>
 						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
+						<div class="goods">
+							<img src="img/main/goods.png" />
+							<div class="goods-info">
+								<h4 class="goods-name">机身全清洗</h4>
+								<p>￥<span class="goods-price">128</span></p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!--主题内容右侧结束-->
@@ -603,71 +660,51 @@
 					</div>
 					<div class="modal-body vip-body">
 						<div class="vip-section1">
-							<p>会员列表</p>
-							<div class="vip-search-content">
-								<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
-								<i class="vip-search-icon"></i>
+							<div style="display: flex;margin-right: 4%;">
+								<p>会员列表</p>
+								<div class="vip-search-content">
+									<input class="vip-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+									<i class="vip-search-icon"></i>
+								</div>
+							</div>
+							<div class="vip-section2">
+								<select name="sex">
+									<option style="display: none;" selected="selected">性别</option>
+									<option>男</option>
+									<option>女</option>
+								</select>
+								<select name="oprate">
+									<option style="display: none;" selected="selected">操作员</option>
+									<option>阿萨德</option>
+									<option>卡萨丁</option>
+								</select>
+								<select name="source">
+									<option style="display: none;" selected="selected">注册来源</option>
+									<option>线下</option>
+									<option>微信</option>
+								</select>
+								<!--<p>会员总数<span class="vip-total">10</span>&nbsp;本月还有<span class="vip-birthday">5</span>个会员过生日</p>
+								<i class="vip-eyes"></i>-->
 							</div>
 						</div>
 						<ul class="vip-nav">
 							<li data-toggle="modal" data-target="#vipRecharge">账号充值<i class="vip-nav1"></i></li>
 							<li data-toggle="modal" data-target="#VIPManage-add">新增会员<i class="vip-nav2"></i></li>
-							<li>重置密码<i class="vip-nav3"></i></li>
-							<li data-toggle="modal" data-target="#VIPManage-modify">修改密码<i class="vip-nav4"></i></li>
-							<li>导出<i class="vip-nav5"></i></li>
-							<li>导入<i class="vip-nav6"></i></li>
-							<li>挂失<i class="vip-nav7"></i></li>
-							<li>删除<i class="vip-nav8"></i></li>
-							<li>补卡<i class="vip-nav9"></i></li>
+							<li class="vipNav3">重置密码<i class="vip-nav3"></i></li>
+							<li class="vipNav4">修改密码<i class="vip-nav4"></i></li>
+							<li data-toggle="modal" data-target="#VIPManage-export">导出<i class="vip-nav5"></i></li>
+							<li data-toggle="modal" data-target="#VIPManage-import">导入<i class="vip-nav6"></i></li>
+							<li class="vipNav7">挂失<i class="vip-nav7"></i></li>
+							<li class="vipNav8">删除<i class="vip-nav8"></i></li>
+							<li class="vipNav9">补卡<i class="vip-nav9"></i></li>
 							<li>刷新<i class="vip-nav10"></i></li>
 							<li>筛选会员<i class="vip-nav11"></i></li>
 						</ul>
-						<div class="vip-section2">
-							<select name="sex">
-								<option style="display: none;" selected="selected">性别</option>
-								<option>男</option>
-								<option>女</option>
-							</select>
-							<select name="oprate">
-								<option style="display: none;" selected="selected">操作员</option>
-								<option>阿萨德</option>
-								<option>卡萨丁</option>
-							</select>
-							<select name="source">
-								<option style="display: none;" selected="selected">注册来源</option>
-								<option>线下</option>
-								<option>微信</option>
-							</select>
-							<p>会员总数<span class="vip-total">10</span>&nbsp;本月还有<span class="vip-birthday">5</span>个会员过生日</p>
-							<i class="vip-eyes"></i>
-						</div>
-						<div class="vip-section3">
-							<div class="section3-item">
-								<h3>今天过生日的会员</h3>
-								<p><span>5</span>位</p>
-								<p>本月还有<span>2</span>位过生日</p>
-							</div>
-							<div class="section3-item">
-								<h3>会员总数</h3>
-								<p><span>88</span>位</p>
-								<p>平均每日新增会员<span>0.25</span>位会员</p>
-							</div>
-							<div class="section3-item">
-								<h3>累计消费</h3>
-								<p><span>2500</span>元</p>
-								<p>共<span>2</span>笔&nbsp;平均每位会员消费<span>214</span>元</p>
-							</div>
-							<div class="section3-item">
-								<h3>消费TOP3的会员</h3>
-								<p>1.肖潇 ￥：1020</p>
-								<p>2.肖迦里 ￥：888</p>
-								<p>3.李艳 ￥：888</p>
-							</div>
-						</div>
-						<div style="height: 250px;overflow-y: scroll;">
-							<table class="vip-info" border="" cellspacing="" cellpadding="">
+						
+						<div class="vipInfo-container">
+							<table class="vip-info vipManage-info" border="" cellspacing="" cellpadding="">
 								<tr>
-									<th></th>
+									<th><input class="myCheckbox" type="checkbox" /></th>
 									<th>卡号</th>
 									<th>姓名</th>
 									<th>性别</th>
@@ -852,13 +889,75 @@
 										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
 									</td>
 								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
+								<tr>
+									<td><input class="myCheckbox" type="checkbox" /></td>
+									<td>25456897</td>
+									<td>肖晓</td>
+									<td>女</td>
+									<td>130582501</td>
+									<td>金卡</td>
+									<td>高端消费</td>
+									<td>总店</td>
+									<td>254</td>
+									<td class="vip-balance">￥：245</td>
+									<td>永久有效</td>
+									<td>线上</td>
+									<td class="vip-handle">
+										<img src="img/VIPManage/vip-operate3.png" />
+										<img src="img/VIPManage/vip-operate2.png" />
+										<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="img/VIPManage/vip-operate1.png" />
+									</td>
+								</tr>
 							</table>
 						</div>
+						<div class="pagination">
+							<div class="box" id="box"></div>
+						</div>
 						<div class="vip-operate">
-							<img src="img/VIPManage/vip-message.png" />
-							<img src="img/VIPManage/vip-discount.png" />
-							<div>
-								<img class="VIPLabelBt" src="img/VIPManage/vip-label.png" />
+							<div style="display: flex;">
+								<img src="img/VIPManage/vip-message.png" />
+								<img src="img/VIPManage/vip-discount.png" />
+								<div>
+									<img class="VIPLabelBt" src="img/VIPManage/vip-label.png" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -935,50 +1034,6 @@
 			</div>
 		</div>
 		<!-- 会员管理--充值弹框结束 -->
-
-		<!-- 会员管理--删除弹框开始 -->
-		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-delete" tabindex="-1" role="dialog" aria-labelledby="VIPManage-delete">
-			<div class="modal-dialog vipDelete-container" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header vip-tital vipDelete-tital">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">信息</h4>
-					</div>
-					<div class="modal-body vipDelete-body">
-						<p>删除会员将删除掉该会员所有信息，确定删除吗？</p>
-						<div class="vipDelete-bottom">
-							<button class="confirmBt confirm" data-dismiss="modal">确认</button>
-							<button class="cancelBt" data-dismiss="modal">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 会员管理--删除弹框结束 -->
-		
-		<!-- 会员管理--修改密码弹框开始 -->
-		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-modify" tabindex="-1" role="dialog" aria-labelledby="VIPManage-modify">
-			<div class="modal-dialog vipDelete-container" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header vip-tital vipDelete-tital">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">修改密码</h4>
-					</div>
-					<div class="modal-body vipModify-body">
-						<div class="myInput"><p>原密码：</p><input type="password" /></div>
-						<div class="myInput"><p>新密码：</p><input type="password" /></div>
-						<div class="myInput"><p>确认密码：</p><input type="password" /></div>
-						<div class="vipDelete-bottom vipModify-bottom">
-							<button class="confirmBt" data-dismiss="modal">保存</button>
-							<button class="cancelBt" data-dismiss="modal">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 会员管理--修改密码弹框结束 -->
 		
 		<!-- 会员管理--新增会员弹框开始 -->
 		<div style="overflow: visible;top: 100px;" class="modal fade lowModal" id="VIPManage-add" tabindex="-1" role="dialog" aria-labelledby="VIPManage-add">
@@ -1014,9 +1069,201 @@
 			</div>
 		</div>
 		<!-- 会员管理--新增会员弹框结束 -->
+
+		<!-- 会员管理--重置密码弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-reset" tabindex="-1" role="dialog" aria-labelledby="VIPManage-reset">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>重置密码将把密码重置为123456，确定重置吗？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt reset-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--重置密码弹框结束 -->
+
+		<!-- 会员管理--删除弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-delete" tabindex="-1" role="dialog" aria-labelledby="VIPManage-delete">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>删除会员将删除掉该会员所有信息，确定删除吗？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt delete-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--删除弹框结束 -->
+		
+		<!-- 会员管理--修改密码弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-modify" tabindex="-1" role="dialog" aria-labelledby="VIPManage-modify">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">修改密码</h4>
+					</div>
+					<div class="modal-body vipModify-body">
+						<div class="myInput"><p>原密码：</p><input type="password" /></div>
+						<div class="myInput"><p>新密码：</p><input type="password" /></div>
+						<div class="myInput"><p>确认密码：</p><input type="password" /></div>
+						<div class="vipDelete-bottom vipModify-bottom">
+							<button class="confirmBt" data-dismiss="modal">保存</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--修改密码弹框结束 -->
+		
+		<!-- 会员管理--导出弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-export" tabindex="-1" role="dialog" aria-labelledby="VIPManage-export">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>确认导出？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt export-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--导出弹框结束 -->
+		
+		<!-- 会员管理--导入弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-import" tabindex="-1" role="dialog" aria-labelledby="VIPManage-import">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>确认导出？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt import-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--导入弹框结束 -->
+		
+		<!-- 会员管理--挂失弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-loss" tabindex="-1" role="dialog" aria-labelledby="VIPManage-loss">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>确认挂失？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt loss-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--挂失弹框结束 -->
+		
+		<!-- 会员管理--多个删除弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-deleteMore" tabindex="-1" role="dialog" aria-labelledby="VIPManage-deleteMore">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>确认删除？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt deleteMore-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--多个删除弹框结束 -->
+		
+		<!-- 会员管理--补卡弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-patch" tabindex="-1" role="dialog" aria-labelledby="VIPManage-patch">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>补卡</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt deleteMore-confirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--补卡弹框结束 -->
+		
+		<!-- 会员管理--未选择提示弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-unchecked" tabindex="-1" role="dialog" aria-labelledby="VIPManage-unchecked">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>请选中会员</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt" data-dismiss="modal">确认</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--未选择提示弹框结束 -->
+		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/H-ui.js"></script>
 		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
+		<script type="text/javascript" src="js/paging.js" ></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/VIPManage.js" ></script>
 	</body>
