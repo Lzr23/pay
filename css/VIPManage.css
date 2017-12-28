@@ -253,7 +253,7 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	position: absolute;
-	top: -30px;
+	bottom: 40px;
 	right: 10px;
 	background: #EDEDED;
 }

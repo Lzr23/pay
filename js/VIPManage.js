@@ -8,7 +8,9 @@ $(function() {
 	
 	isShowVipLabel()
 	vipLabelAdd()
-
+	
+	vipSelectAll()
+	
 	////////分页器
 	$('#box').paging({
 		initPageNo: 1, // 初始页码
@@ -36,7 +38,7 @@ $(function() {
 			if(targetClass == 'vipNav3' || targetClass == 'vipNav4' || targetClass == 'vipNav7' ||
 				targetClass == 'vipNav8' || targetClass == 'vipNav9') {
 				var myCheckbox = $('.vipManage-info .myCheckbox')
-				for(var i = 0; i < myCheckbox.length; i++) {
+				for (var i = 1; i < myCheckbox.length; i++) {
 					if(myCheckbox[i].checked == true) {
 						$(modal[targetClass]).modal('show')
 						return
@@ -76,7 +78,7 @@ $(function() {
 	function vipReset () {
 		$('.reset-confirm').click(function() {
 			var myCheckbox = $('.vipManage-info .myCheckbox')
-			for(var i = 0; i < myCheckbox.length; i++) {
+			for (var i = 0; i < myCheckbox.length; i++) {
 				myCheckbox[i].checked = false
 			}
 		})
@@ -108,8 +110,6 @@ $(function() {
 					$(this).css('display', 'none').siblings('span').css('display', 'inline-block')
 					var oLi = $('<li><p>' + content + '</p><span>X</span></li>')
 					$('.label-container ul').append(oLi)
-					var top = parseInt($('.label-container').css('top'))
-					$('.label-container').css('top', top - 20 + 'px')
 					vipLabelChoice(oLi)
 					showLabelDelete(oLi)
 				}
@@ -125,9 +125,6 @@ $(function() {
 			$('#VIPManage-labelDelete').modal('show')
 			document.querySelector('.labelDeleteConfirm').onclick = function () {
 				oSpan.closest('li').remove()
-				var top = parseInt($('.label-container').css('top'))
-				console.log("asd")
-				$('.label-container').css('top', top + 20 + 'px')
 			}
 		})
 	}
@@ -137,5 +134,27 @@ $(function() {
 		oLi.click(function() {
 			console.log('p')
 		})
+	}
+	
+	//////////会员全选或者全不选
+	function vipSelectAll () {
+		var oInput = document.querySelectorAll('.vip-info .myCheckbox')
+		for (var i = 1; i < oInput.length; i++) {
+				oInput[i].onclick = function () {
+					for (var i = 1; i< oInput.length; i++) {
+						if (oInput[i].checked == false) {
+							$('.vipSelectAll').removeAttr('checked')
+							return
+						}
+					}
+					$('.vipSelectAll').prop('checked', true)
+				}
+		}
+		
+		document.querySelector('.vipSelectAll').onclick = function () {
+			for (var i = 1; i < oInput.length; i++) {
+				oInput[i].checked = $(this).prop('checked') 
+			}
+		}
 	}
 })
