@@ -247,6 +247,51 @@
 	justify-content: flex-start;
 	position: relative;
 }
+.label-container{
+	width: 100%;
+	display: none;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: absolute;
+	top: -30px;
+	right: 10px;
+	background: #EDEDED;
+}
+.label-container ul li{
+	display: flex;
+	justify-content: space-between;
+	line-height: 20px;
+}
+.label-container ul li span{
+	height: 20px;
+	width: 20px;
+	color: #FF0000;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+.label-add{
+	line-height: 25px;
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+.label-add input{
+	height: 24px;
+	display: none;
+}
+.label-add:hover{
+	background: #ffae01;
+	color: #FFFFFF;
+}
+.label-container ul li:hover{
+	background: #ffae01;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.label-container ul li span:hover{
+	background: #FF0000;
+	color: #FFFFFF;
+}
 .vip-operate img{
 	margin-right: 20px;
 	cursor: pointer;

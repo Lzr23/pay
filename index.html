@@ -955,7 +955,16 @@
 							<div style="display: flex;">
 								<img src="img/VIPManage/vip-message.png" />
 								<img src="img/VIPManage/vip-discount.png" />
-								<div>
+								<div style="position: relative;">
+									<div class="label-container">
+										<ul>
+											<!--<li><p>00</p><span>X</span></li>-->
+										</ul>
+										<div class="label-add">
+											<span>新增标签</span>
+											<input type="text" placeholder="按回车完成" />
+										</div>
+									</div>
 									<img class="VIPLabelBt" src="img/VIPManage/vip-label.png" />
 								</div>
 							</div>
@@ -1259,6 +1268,27 @@
 			</div>
 		</div>
 		<!-- 会员管理--未选择提示弹框结束 -->
+		
+		<!-- 会员管理--删除会员标签弹框开始 -->
+		<div style="overflow: visible;top: 200px;" class="modal fade lowModal" id="VIPManage-labelDelete" tabindex="-1" role="dialog" aria-labelledby="VIPManage-labelDelete">
+			<div class="modal-dialog vipDelete-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header vip-tital vipDelete-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">信息</h4>
+					</div>
+					<div class="modal-body vipDelete-body">
+						<p>删除该标签？</p>
+						<div class="vipDelete-bottom">
+							<button class="confirmBt labelDeleteConfirm" data-dismiss="modal">确认</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 会员管理--删除会员标签弹框结束 -->
 		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/H-ui.js"></script>
