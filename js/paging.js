@@ -24,7 +24,7 @@
 				ulDom = '',
 				jumpDom = '',
 				content = '',
-				liWidth = 40, // li的宽度
+				liWidth = 35, // li的宽度
 				totalPages = that.options.totalPages, // 总页数
 				wrapLength = 0;
 			totalPages > 5 ? wrapLength = 5 * liWidth : wrapLength = totalPages * liWidth;
@@ -47,7 +47,7 @@
 				'<a href="#" class="turnPage" id="nextPage">下一页</a>' +
 				'<a href="#" type="button" id="lastPage" class="last-page">尾页</a>' +
 				jumpDom + '</div>';
-			that.el.html(content);
+//			that.el.html(content);
 		},
 		bindEvents: function() {
 			var that = this,
@@ -102,13 +102,13 @@
 
 			function handles(pageIndex) {
 				lis.removeClass('sel-page').eq(pageIndex - 1).addClass('sel-page');
-				if(totalPages <= 5) {
+				if(totalPages <= 3) {
 					that.options.callback(pageIndex);
 					return false;
 				}
 				if(pageIndex >= 3 && pageIndex <= totalPages - 2) distance = (pageIndex - 3) * liWidth;
 				if(pageIndex == 2 || pageIndex == 1) distance = 0;
-				if(pageIndex > totalPages - 2) distance = (totalPages - 5) * liWidth;
+				if(pageIndex > totalPages - 2) distance = (totalPages - 3) * liWidth;
 				pageSelect.css('transform', 'translateX(' + (-distance) + 'px)');
 				pageIndex == 1 ? firstPage.attr('disabled', true) : firstPage.attr('disabled', false);
 				pageIndex == 1 ? prePage.attr('disabled', true) : prePage.attr('disabled', false);

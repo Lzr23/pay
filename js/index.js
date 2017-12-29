@@ -4,7 +4,8 @@ $(function () {
 	goodsDelete()
 	navToggle()
 	fly()
-	closeVIPModal()
+	vipChoiceSearch()
+	
 	/////////////////商品数量加、减、删除功能
 	function goodsNumSub () {
 		$(".jiang").click(function() {
@@ -13,6 +14,7 @@ $(function () {
 				return
 			} else {
 				$(this).siblings('.num').text(num - 1)
+				$('.head-cart-num').text(parseInt($('.head-cart-num').text()) - 1)
 			}
 		})
 	}
@@ -60,21 +62,18 @@ $(function () {
 			});
 		});
 	}
-	////////////////////关闭会员管理时同时关闭所有子级弹框
-	function closeVIPModal() {
-		$(".closeVIPManage").click(function() {
-			$('#vipRecharge').modal('hide')
-			$('#VIPManage-add').modal('hide')
-			$('#VIPManage-modify').modal('hide')
-			$('#VIPManage-delete').modal('hide')
-		})
-	}
 	
 	////////////////////快速选择会员搜索
-	function vipSearch () {
-		
-		var searchTimer = setTimeout(function () {
-			
+	function vipChoiceSearch () {
+		var searchTimer
+		$('.vipChoice-search').keyup(function () {
+			$('.vipChoice-info tr').css('display', 'none')
+			clearTimeout(searchTimer)
+			searchTimer = setTimeout(function () {
+				$('.vipChoice-info tr').css('display', 'table-row')
+			},1000)
 		})
+		
+		
 	}
 })

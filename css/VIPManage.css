@@ -1,4 +1,4 @@
-.modal-dialog{
+.VIPManage-container{
 	width: 80%;
 }
 .vip-tital{
@@ -12,17 +12,18 @@
 	top: 5px;
 }
 .vip-body{
-	background: #fffbf2;
+	background: #FFFFFF;
 	font-style: normal !important;
 }
 .vip-body i{
 	font-style: normal;
 }
-.vip-section1{
+.vipManage-search{
 	display: flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 }
-.vip-section1 div p{
+.vipManage-search div p{
 	width: 72px;
 	height: 40px;
 	line-height: 40px;
@@ -33,9 +34,28 @@
 	font-size: 14px;
 	letter-spacing: 3px;
 }
+.vipManage-searchLeft{
+	display: flex;
+	margin-right: 4%;
+	margin-bottom: 20px;
+}
+.vipManage-searchRight{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+.vipManage-searchRight select{
+	width: 80px;
+	height: 34px;
+	border-radius: 5px;
+	margin-right: 10px;
+	color: #CCCCCC;
+}
 .vip-search-content{
-	width: 250px;
 	position: relative;
+}
+.vipManage-search-content{
+	width: 250px;
 	margin-left: 70px;
 }
 .vip-search{
@@ -55,37 +75,8 @@
 	background: url(../img/VIPManage/vip-search.png) no-repeat;
 	background-size: 100% 100%;
 }
-.vip-section2{
-	display: flex;
-	justify-content: flex-end;
-	margin-right: 20px;
-}
-.vip-section2 select{
-	height: 34px;
-	border-radius: 5px;
-	margin-right: 10px;
-	color: #CCCCCC;
-}
-.vip-section2 p{
-	line-height: 30px;
-	font-size: 14px;
-	letter-spacing: 2px;
-}
-.vip-section2 p span{
-	color: #ffae01;
-}
-/*.vip-eyes
-{
-	width: 20px;
-	height: 17px;
-	display: block;
-	background: url(../img/VIPManage/vip-eye.png) no-repeat;
-	background-size: 100% 100%;
-	margin-top: 3px;
-}*/
-
 .vip-nav{
-	margin: 20px 0;
+	margin: 10px 0;
 	overflow: hidden;
 }
 .vip-nav li{
@@ -219,8 +210,10 @@
 .vipInfo-container{
 	overflow-x: auto;
 }
-.vip-info{
+.vipManage-info{
 	min-width: 700px;
+}
+.vip-info{
 	text-align: center;
 	border: 1px solid #CCCCCC;
 }
@@ -319,6 +312,7 @@
 }
 .vipRecharge-container{
 	width: 60%;
+	margin-top: 0px;
 }
 .vipRecharge-tital{
 	-webkit-box-shadow: 0px 1px 10px #EDEDED;
@@ -332,6 +326,31 @@
 	width: 40%;
 	-webkit-box-shadow: 1px 0 10px #CCCCCC;
 	box-shadow: 1px 0 10px #CCCCCC;
+}
+.left-search{
+	height: 34px;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: 18px 15px;
+	padding: 0 5px;
+	position: relative;
+}
+.left-search input{
+	height: 34px;
+	width: 80%;
+	outline: none;
+	border: none;
+	padding: 0 10px;
+}
+.left-search i{
+	height:30px;
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	background: url(../img/main/left-search.png) no-repeat 0 12px;
+	background-size: 100% 20%;
+	cursor: pointer;
 }
 .vipRecharge-head{
 	width: 100px;
@@ -494,6 +513,7 @@
 /*新增会员弹框*/
 .vipAdd-container{
 	width: 56%;
+	margin-top: 0px;
 }
 .vipAdd-body{
 	display: flex;

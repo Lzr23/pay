@@ -1,6 +1,8 @@
 $(function() {
 	var isVipLabelShow = false //标识新增会员标签是否可见
 
+	closeVIPModal()
+	
 	haveChecked()
 	deleteConfirm()
 	vipLoss()
@@ -10,18 +12,18 @@ $(function() {
 	vipLabelAdd()
 	
 	vipSelectAll()
-	
+
 	////////分页器
+	var totalPage = parseInt($(".total-pages span").text())
 	$('#box').paging({
 		initPageNo: 1, // 初始页码
-		totalPages: 20, //总页数
+		totalPages: totalPage, //总页数
 		totalCount: '合计300条数据', // 条目总数
 		slideSpeed: 600, // 缓动速度。单位毫秒 
 		callback: function(page) { // 回调函数 
-			console.log(page);
 		}
 	})
-
+	
 	////////重置密码等弹框前确认是否已经选中元素
 	function haveChecked () {
 		$(".vip-nav").click(function(event) {
@@ -157,4 +159,15 @@ $(function() {
 			}
 		}
 	}
+	
+	////////////////////关闭会员管理时同时关闭所有子级弹框
+	function closeVIPModal() {
+		$(".closeVIPManage").click(function() {
+			$('#vipRecharge').modal('hide')
+			$('#VIPManage-add').modal('hide')
+			$('#VIPManage-modify').modal('hide')
+			$('#VIPManage-delete').modal('hide')
+		})
+	}
+	
 })

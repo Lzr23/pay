@@ -133,7 +133,7 @@ header{
 }
 .left-info{
 	height: 400px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .left-info table{
 	max-height: 400px;
@@ -201,6 +201,7 @@ header{
 	color: #FFFFFF;
 	font-weight: 600;
 	font-size: 15px;
+	cursor: pointer;
 }
 .zekou{
 	float: left;
@@ -299,6 +300,10 @@ header{
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
+.modal .deal-container{
+	width: 60%;
+	margin-top: 30px;
+}
 .dealClose span{
 	width: 33px;
 	height: 33px;
@@ -333,6 +338,8 @@ header{
 .vipRecharge-body .deal-left{
 	width: 50%;
 	background: #fafafa;;
+	-webkit-box-shadow: 1px 0 10px #CCCCCC;
+	box-shadow: 1px 0 10px #CCCCCC;
 }
 
 .deal-left .left-search{
@@ -353,8 +360,8 @@ header{
 	width: 41px;
 	height: 20px;
 	position: absolute;
-	right: 0px;
-	top: 0px;
+	right: 4px;
+	top: 4px;
 	border-radius: 10px;
 	text-align: center;
 	line-height: 20px;
@@ -380,7 +387,7 @@ header{
 }
 .vipRecharge-body .deal-right{
 	width: 50%;
-	padding-top: 20px;
+	padding: 20px 20px 0 20px;
 }
 .deal-counter{
 	flex-wrap: wrap;
@@ -390,6 +397,182 @@ header{
 	height: 25%;
 	cursor: pointer;
 }
+
+/*改价弹框*/
+.changePrice-container{
+	width: 30%;
+}
+.changePrice-tital{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.changePrice-tital .modal-title{
+	padding: 0;
+	line-height: 40px;
+	text-align: center;
+	letter-spacing: 1px;
+}
+.changePrice-body{
+	padding: 0;
+	padding: 10px;
+	background: #eeeeee;
+}
+.changePrice-input{
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+	position: relative;
+}
+.changePrice-input input{
+	width: 95%;
+	height: 48px;
+	border: 1px solid #EDEDED;
+	border-radius: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+	outline: none;
+	box-shadow: 1px 1px 3px #EDEDED;
+}
+.changePrice-input i{
+	width: 31px;
+	height: 31px;
+	background: url(../img/main/inputCancel.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 17%;
+	right: 5%;
+	cursor: pointer;
+}
+
+/*取挂单弹框*/
+.quguadan-container{
+	width: 25%;
+	margin-top: 200px;
+}
+.quguadan-tital{
+	border: none;
+	text-align: center;
+	padding: 0;
+}
+.quguadan-body{
+	padding: 10px;
+}
+.quguadan-input input{
+	height: 36px;
+	width: 96%;
+	border: 1px solid #8cdd16;
+	font-size: 16px;
+	padding-left: 10px;
+}
+.quguadan-bottom{
+	width: 100%;
+	margin: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.quguadan-bottom button{
+	width: 30%;
+	height: 30px;
+	font-size: 14px;
+}
+.quguadan-bottom .cancelBt{
+	background: #e5e5e5;
+	color: #333333;
+}
+/*交易记录弹框*/
+.history-container{
+	width: 59%;
+}
+.history-body{
+	display: flex;
+	padding: 0;
+	flex-wrap: wrap;
+}
+.history-left{
+	width: 34%;
+	height: 450px;
+	overflow-y: auto;
+	box-shadow: 2px 0 10px #EDEDED;
+}
+.history-container .history-tital{
+	box-shadow: 0px 1px 10px #EDEDED;
+	background: #ffffff;
+}
+.history-container .history-search{
+	width: 80%;
+	margin-left: 8%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.history-table{
+	max-height: 330px;
+	overflow: auto;
+}
+.history-table table{
+	text-align: center;
+	line-height: 30px;
+}
+.history-table table th{
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+}
+.history-table table td{
+	font-size: 14px;
+}
+.history-right{
+	width: 60%;
+	padding-top: 10px;
+	padding-left: 6%;
+}
+.history-tabel-operate{
+	color: #8cdd16;
+}
+.history-rtabel th{
+	line-height: 45px;
+}
+.history-tabel-bottom{
+	width: 90%;
+	padding-left: 10px;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.history-tabel-bottom p{
+	font-size: 16px;
+}
+.history-tabel-bottom p span{
+	color: #FF0000;
+	font-size: 18px;
+}
+.history-bottom{
+	margin: 0;
+	padding: 10px 0;
+	border-top: 1px solid #999999;
+	padding-right: 20px;
+	justify-content: flex-end;
+}
+.history-bottom button{
+	width: 100px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	color: #FFFFFF;
+	margin-right: 10px;
+}
+/*取单弹框*/
+.qudan-container{
+	width: 60%;
+	margin-top: 150px;
+}
+.qudan-goodsPrice{
+	color: #FF0000;
+}
+.qudan-operate{
+	color: #ffae01;
+	cursor: pointer;
+}
+
 .myCheckbox{
 	display: inline-block;
 	vertical-align: middle;

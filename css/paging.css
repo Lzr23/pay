@@ -29,6 +29,7 @@
 }
 .turnPage{
 	float: left;
+	margin: 0 5px;
 }
 .box .pageWrap {
   height: 40px;
@@ -36,13 +37,14 @@
   overflow: hidden;
 }
 .box .pageWrap ul {
-  width: 100000px;
+	display: flex;
+	flex-wrap: nowrap;
   height: 40px;
   margin-top: 5px;
   float: left;
 }
 .box .pageWrap ul li {
-  width: 40px;
+  width: 35px;
   height: 30px;
   border: 1px solid #ebebeb;
   line-height: 30px;
