@@ -95,11 +95,19 @@ header{
 	z-index: 8;
 	text-align: center;
 }
+.checkstand-container{
+	width: 98%;
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+	left: 0;
+}
 .main-left{
-	height: 699px;
+	height: 100%;
 	padding: 0;
 	box-shadow: 2px 0px 1px #CCCCCC;
 	z-index: 10;
+	position: relative;
 }
 .left-search{
 	height: 34px;
@@ -130,6 +138,7 @@ header{
 	height: 480px;
 	border-bottom: 2px solid #ececec;
 	position: relative;
+	
 }
 .left-info{
 	height: 400px;
@@ -186,6 +195,11 @@ header{
 	font-size: 18px;
 	color: #ec6941;
 }
+.left-bottom{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
 .left-button{
 	padding: 0 40px;
 }
@@ -233,7 +247,7 @@ header{
 	border-right: 1px solid #fff;
 }
 .main-right{
-	height: 690px;
+	height: 100%;
 	background: #ececec;
 	padding: 0;
 }
