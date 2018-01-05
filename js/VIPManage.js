@@ -10,9 +10,10 @@ $(function() {
 	
 	isShowVipLabel()
 	vipLabelAdd()
-	
 	vipSelectAll()
+	vipSave()
 
+	
 	////////分页器
 	var totalPage = parseInt($(".total-pages span").text())
 	$('#box').paging({
@@ -51,6 +52,13 @@ $(function() {
 		})
 	}
 
+	////////保存新增会员
+	function vipSave () {
+		$('.vipAdd-save').click(function () {
+			toastr.success("保存成功");
+		})
+	}
+	
 	////////确认删除会员
 	function deleteConfirm () {
 		$(".vipHandle-delete").click(function() {
@@ -131,7 +139,7 @@ $(function() {
 		})
 	}
 	
-	//////////选择会员标签
+	//////////给会员添加标签
 	function vipLabelChoice (oLi) {
 		oLi.click(function() {
 			console.log('p')

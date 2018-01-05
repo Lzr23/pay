@@ -3091,7 +3091,7 @@ H-ui采用Font Awesome 3.2.1的整套图标，因为是图标字体，所以可�
   /*logo*/
 	.logo{ display:inline-block; text-decoration:none; cursor:pointer; background-repeat: no-repeat; background-position: left center; background-size: auto 100%}
 	a.logo:hover{ text-decoration:none}
-	.navbar .logo{height: 44px;line-height: 44px;margin-right: 10px;float: left}
+	.navbar .logo{height: 44px;line-height: 70px;margin-right: 10px;float: left;}
 	.navbar-logo,.navbar-logo-m{font-size: 16px}
 	.navbar-slogan{ font-size:12px; cursor: default}
 	.navbar .container{ position:relative}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://192.168.1.104:8080/ics-web/seller/member_list.htm -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<link rel="Bookmark" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<link rel="Shortcut Icon" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
+		<link rel="stylesheet" href="css/H-ui.admin.css" />
+		<link rel="stylesheet" href="css/H-ui.reset.css" />
+		<link rel="stylesheet" href="css/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="css/paging.css">
+		<link rel="stylesheet" href="css/toastr.css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+		<!--/meta 作为公共模版分离出去-->
+
+		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+
+		<title>会员列表 - 会员管理 - H-ui.admin v3.0</title>
+		<link rel="stylesheet" href="css/layer.css" />
+		<link rel="stylesheet" href="css/head-side.css" />
+		<link rel="stylesheet" href="css/VIPManage.css" />
+	</head>
+
+	<body>
+		<!--_header 作为公共模版分离出去-->
+		<header class="navbar-wrapper">
+			<div class="navbar navbar-fixed-top">
+				<div class="container-fluid cl">
+					<a class="logo navbar-logo f-l mr-10 hidden-xs head-logo" href="http://192.168.1.104:8080/aboutHui.shtml"></a>
+					<a class="logo navbar-logo-m f-l mr-10 visible-xs" href="http://192.168.1.104:8080/aboutHui.shtml">烽途</a>
+					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
+					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+						<ul class="cl">
+							<li class="f-l mr-30"><i class="checkstand-icon"></i><a href="#">收银台</a></li>
+							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
+							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
+							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!--/_header 作为公共模版分离出去-->
+
+		<!--_menu 作为公共模版分离出去-->
+		<aside class="Hui-aside">
+
+			<div class="menu_dropdown bk_2">
+				<dl id="menu-home">
+					<dt><i class="home-icon"></i> 首页</dt>
+				</dl>
+				<dl id="menu-vip">
+					<dt><i class="vipManage-icon"></i> 会员</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">新增会员</a>
+							</li>
+							<li>
+								<a href="#">会员管理</a>
+							</li>
+							<li>
+								<a href="#">会员等级</a>
+							</li>
+							<li>
+								<a href="#">充值充次</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-goods">
+					<dt><i class="weixin-icon"></i> 商品</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">新增商品</a>
+							</li>
+							<li>
+								<a href="#">商品管理</a>
+							</li>
+							<li>
+								<a href="#">商品分类</a>
+							</li>
+							<li>
+								<a href="#">商品规格</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-weixin">
+					<dt><i class="weixin-icon"></i> 微信</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">公众号授权</a>
+							</li>
+							<li>
+								<a href="#">自定义菜单</a>
+							</li>
+							<li>
+								<a href="#">消息回复管理</a>
+							</li>
+							<li>
+								<a href="#">消息群发</a>
+							</li>
+							<li>
+								<a href="#">图文素材管理</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-market">
+					<dt><i class="market-icon"></i> 营销</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">优惠券</a>
+							</li>
+							<li>
+								<a href="#">短信营销</a>
+							</li>
+							<li>
+								<a href="#">开卡有礼</a>
+							</li>
+							<li>
+								<a href="#">消费满减</a>
+							</li>
+							<li>
+								<a href="#">满减送</a>
+							</li>
+							<li>
+								<a href="#">积分商城</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</aside>
+		<div class="dislpayArrow hidden-xs">
+			<a class="pngfix" href="javascript:void(0);" onclick="displaynavbar(this)"></a>
+		</div>
+		<!--/_menu 作为公共模版分离出去-->
+
+		<section class="Hui-article-box">
+			<!--<form >-->
+				<div>
+					<article>
+						<div>
+
+					<div class="modal-body vipAdd-body">
+						<div class="vipAdd-left">
+							<img src="img/main/head.png" />
+							<p>点击上传头像<br/>建议尺寸：300*300px</p>
+						</div>
+						<div class="vipAdd-right">
+							<div class="myInput"><p><span>*</span>会员卡号：</p><input type="text" /><button id="creatVipId">自动生成</button></div>
+							<div class="myInput"><p><span>*</span>会员姓名：</p><input type="text" /></div>
+							<div class="myInput"><p><span>*</span>手机号码：</p><input type="text" /></div>
+							<div class="myInput"><p>会员生日：</p>
+								<input type="text" onfocus="WdatePicker()" id="birthday" name="birthday"
+									value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate">
+							</div>
+							<div class="myInput"><p>会员等级：</p><input type="text" /></div>
+							<div class="myInput"><p>售卡金额：</p><input type="text" /></div>
+							<div class="myInput"><p>推荐人：</p><input type="text" /></div>
+							<div class="myInput"><p>地址：</p><input type="text" /></div>
+							<div class="myInput"><p>备注：</p><input type="text" /></div>
+							<div class="vipDelete-bottom vipAdd-bottom">
+								<button class="confirmBt vipAdd-save" >保存</button>
+								<button class="cancelBt">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+						</div>
+					</article>
+
+				</div>
+			<!--</form>-->
+		</section>
+
+		
+		
+
+		
+
+		<!--_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!--<script type="text/javascript" src="js/layer.js"></script>-->
+		<script type="text/javascript" src="js/H-ui.js"></script>
+		<script type="text/javascript" src="js/H-ui.admin.page.js"></script>
+		<script type="text/javascript" src="js/paging.js"></script>
+		<script type="text/javascript" src="js/toastr.js" ></script>
+		<script type="text/javascript" src="My97DatePicker/WdatePicker.js" ></script>
+		<!--/_footer /作为公共模版分离出去-->
+
+		<!--请在下方写此页面业务相关的脚本-->
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
+		<!--<script type="text/javascript" src="js/VIPManage.js"></script>-->
+		<script>
+			/////////完成提示框
+			toastr.options = {
+				"closeButton": false, //是否显示关闭按钮
+				"debug": false, //是否使用debug模式
+				"positionClass": "toast-top-center", //弹出窗的位置
+				"showDuration": "300", //显示的动画时间
+				"hideDuration": "1000", //消失的动画时间
+				"timeOut": "1000", //展现时间
+				"extendedTimeOut": "1000", //加长展示时间
+				"showEasing": "swing", //显示时的动画缓冲方式
+				"hideEasing": "linear", //消失时的动画缓冲方式
+				"showMethod": "fadeIn", //显示时的动画方式
+				"hideMethod": "fadeOut" //消失时的动画方式
+			};
+			
+			vipSave()
+			
+			////////保存新增会员
+			function vipSave () {
+				$('.vipAdd-save').click(function () {
+					console.log('1')
+					toastr.success("保存成功");
+				})
+			}
+		</script>
+		<!--/请在上方写此页面业务相关的脚本-->
+
+	</body>
+
+</html>

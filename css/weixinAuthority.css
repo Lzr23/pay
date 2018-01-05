@@ -1,0 +1,86 @@
+.weixinAuthority-empty{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	padding-top: 20px;
+	display: none;
+}
+.weixinAuthority-emptyBt{
+	width: 215px;
+	height: 58px;
+	background: #ffae01;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 10px;
+	font-size: 18px;
+	margin: 10px 0;
+	cursor: pointer;
+}
+.weixinAuthority-empty p{
+	font-size: 14px;
+}
+.weixinAuthority-empty span{
+	color: #999999;
+	letter-spacing: 2px;
+}
+.weixinAuthority-exist-head{
+	display: flex;
+}
+.weixinAuthority-exist-head img{
+	width: 95px;
+	height: 95px;
+	border-radius: 5px;
+}
+.weixinAuthority-PN{
+	margin-left: 20px;
+	padding-top: 10px;
+}
+.weixinAuthority-PN h5{
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 600;
+}
+.weixinAuthority-PN p{
+	font-size: 16px;
+	line-height: 30px;
+}
+.weixinAuthority-PN p span{
+	color: #ffae01;
+}
+.weixinAuthority-info{
+	width: 80%;
+	margin: 20px 0;
+}
+.weixinAuthority-info table{
+	text-align: center;
+	border: 1px solid #d3d3d3;
+}
+.weixinAuthority-info th{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+}
+.weixinAuthority-info table td{
+	font-size: 14px;
+}
+.weixinAuthority-infoHead img{
+	width: 95px;
+	height: 95px;
+}
+.weixinAuthority-infoName{
+	font-weight: 600;
+}
+.weixinAuthority-infoCode{
+	width: 88px;
+	height: 88px;
+}
+.weixinAuthority-infoOperate img{
+	display: block;
+	margin: 10px auto;
+	cursor: pointer;
+}
+.weixinAuthority-exist-bottom{
+	color: #6e6e6e;
+}

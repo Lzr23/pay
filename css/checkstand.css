@@ -272,15 +272,20 @@ header{
 	margin: 15px 0 0 2%;
 	background: #FFFFFF;
 	float: left;
+	display: flex;
 	box-shadow: 2px 2px 8px #CCCCCC;
+	cursor: pointer;
+	-webkit-user-select: none;
 }
 .goods img{
 	width: 50%;
 	float: left;
 }
 .goods-info{
+	width: 46%;
 	float: left;
-	padding: 5%;
+	padding: 4%;
+	padding-right: 0;
 }
 .goods-info p{
 	color: #ec6941;
@@ -290,8 +295,20 @@ header{
 	font-size: 16px;
 	font-weight: 800;
 	margin: 10px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.clear-container{
+	width: 400px;
 }
 
+.backEnd-container{
+	width: 80%;
+}
+.backEnd-body{
+	padding: 0;
+}
 
 /*结账弹框页面*/
 .modal-content .modal-header .dealClose{
@@ -301,7 +318,7 @@ header{
 	filter: alpha(opacity=100);
 }
 .modal .deal-container{
-	width: 60%;
+	width: 860px;
 	margin-top: 30px;
 }
 .dealClose span{
@@ -320,6 +337,9 @@ header{
 .deal-tital .modal-title{
 	line-height: 40px;
 }
+.dealPayWay{
+	display: flex;
+}
 .deal-tital img{
 	margin-right: 20px;
 	cursor: pointer;
@@ -334,9 +354,26 @@ header{
 	justify-content: space-between;
 	font-size: 18px;
 	margin-bottom: 20px;
+	position: relative;
+}
+.deal-section1 h6 input{
+	border: none;
+	outline: none;
+	text-align: right;
+	background: #fafafa;
+	font-size: 18px;
+}
+.dealDiscount{
+	padding-right: 20px;
+}
+.deal-section1 span{
+	color: #FF0000;
+	position: absolute;
+	top: 3px;
+	right: 0px;
 }
 .vipRecharge-body .deal-left{
-	width: 50%;
+	width: 40%;
 	background: #fafafa;;
 	-webkit-box-shadow: 1px 0 10px #CCCCCC;
 	box-shadow: 1px 0 10px #CCCCCC;
@@ -367,6 +404,7 @@ header{
 	line-height: 20px;
 	background: #FFFFFF;
 	color: #41b035;
+	cursor: pointer;
 }
 .deal-lef1 img{
 	width: 71px;
@@ -386,7 +424,7 @@ header{
 	text-align: center;
 }
 .vipRecharge-body .deal-right{
-	width: 50%;
+	width: 40%;
 	padding: 20px 20px 0 20px;
 }
 .deal-counter{
@@ -397,10 +435,40 @@ header{
 	height: 25%;
 	cursor: pointer;
 }
-
+.deal-staff{
+	max-height: 450px;
+	overflow-y: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.deal-staff-info{
+	margin: 10px 0;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+}
+.deal-staff-info img{
+	width: 60%;
+	border-radius: 50% 50%;
+}
+.deal-staff-info i{
+	position: absolute;
+	color:#41b035;
+	top: -20px;
+	right: 0px;
+	font-size: 30px;
+	display: none;
+}
+.deal-staff-info .deal-staffSelected{
+	display: block;
+}
+.vipChoice-handle{
+	cursor: pointer;
+}
 /*改价弹框*/
 .changePrice-container{
-	width: 30%;
+	width: 480px;
 }
 .changePrice-tital{
 	padding-top: 0;
@@ -446,7 +514,7 @@ header{
 
 /*取挂单弹框*/
 .quguadan-container{
-	width: 25%;
+	width: 400px;
 	margin-top: 200px;
 }
 .quguadan-tital{

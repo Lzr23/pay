@@ -1,0 +1,92 @@
+.weixinMymenu-container{
+	display: flex;
+}
+.weixinMymenu-left{
+	margin: 10px 30px;
+}
+.weixinMymenu-left img{
+	width: 100%;
+}
+.weixinMymenu-right{
+	width: 60%;
+	margin: 10px 10px;
+}
+.weixinMymenu-head{
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: 800;
+}
+.weixinMymenu-prompt{
+	margin: 30px 0;
+	color: #737373;
+}
+.weixinMymenu-prompt li{
+	list-style: disc;
+	list-style-position: inside;
+}
+.weixinMymenu-write{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	font-size: 14px;
+}
+.weixinMymenu-write ul{
+	width: 100%;
+}
+.weixinMymenu-write li{
+	display: flex;
+	justify-content: flex-end;
+	margin: 15px;
+}
+.weixinMymenu-write li span{
+	color: #FF0000;
+	margin-right: 5px;
+}
+.weixinMymenu-write li input,.weixinMymenu-write li select{
+	height: 20px;
+	width: 50%;
+	border: 1px solid #d9d9d9;
+	margin-left: 20px;
+}
+.weixinMymenu-bottom{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-top: 30px;
+}
+.weixinMymenu-bottom button{
+	width: 60px;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 5px;
+	outline: none;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin: 0 15px;
+}
+.weixinMymenu-bottom div{
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 20px;
+}
+.weixinMymenu-save{
+	background: #FFAE01;
+	border: none;
+	color: #FFFFFF;
+}
+.weixinMymenu-bottom .weixinMymenu-reset,.weixinMymenu-bottom .weixinMymenu-delete{
+	background: #FFFFFF;
+	color: #FFAE01;
+	border: 1px solid #dcdcdc;
+}
+.weixinMymenu-bottom .weixinMymenu-done{
+	width: 240px;
+	height: 40px;
+	border: none;
+	background: #8cdd16;
+	font-weight: 600;
+	color: #FFFFFF;
+}

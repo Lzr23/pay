@@ -485,6 +485,7 @@
 	padding-right: 17%;
 }
 .myInput{
+	position: relative;
 	width: 100%;
 	display: flex;
 	margin-bottom: 10px;
@@ -509,6 +510,16 @@
 	color: #FF0000;
 	margin-right: 3px;
 }
+.myInput button{
+	width: 50px;
+	height: 29px;
+	background: #FFAE01;
+	color: #FFFFFF;
+	position: absolute;
+	right: 16%;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+}
 
 /*新增会员弹框*/
 .vipAdd-container{
@@ -524,7 +535,7 @@
 	align-items: center;
 }
 .vipAdd-left{
-	width: 38%;
+	width: 30%;
 	padding-top: 15px;
 }
 .vipAdd-left img{
