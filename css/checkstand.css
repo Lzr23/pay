@@ -340,9 +340,23 @@ header{
 .dealPayWay{
 	display: flex;
 }
-.deal-tital img{
-	margin-right: 20px;
+.dealPayWay li{
+	position: relative;
 	cursor: pointer;
+}
+.dealPayWay i{
+	position: absolute;
+	color:#41b035;
+	top: -15px;
+	right: 10px;
+	font-size: 20px;
+	display: none;
+}
+.dealPayWay .dealPayWay-selected{
+	display: block;
+}
+.deal-tital img{
+	margin-right: 25px;
 }
 .deal-section1{
 	padding: 30px 20px 0 20px;

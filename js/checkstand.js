@@ -157,7 +157,7 @@ $(function () {
 		
 	}
 	
-	/////////////////////结账
+	///////////////////////////////////////结账
 	var dealInput  //结账弹框当前输入框对象
 	var isFirst = true //标记是否需要重置input值
 	$('.deal-section1 input').focus(function () {
@@ -178,7 +178,6 @@ $(function () {
 	})
 	
 	$('.jiezhang').click(function () {
-		
 		if ($('.cart-goodsNum').length <= 0) {  //判断购物车中是否有商品,有则结账，否则提示
 			toastr.warning('购物车是空的~~')
 		} else {
@@ -244,6 +243,69 @@ $(function () {
 		$(this).siblings('li').children('i').removeClass('deal-staffSelected')
 		$(this).children('i').addClass('deal-staffSelected')
 	})
+	
+	///////////选择支付方式
+	var payWayNum = 0 //标记当前选择的支付方式数量
+	$('.dealPayWay li').click(function () {
+		if ($('.dealPayWay .dealPayWay-group i').is('.dealPayWay-selected')) {  //是否为组合支付
+			if ($(this).children('i').is('.dealPayWay-selected')) { //如果当前点击的支付方式已选中则取消选中，否则反之
+				if ($(this).attr('class') == 'dealPayWay-group') {  //取消组合支付则初始化数量标记
+					payWayNum = 0
+					$('.dealPayWay li i').removeClass('dealPayWay-selected')
+					$('.dealPayWay-cash i').addClass('dealPayWay-selected')
+					$('.dealType1').text('现金')
+				} else {  //取消选择的支付方式
+					payWayNum -= 1
+					if (payWayNum == 0) {  //如果没有选中的支付方式，则默认选择现金
+						payWayNum = 1
+						$(this).children('i').removeClass('dealPayWay-selected')
+						$('.dealPayWay-cash').children('i').addClass('dealPayWay-selected')
+						$('.dealType1').text('现金')
+						return
+					}
+					$(this).children('i').removeClass('dealPayWay-selected')
+					for (var i = 0; i < $('.dealPayWay li').length; i++) {    //遍历选中的支付方式
+						if ($('.dealPayWay li i').eq(i).is('.dealPayWay-selected')) {
+							changePayWay($('.dealPayWay li').eq(i), payWayNum)
+							return
+						}
+					}
+				}
+			} else {  //添加支付方式，最多两种
+				console.log(payWayNum)
+				if (payWayNum < 2) {
+					payWayNum += 1
+					$(this).children('i').addClass('dealPayWay-selected')
+					changePayWay($(this), payWayNum)
+				} else {
+					return
+				}
+			}
+		} else {  //不是组合支付
+			$(this).siblings('li').children('i').removeClass('dealPayWay-selected')
+			$(this).children('i').addClass('dealPayWay-selected')
+			changePayWay($(this), 1)
+		}
+		
+	})
+	////////改变支付方式显示
+	function changePayWay (obj, num) {
+		var payWay = {
+			'dealPayWay-cash': '现金',
+			'dealPayWay-card1': '储蓄卡',
+			'dealPayWay-card2': '银行卡',
+			'dealPayWay-zhifubao': '支付宝',
+			'dealPayWay-weixin': '微信',
+			'dealPayWay-youhui': '优惠券',
+			'dealPayWay-code': '扫码支付',
+		}
+		if (num == 1) {
+			$('.dealType1').text(payWay[obj.attr('class')])
+			$('.dealType2').text('待收')
+		} else if (num == 2) {
+			$('.dealType2').text(payWay[obj.attr('class')])
+		}
+	}
 	
 	////////改变当前输入框
 	$('.deal-section1 input').focus(function () {
