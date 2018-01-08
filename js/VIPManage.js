@@ -170,7 +170,7 @@ $(function() {
 	
 	////////////////////关闭会员管理时同时关闭所有子级弹框
 	function closeVIPModal() {
-		$(".closeVIPManage").click(function() {
+		$(".backEndClose",window.parent.document).click(function() {
 			$('#vipRecharge').modal('hide')
 			$('#VIPManage-add').modal('hide')
 			$('#VIPManage-modify').modal('hide')

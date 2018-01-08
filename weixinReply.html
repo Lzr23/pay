@@ -30,9 +30,9 @@
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>微信图文素材管理</title>
+		<title>消息回复管理</title>
 		<!--<link rel="stylesheet" href="css/layer.css" />-->
-		<link rel="stylesheet" href="css/weixinArticle.css" />
+		<link rel="stylesheet" href="css/weixinReply.css" />
 	</head>
 
 	<body>
@@ -58,7 +58,6 @@
 
 		<!--_menu 作为公共模版分离出去-->
 		<aside class="Hui-aside">
-
 			<div class="menu_dropdown bk_2">
 				<dl id="menu-home">
 					<dt><i class="home-icon"></i> 首页</dt>
@@ -158,55 +157,158 @@
 		<section class="Hui-article-box">
 			<!--<form name="ListForm" id="ListForm" action="#" method="post">-->
 				<article>
-					<div class="modal-body weixin-body">
-						<div class="weixinArticle-container">
-							<div class="weixinArticle-head">
-								<div class="vip-search-content weixinArticle-search">
-									<input class="vip-search vipChoice-search" type="text" placeholder="搜索标题/作者/摘要" />
-									<i class="vip-search-icon"></i>
-								</div>
-								<button class="weixinArticle-add">+ 新建图文信息</button>
+					<div class="modal-body weixinReply-body">
+						<div id="weixinReplyTab" class="HuiTab">
+						  <div class="tabBar clearfix"><span>消息自动回复</span><span>关键词回复</span></div>
+						  
+						  <div class="tabCon">
+							<div class="weixinReply-tab">
+								<img class="weixinReply-textTab" src="img/weixin/weixinReply.png" />
+								<img class="weixinReply-picTab" src="img/weixin/weixinReply1.png" />
 							</div>
-							<div class="weixinArticle-main">
-								<table class="weixinArticle-table" border="" cellspacing="" cellpadding="">
+							<div class="weixinReply-content">
+								<textarea class="weixinReply-text"></textarea>
+								<div class="weixinReply-pic">
+									<img data-toggle="modal" data-target="#weixinReply-articleSelect" src="img/weixin/weixinReply4.png" />
+									<img src="img/weixin/weixinReply5.png" />
+								</div>
+							</div>
+							<div class="weixinReply-bottom">
+								<button class="confirmBt delete-confirm" data-dismiss="modal">保存</button>
+								<button class="cancelBt" data-dismiss="modal">取消</button>
+							</div>
+						  </div>
+						  
+						  <div class="tabCon">
+						  	<div style="display: none;">
+						  		<p  class="weixinReply-keyword-empty">+ 添加</p>
+							  	<table class="weixin-table" border="" cellspacing="" cellpadding="">
 									<tr>
-										<th>封面图</th>
-										<th>标题</th>
-										<th>编辑时间</th>
+										<th style="border-right: 0;">1</th>
+										<th style="border-left: 0;color: #FFAE01;">关键词 ：元旦</th>
 										<th>操作</th>
 									</tr>
 									<tr>
-										<td><img src="img/weixin/weixinArticle.png"/></td>
-										<td>元旦大促销</td>
-										<td>2017-12-28</td>
-										<td class="weixinArticle-table-operate">
-											<span class="weixinArticle-operate1" title="修改"></span>
-											<span class="weixinArticle-operate2" title="删除"></span>
+										<td style="border-right: 0;"><img src="img/weixin/weixinArticle.png"/></td>
+										<td style="border-left: 0;">元旦大促销</td>
+										<td class="weixin-table-operate">
+											<span class="weixinTable-operate1" title="修改"></span>
+											<span class="weixinTable-operate2" title="删除"></span>
 										</td>
 									</tr>
 								</table>
-							</div>
+						  	</div>
+						  	
+						  	<div class="">
+						  		<ul class="weixinReply-keywords">
+						  			<li>1</li>
+						  		</ul>
+						  		<p class="weixinReply-keywordsAdd">+添加关键词</p>
+						  		<div class="weixinReply-tab">
+									<img class="weixinReply-textTab" src="img/weixin/weixinReply.png" />
+									<img class="weixinReply-picTab" src="img/weixin/weixinReply1.png" />
+								</div>
+								<div class="weixinReply-content">
+									<textarea class="weixinReply-text"></textarea>
+									<div class="weixinReply-pic">
+										<img data-toggle="modal" data-target="#weixinReply-articleSelect" src="img/weixin/weixinReply4.png" />
+										<img src="img/weixin/weixinReply5.png" />
+									</div>
+								</div>
+								<div class="weixinReply-keywords-bottom">
+									<button class="confirmBt delete-confirm" data-dismiss="modal">保存</button>
+									<button class="cancelBt" data-dismiss="modal">取消</button>
+								</div>
+						  	</div>
+						  </div>
 						</div>
 					</div>
 				</article>
 			<!--</form>-->
 		</section>
 
-		
+		<!-- 图文选择弹框开始 -->
+		<div class="modal fade" id="weixinReply-articleSelect" tabindex="-1" role="dialog" aria-labelledby="weixinReply-articleSelect">
+			<div class="modal-dialog articleSelect-container" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header articleSelect-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">图文选择添加</h4>
+					</div>
+					<div class="modal-body">
+						<div class="weixinArticle-head">
+							<div class="vip-search-content weixinArticle-search">
+								<input class="vip-search vipChoice-search" type="text" placeholder="搜索标题/作者/摘要" />
+								<i class="vip-search-icon"></i>
+							</div>
+							<button class="weixinArticle-add">+ 新建图文信息</button>
+						</div>
+						<div class="articleSelect-main">
+							<table class="weixin-table" border="" cellspacing="" cellpadding="">
+								<tr>
+									<th>封面图</th>
+									<th>标题</th>
+									<th>编辑时间</th>
+									<th>操作</th>
+								</tr>
+								<tr>
+									<td><img src="img/weixin/weixinArticle.png"/></td>
+									<td>元旦大促销</td>
+									<td>2017-12-28</td>
+									<td class="articleSelect-operate">
+										选择
+									</td>
+								</tr>
+								<tr>
+									<td><img src="img/weixin/weixinArticle.png"/></td>
+									<td>元旦大促销</td>
+									<td>2017-12-28</td>
+									<td class="articleSelect-operate">
+										选择
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="articleSelect-pagination">
+							共<span>20</span>条
+							<a> < </a>
+							<a> > </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 图文选择弹框结束 -->
+
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<!--<script type="text/javascript" src="js/layer.js"></script>-->
 		<script type="text/javascript" src="js/H-ui.js"></script>
 		<script type="text/javascript" src="js/H-ui.admin.page.js"></script>
-		<!--<script type="text/javascript" src="js/paging.js"></script>-->
 		<!--<script type="text/javascript" src="js/toastr.js" ></script>-->
 		<!--<script type="text/javascript" src="My97DatePicker/WdatePicker.js" ></script>-->
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
-
+		
+		<script>
+			$("#weixinReplyTab").Huitab({
+				index:0
+			});
+			
+			$('.weixinReply-textTab').click(function () {
+				$(this).attr('src', 'img/weixin/weixinReply.png')
+				$('.weixinReply-picTab').attr('src', 'img/weixin/weixinReply1.png')
+				$('.weixinReply-text').css('display', 'flex')
+				$('.weixinReply-pic').css('display', 'none')
+			})
+			$('.weixinReply-picTab').click(function () {
+				$(this).attr('src', 'img/weixin/weixinReply3.png')
+				$('.weixinReply-textTab').attr('src', 'img/weixin/weixinReply2.png')
+				$('.weixinReply-pic').css('display', 'flex')
+				$('.weixinReply-text').css('display', 'none')
+			})
+		</script>
 	</body>
 
 </html>

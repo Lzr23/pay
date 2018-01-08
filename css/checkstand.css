@@ -95,19 +95,14 @@ header{
 	z-index: 8;
 	text-align: center;
 }
-.checkstand-container{
-	width: 98%;
-	position: absolute;
-	top: 70px;
-	bottom: 0;
-	left: 0;
-}
 .main-left{
-	height: 100%;
 	padding: 0;
 	box-shadow: 2px 0px 1px #CCCCCC;
 	z-index: 10;
-	position: relative;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	bottom: 0;
 }
 .left-search{
 	height: 34px;
@@ -135,13 +130,15 @@ header{
 	cursor: pointer;
 }
 .left-main{
-	height: 480px;
+	width: 100%;
 	border-bottom: 2px solid #ececec;
-	position: relative;
+	position: absolute;
+	top: 55px;
+	bottom: 140px;
 	
 }
 .left-info{
-	height: 400px;
+	height: 85%;
 	overflow-y: auto;
 }
 .left-info table{
@@ -247,9 +244,12 @@ header{
 	border-right: 1px solid #fff;
 }
 .main-right{
-	height: 100%;
 	background: #ececec;
 	padding: 0;
+	position: absolute;
+	top: 70px;
+	right: 0;
+	bottom: 0;
 }
 .right-head{
 	height: 80px;
@@ -336,6 +336,21 @@ header{
 	margin-top: 30px;
 }
 .dealClose span{
+	width: 33px;
+	height: 33px;
+	line-height: 33px;
+	background: #ffffff;
+	border-radius: 50% 50%;
+	opacity: 1;
+	display: block;
+}
+.modal-content .modal-header .backEndClose{
+	top: -12px;
+	right: -12px;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.backEndClose span{
 	width: 33px;
 	height: 33px;
 	line-height: 33px;

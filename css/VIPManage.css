@@ -49,7 +49,7 @@
 	height: 34px;
 	border-radius: 5px;
 	margin-right: 10px;
-	color: #CCCCCC;
+	color: #808080;
 }
 .vip-search-content{
 	position: relative;
@@ -458,23 +458,7 @@
 	display: flex;
 	justify-content: flex-end;
 }
-.confirmBt,.cancelBt{
-	width: 42px;
-	height: 24px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-.confirmBt{
-	background: #ffae01;
-	color: #FFFFFF;
-}
-.cancelBt{
-	background: #FFFFFF;
-	color: #ffae01;
-	border: 1px solid #dcdcdc;
-	margin-left: 20px;
-}
+
 
 /*会员修改密码弹框*/
 .vipModify-body{

@@ -16,7 +16,7 @@ $(function () {
 		for (var i = 0; i<$('.cart-goodsNum').length; i++) {
 			totalPrice += parseInt($('.cart-goodsNum').eq(i).text()) * parseFloat($('.cart-goodsPrice').eq(i).text())
 		}
-		$('.cart-totalPrice').text(totalPrice)
+		$('.cart-totalPrice').text(totalPrice.toFixed(2))
 	}
 	
 	////////////////清空购物车
@@ -44,10 +44,9 @@ $(function () {
 			var goodsId = $(this).attr('id')
 			var goodsName = $(this).eq(0).find('.goods-name').text()
 			var goodsPrice = parseFloat($(this).find('.goods-price').text())
-			var cartGoods = $('.cart-goodsNum')
+			var cartGoods = $('.cart-goods tr')
 			
-			for (var i = 0; i < cartGoods.length; i++) {
-				
+			for (var i = 1; i < cartGoods.length; i++) {
 				if ($(cartGoods).eq(i).attr('id') == goodsId) {
 					var cartGoodsNum = parseInt($(cartGoods).eq(i).find('.cart-goodsNum').text())
 					$(cartGoods).eq(i).find('.cart-goodsNum').text(cartGoodsNum + 1)
@@ -204,14 +203,14 @@ $(function () {
 		var money1 = parseFloat($('.dealMoney1').val())
 		if ($('.dealMoney1').val() != '') {  ////为空时和不为空时
 			if (totalPrice >= money1) {
-				$('.dealMoney2').text(checkPrice(totalPrice-money1))
+				$('.dealMoney2').text((totalPrice-money1).toFixed(2))
 				$('.deal-change').text('0.00')
 			} else {
 				$('.dealMoney2').text('0.00')
-				$('.deal-change').text(checkPrice(money1-totalPrice))
+				$('.deal-change').text((money1-totalPrice).toFixed(2))
 			}
 		} else {
-			$('.dealMoney2').text(checkPrice(totalPrice))
+			$('.dealMoney2').text((totalPrice).toFixed(2))
 			$('.deal-change').text('0.00')
 		}
 	}
@@ -221,10 +220,10 @@ $(function () {
 		var discount = parseInt($('.dealDiscount').val())
 		var newPrice = (totalPrice * discount) / 100
 		if ($('.dealDiscount').val() != '') {
-			$('.dealMoney1').val(checkPrice(newPrice))
+			$('.dealMoney1').val((newPrice).toFixed(2))
 			$('.dealMoney2').text('0.00')
 			$('.deal-change').text('0.00')
-			$('.deal-reality').val(checkPrice(newPrice))
+			$('.deal-reality').val((newPrice).toFixed(2))
 		}
 	}
 	//////////实收变化
@@ -233,8 +232,8 @@ $(function () {
 		var reality = parseFloat($('.deal-reality').val())
 		if ($('.deal-reality').val() != '') {
 			var discount = (reality/totalPrice) * 100
-			$('.dealDiscount').val(checkPrice(discount))
-			$('.dealMoney1').val(checkPrice(reality))
+			$('.dealDiscount').val((discount).toFixed(2))
+			$('.dealMoney1').val((reality).toFixed(2))
 		}
 	}
 	
@@ -272,7 +271,6 @@ $(function () {
 					}
 				}
 			} else {  //添加支付方式，最多两种
-				console.log(payWayNum)
 				if (payWayNum < 2) {
 					payWayNum += 1
 					$(this).children('i').addClass('dealPayWay-selected')
@@ -313,7 +311,7 @@ $(function () {
 	})
 	
 	////////点击数字输入
-	$('.deal-counter img').click(function (event) {
+	$('.deal-counter').on('click', function (event) {
 		event = event || window.event
 		var target = event.srcElement || event.target
 		var count = {
@@ -333,14 +331,19 @@ $(function () {
 			'deal-dot': '.',
 		}
 		if ($(target).attr('class') == 'deal-20' || $(target).attr('class') == 'deal-50' || $(target).attr('class') == 'deal-100') {
-			dealInput.val(count[$(this).attr('class')])
+			dealInput.val(count[$(target).attr('class')])
 			changePrice(dealInput)
+		} else if ($(target).attr('class') == 'deal-clear') {
+			dealInput.val('0.00')
+			isFirst = true
+		} else if ($(target).attr('class') == 'deal-remove') {
+			dealInput.val(parseInt(dealInput.val()))
 		} else if (isFirst) {
-			dealInput.val(count[$(this).attr('class')])
+			dealInput.val(count[$(target).attr('class')])
 			changePrice(dealInput)
 			isFirst = false
 		} else {
-			dealInput.val(dealInput.val() + count[$(this).attr('class')])
+			dealInput.val(dealInput.val() + count[$(target).attr('class')])
 			changePrice(dealInput)
 		}
 		
