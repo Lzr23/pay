@@ -152,7 +152,8 @@ h4 {
 .tabBar span{
 	background: #FFFFFF;
 	padding-bottom: 10px;
-	font-size: 14px;
+	font-size: 16px;
+	font-weight: 300;
 }
 .tabBar span.current{
 	background: #FFFFFF;

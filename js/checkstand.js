@@ -1,12 +1,10 @@
 $(function () {
 	showCartNum()
-	goodsNumSub($(".jiang"))
-	goodsNumAdd($(".jia"))
-	goodsDelete($(".left-delete"))
-	fly($('.jia'))
 	navToggle()
 	vipChoiceSearch()
 	goodsToCart()
+	cartDiscount()
+	cartChangePrice()
 	clearCart()
 	iframeLoad()
 	
@@ -46,7 +44,7 @@ $(function () {
 			var goodsPrice = parseFloat($(this).find('.goods-price').text())
 			var cartGoods = $('.cart-goods tr')
 			
-			for (var i = 1; i < cartGoods.length; i++) {
+			for (var i = 1; i < cartGoods.length; i++) {  ////遍历购物车有没有该商品，有则数量加1，否则购物车添加新商品
 				if ($(cartGoods).eq(i).attr('id') == goodsId) {
 					var cartGoodsNum = parseInt($(cartGoods).eq(i).find('.cart-goodsNum').text())
 					$(cartGoods).eq(i).find('.cart-goodsNum').text(cartGoodsNum + 1)
@@ -64,12 +62,13 @@ $(function () {
 							'<i class="jia">+</i>'+
 							'</td>'+
 							'<td class="cart-goodsPrice">' + goodsPrice + '</td>'+
-							'<td class="cart-discountPrice">118</td>'+
+							'<td class="cart-vipPrice">118</td>'+
 							'<td><button class="left-delete">X</button></td>'+
 							'</tr>')
 			goodsNumSub(newGoods.find('.jiang'))
 			goodsNumAdd(newGoods.find('.jia'))
 			goodsDelete(newGoods.find('.left-delete'))
+			cartSelect(newGoods)
 			fly(newGoods.find('.jia'))
 			$('.cart-goods').append(newGoods)
 			$('.head-cart-num').text(parseInt($('.head-cart-num').text()) + 1)
@@ -80,7 +79,9 @@ $(function () {
 	
 	/////////////////购物车商品数量加、减、删除功能
 	function goodsNumSub (obj) {
-		obj.click(function() {
+		obj.click(function(event) {
+			event = event || window.event
+			event.stopPropagation()
 			var num = parseInt($(this).siblings('.cart-goodsNum').text())
 			if(num == 1) {
 				return
@@ -93,7 +94,9 @@ $(function () {
 	}
 
 	function goodsNumAdd (obj) {
-		obj.click(function() {
+		obj.click(function(event) {
+			event = event || window.event
+			event.stopPropagation()
 			var num = parseInt($(this).siblings('.cart-goodsNum').text());
 			$(this).siblings('.cart-goodsNum').text(num + 1)
 			cartTotalPrice()
@@ -101,7 +104,9 @@ $(function () {
 	}
 	
 	function goodsDelete (obj) {
-		obj.closest("td").click(function () {
+		obj.closest("td").click(function (event) {
+			event = event || window.event
+			event.stopPropagation()
 			var num = parseInt(obj.closest('td').siblings().children('.cart-goodsNum').text())
 			$('.head-cart-num').text(parseInt($('.head-cart-num').text()) - num)
 			$(this).closest("tr").remove()
@@ -109,13 +114,111 @@ $(function () {
 			cartTotalPrice()
 		})
 	}
-	///////////////////商品导航栏切换
-	function navToggle() {
-		$(".classify li").click(function () {
-			$(this).siblings().children().removeClass("current")
-			$(this).children().addClass("current")
+	
+	/////////////////////购物车选中商品
+	function cartSelect (obj) {
+		obj.click(function () {
+			if ($(this).hasClass('cartSelect')) {
+				$(this).removeClass('cartSelect')
+			} else{
+				$(this).siblings('tr').removeClass('cartSelect')
+				$(this).addClass('cartSelect')
+			}
 		})
 	}
+	
+	////////////////////购物车商品 折扣
+	function cartDiscount () {
+		var selectedGoods
+		$('.zekou').click(function () {
+			var goods = $('.cart-goods tr')
+			for (var i = 1; i < goods.length; i++) { ////遍历购物车是否有选中的商品
+				if (goods.eq(i).hasClass('cartSelect')) {
+					selectedGoods = goods.eq(i)
+					$('#discount').modal('show')
+					return
+				}
+			}
+			toastr.warning('请在购物车选中商品')
+		})
+		var oInput = $('#discountInput')
+		numberInput(oInput)
+		$('.discountConfirm').click(function () {
+			var price = Number(parseFloat(selectedGoods.children('.cart-goodsPrice').text()).toFixed(2))
+			var vipPrice = Number(parseFloat(selectedGoods.children('.cart-vipPrice').text()).toFixed(2))
+			var discount = Number(parseFloat(oInput.val()).toFixed(2))
+			var discounted = Number(price * (discount/10)).toFixed(2)
+			if (discount > 10 || discount < 1) {
+				toastr.warning('折扣必须在1-10之间')
+			} else if (discounted < vipPrice) {
+				toastr.warning('折扣后的价格不能低于会员单价')
+			} else {
+				selectedGoods.children('.cart-goodsPrice').text(discounted)
+				cartTotalPrice()
+				toastr.success('折扣成功')
+			}
+		})
+	}
+	
+	/////////////////////购物车商品改价
+	function cartChangePrice () {
+		var selectedGoods
+		$('.gaijia').click(function () {
+			var goods = $('.cart-goods tr')
+			for (var i = 1; i < goods.length; i++) { ////遍历购物车是否有选中的商品
+				if (goods.eq(i).hasClass('cartSelect')) {
+					selectedGoods = goods.eq(i)
+					$('#changePrice').modal('show')
+					return
+				}
+			}
+			toastr.warning('请在购物车选中商品')
+		})
+		var oInput = $('#changePriceInput')
+		numberInput(oInput)
+		$('.changePriceConfirm').click(function () {
+			var price = Number(parseFloat(selectedGoods.children('.cart-goodsPrice').text()).toFixed(2))
+			var vipPrice = Number(parseFloat(selectedGoods.children('.cart-vipPrice').text()).toFixed(2))
+			var changed = Number(parseFloat(oInput.val()).toFixed(2))
+			if (changed < vipPrice) {
+				toastr.warning('改价后的价格必须大于会员单价')
+			} else {
+				selectedGoods.children('.cart-goodsPrice').text(changed)
+				cartTotalPrice()
+				toastr.success('改价成功')
+			}
+		})
+	}
+	
+	
+	//////////////////////点击数字键盘输入
+	function numberInput (oInput) {
+		var count = {
+			'num-1': '1',
+			'num-2': '2',
+			'num-3': '3',
+			'num-4': '4',
+			'num-5': '5',
+			'num-6': '6',
+			'num-7': '7',
+			'num-8': '8',
+			'num-9': '9',
+			'num-0': '0',
+			'num-dot': '.'
+		}
+		$('.counter').on('click', function (event) {
+			event = event || window.event
+			var target = event.target || window.srcElement
+			if (count[$(target).attr('class')] != undefined) {
+				oInput.val(oInput.val() + count[$(target).attr('class')])
+			}
+		})
+		$('.couterClear').click(function () {
+			oInput.val('')
+		})
+	}
+	
+	
 	///////////////////加入购物车小球动画
 	function fly(obj) {
 		var offset = $('.head-cart').offset();
@@ -158,6 +261,8 @@ $(function () {
 	
 	///////////////////////////////////////结账
 	var dealInput  //结账弹框当前输入框对象
+	var totalPrice //标记当前总金额
+	
 	var isFirst = true //标记是否需要重置input值
 	$('.deal-section1 input').focus(function () {
 		isFirst = true
@@ -165,7 +270,23 @@ $(function () {
 	$('.deal-close').click(function () {
 		isFirst = true
 	})
-	/////////监听键盘输入，结账金额变化
+	
+	//////////结账弹框初始化
+	$('.jiezhang').click(function () {
+		if ($('.cart-goodsNum').length <= 0) {  //判断购物车中是否有商品,有则结账，否则提示
+			toastr.warning('购物车是空的~~')
+		} else {
+			$('#deal').modal('show')
+			$('.dealMoney1')[0].focus()
+			totalPrice = parseFloat($('.cart-totalPrice').text())
+			$('.dealMoney1').val(totalPrice)
+			$('.deal-reality').val(totalPrice)
+			dealInput = $('.dealMoney1')
+			
+		}
+	})
+	
+	///////////////////监听键盘输入，结账金额变化
 	$('.dealMoney1').keyup(function () {
 		deal1()
 	})
@@ -176,27 +297,25 @@ $(function () {
 		deal3()
 	})
 	
-	$('.jiezhang').click(function () {
-		if ($('.cart-goodsNum').length <= 0) {  //判断购物车中是否有商品,有则结账，否则提示
-			toastr.warning('购物车是空的~~')
-		} else {
-			$('#deal').modal('show')
-			$('.dealMoney1')[0].focus()
-			var totalPrice = parseFloat($('.cart-totalPrice').text())
-//				var money1 = $('dealMoney1').val()
-//				var money2 = parseFloat($('dealMoney2').text())
-			$('.dealMoney1').val(totalPrice)
-			$('.deal-reality').val(totalPrice)
-			
-			dealInput = $('.dealMoney1')
-			
+	////////////////////监听数字点击，金额变化
+	function changePrice (dealInput) {
+		switch (dealInput.attr('class')){
+			case 'dealMoney1': deal1(); break;
+			case 'dealDiscount': deal2(); break;
+			case 'deal-reality': deal3(); break;
 		}
+		return
+	}
+	
+	////////标记当前输入框
+	$('.deal-section1 input').focus(function () {
+		dealInput = $(this)
 	})
+	
 	/////////第一种支付输入变化
 	function deal1 () {
-		var totalPrice
 		if ($('.deal-reality').val() == '0.00') {  //实收为空时，收取购物车总价，否则收取实收的金额
-			totalPrice = parseFloat($('.cart-totalPrice').text()) 
+			totalPrice = parseFloat($('.cart-totalPrice').text())
 		} else {
 			totalPrice = parseFloat($('.deal-reality').val())
 		}
@@ -216,7 +335,6 @@ $(function () {
 	}
 	//////////折扣变化
 	function deal2 () {
-		var totalPrice = parseFloat($('.cart-totalPrice').text())
 		var discount = parseInt($('.dealDiscount').val())
 		var newPrice = (totalPrice * discount) / 100
 		if ($('.dealDiscount').val() != '') {
@@ -228,7 +346,6 @@ $(function () {
 	}
 	//////////实收变化
 	function deal3 () {
-		var totalPrice = parseFloat($('.cart-totalPrice').text())
 		var reality = parseFloat($('.deal-reality').val())
 		if ($('.deal-reality').val() != '') {
 			var discount = (reality/totalPrice) * 100
@@ -284,8 +401,8 @@ $(function () {
 			$(this).children('i').addClass('dealPayWay-selected')
 			changePayWay($(this), 1)
 		}
-		
 	})
+	
 	////////改变支付方式显示
 	function changePayWay (obj, num) {
 		var payWay = {
@@ -305,10 +422,6 @@ $(function () {
 		}
 	}
 	
-	////////改变当前输入框
-	$('.deal-section1 input').focus(function () {
-		dealInput = $(this)
-	})
 	
 	////////点击数字输入
 	$('.deal-counter').on('click', function (event) {
@@ -333,11 +446,19 @@ $(function () {
 		if ($(target).attr('class') == 'deal-20' || $(target).attr('class') == 'deal-50' || $(target).attr('class') == 'deal-100') {
 			dealInput.val(count[$(target).attr('class')])
 			changePrice(dealInput)
-		} else if ($(target).attr('class') == 'deal-clear') {
+		} else if ($(target).attr('class') == 'deal-clear') {  ////清除
 			dealInput.val('0.00')
+			if (dealInput.attr('class') == 'dealMoney1') {
+				deal1()
+			}
 			isFirst = true
-		} else if ($(target).attr('class') == 'deal-remove') {
+		} else if ($(target).attr('class') == 'deal-remove') {  ////抹零
+			if (dealInput.attr('class') == 'dealMoney1') {
+				totalPrice = parseInt(dealInput.val())
+				$('.deal-reality').val(parseInt(dealInput.val()))
+			}
 			dealInput.val(parseInt(dealInput.val()))
+			
 		} else if (isFirst) {
 			dealInput.val(count[$(target).attr('class')])
 			changePrice(dealInput)
@@ -348,31 +469,13 @@ $(function () {
 		}
 		
 	})
-	////////////监听数字点击，金额变化
-	function changePrice (dealInput) {
-		switch (dealInput.attr('class')){
-			case 'dealMoney1': deal1(); break;
-			case 'dealDiscount': deal2(); break;
-			case 'deal-reality': deal3(); break;
-		}
-		return
-	}
-	///////////处理数据，只保留到小数点后两位
-	function checkPrice (num) {
-		num += ''
-		if (num.indexOf('.') != -1) {
-			var leng
-			if (num.length - 2 >= num.indexOf('.')) {
-				leng = num.indexOf('.')+2
-			} else {
-				leng = num.length
-			}
-			num = parseFloat(num.substr(0,leng))
-		} else {
-			num = parseFloat(num + '.00')
-		}
-		
-		return num
+	
+	///////////////////商品导航栏切换
+	function navToggle() {
+		$(".classify li").click(function () {
+			$(this).siblings().children().removeClass("current")
+			$(this).children().addClass("current")
+		})
 	}
 	
 	/////////////////////改变加载iframe的页面初始状态

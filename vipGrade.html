@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)http://192.168.1.104:8080/ics-web/seller/member_list.htm -->
 <html>
 
 	<head>
@@ -18,7 +17,7 @@
 		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
 		<link rel="stylesheet" href="css/H-ui.admin.css" />
 		<link rel="stylesheet" href="css/H-ui.reset.css" />
-		<link rel="stylesheet" href="css/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
 		<link rel="stylesheet" href="css/paging.css">
 		<link rel="stylesheet" href="css/toastr.css" />
 		<link rel="stylesheet" href="css/head-side.css" />
@@ -30,9 +29,94 @@
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>会员列表 - 会员新增</title>
-		<link rel="stylesheet" href="css/VIPManage.css" />
+		<title>会员列表 - 会员等级</title>
 	</head>
+
+	<style>
+		.xiaoding {
+			height: 48px;
+			width: 100%;
+			/*border: solid #4d4d4d 1px;*/
+			box-shadow: 10px 0 10px #EDEDED;
+		}
+		
+		.xiaoding p {
+			font-size: 16px;
+			font-family: "微软雅黑";
+			color: #ffae01;
+			margin-left: 30px;
+			line-height: 48px;
+			letter-spacing: 3px;
+		}
+		
+		.dengji {
+			margin: 20px 30px;
+			letter-spacing: 2px;
+		}
+		
+		.xz {
+			font-size: 16px;
+			font-family: "微软雅黑";
+			color: #333333;
+			float: left;
+		}
+		
+		.aa {
+			font-size: 14px;
+			font-family: "微软雅黑";
+			color: #333333;
+			float: left;
+			margin-left: 0px;
+			line-height: 28px;
+		}
+		
+		.aa input {
+			margin: 0 10px 0 10px;
+		}
+		
+		.xzkuang input {
+			outline: none;
+			border: none;
+		}
+		
+		.xzkuang {
+			font-size: 16px;
+			font-family: "微软雅黑";
+			color: #333333;
+			margin-left: 160px;
+			display: flex;
+			padding-bottom: 20px;
+			flex-wrap: wrap;
+		}
+		.xzkuang>div{
+			display: flex;
+			flex-wrap: nowrap;
+			margin-top: 10px;
+		}
+		.xzkuang input{
+			margin: 0 5px;
+			height: 32px;
+		}
+		.vipGrade-item input {
+			border: solid 1px #CCCCCC;
+			height: 32px;
+			border-radius: 5px;
+		}
+		
+		.jiajian {
+			float: left;
+			margin-left: 40px;
+			line-height: 26px;
+		}
+		
+		.jiajian img {
+			margin-right: 20px;
+		}
+		
+		.kuang {
+			display: flex;
+		}
+	</style>
 
 	<body>
 		<!--_header 作为公共模版分离出去-->
@@ -44,10 +128,18 @@
 					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
 					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 						<ul class="cl">
-							<li class="f-l mr-30"><i class="checkstand-icon"></i><a href="#">收银台</a></li>
-							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
-							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
-							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+							<li class="f-l mr-30"><i class="checkstand-icon"></i>
+								<a href="#">收银台</a>
+							</li>
+							<li class="f-l mr-30"><i class="message-icon"></i>
+								<a href="#">消息</a>
+							</li>
+							<li class="f-l mr-30"><i class="help-icon"></i>
+								<a href="#">帮助</a>
+							</li>
+							<li class="f-l mr-30">
+								<a href="#" class="user-icon"></a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -67,16 +159,16 @@
 					<dd>
 						<ul>
 							<li>
-								<a href="#">新增会员</a>
+								<a href="vipManageAdd.html">新增会员</a>
 							</li>
 							<li>
-								<a href="#">会员管理</a>
+								<a href="vipManage.html">会员列表</a>
 							</li>
 							<li>
-								<a href="#">会员等级</a>
+								<a href="chozhichoci.html">充值充次</a>
 							</li>
 							<li>
-								<a href="#">充值充次</a>
+								<a href="VIPdengji.html">会员等级</a>
 							</li>
 						</ul>
 					</dd>
@@ -152,95 +244,94 @@
 		<div class="dislpayArrow hidden-xs">
 			<a class="pngfix" href="javascript:void(0);" onclick="displaynavbar(this)"></a>
 		</div>
-		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<!--<form >-->
-				<div>
-					<article>
-						<div>
 
-					<div class="modal-body vipAdd-body">
-						<div class="vipAdd-left">
-							<img src="img/main/head.png" />
-							<p>点击上传头像<br/>建议尺寸：300*300px</p>
-						</div>
-						<div class="vipAdd-right">
-							<div class="myInput"><p><span>*</span>会员姓名：</p><input type="text" /><!--<button id="creatVipId">自动生成</button>-->
-								
-							</div>
-							<div class="myInput"><p><span>*</span>会员卡号：</p><input type="text" /></div>
-							<div class="myInput"><p><span>*</span>手机号码：</p><input type="text" /></div>
-							<div class="myInput"><p>会员生日：</p>
-								<input type="text" onfocus="WdatePicker()" id="birthday" name="birthday"
-									value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate">
-							</div>
-							<div class="myInput"><p>会员等级：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<!--<option style="display: none;" selected="selected"></option>-->
-										<option>默认等级</option>
-										<option>铜卡会员</option>
-									</select>
-							</div>
-							<div class="myInput"><p>售卡金额：</p><input type="text" /></div>
-							<div class="myInput"><p>赠送金额：</p><input type="text" /></div>
-							<div class="myInput"><p>会员售价</p><input type="text" /></div>
-							<div class="myInput"><p>会员密码：</p><input type="text" /></div>
-							
-							<div class="myInput"><p>开卡员工：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
-							</div>
-							
-							<div class="myInput"><p>会支付方式：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>支付宝</option>
-										<option>微信支付</option>
-										<option>银行卡</option>
-										<option>现金</option>
-									</select>
-							</div>
-							
-						<div class="myInput"><p>会员称谓：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>先生</option>
-										<option>女士</option>
-										
-									</select>
-							</div>
-							<div class="myInput"><p>推荐人：</p><input type="text" /></div>
-							<div class="myInput"><p>地址：</p><input type="text" /></div>
-							<div class="myInput"><p>备注：</p><input type="text" /></div>
-							
-							<div class="vipDelete-bottom vipAdd-bottom">
-								<button class="confirmBt vipAdd-save" >保存</button>
-								<button class="cancelBt">取消</button>
-							</div>
-						</div>
+			<div class="xiaoding">
+				<p>会员等级</p>
+			</div>
+
+			<div class="dengji">
+				<ul>
+					<li class="xz">会员升级规则：</li>
+					<li class="aa">
+						<input class="myCheckbox" type="checkbox">积分达到
+						<input class="myCheckbox" type="checkbox">累计充值
+						<input class="myCheckbox" type="checkbox">累计消费金额
+						<input class="myCheckbox" type="checkbox">累计积分
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+			</div>
+
+			<div class="kuang">
+				<div class="xzkuang">
+					<div class="vipGrade-item">
+						积分达到
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">
+						享受折扣
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">会员等级名称
+						<input type="text"></div>
+					<div>
+						是否自动降级
+						<input style="margin-top: 5px;" class="myCheckbox" type="checkbox">
+					</div>
+					<div style="display: block;" class="jiajian">
+						<img src="img/VIPdengji/-.png" />
+						<img src="img/VIPdengji/add.png" />
 					</div>
 				</div>
 			</div>
-		</div>
-						</div>
-					</article>
-
+			<div class="kuang">
+				<div class="xzkuang">
+					<div class="vipGrade-item">
+						积分达到
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">
+						享受折扣
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">会员等级名称
+						<input type="text"></div>
+					<div>
+						是否自动降级
+						<input style="margin-top: 5px;" class="myCheckbox" type="checkbox">
+					</div>
+					<div style="display: block;" class="jiajian">
+						<img src="img/VIPdengji/-.png" />
+						<img src="img/VIPdengji/add.png" />
+					</div>
 				</div>
-			<!--</form>-->
+			</div>
+			<div class="kuang">
+				<div class="xzkuang">
+					<div class="vipGrade-item">
+						积分达到
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">
+						享受折扣
+						<input type="text">
+					</div>
+					<div class="vipGrade-item">会员等级名称
+						<input type="text"></div>
+					<div>
+						是否自动降级
+						<input style="margin-top: 5px;" class="myCheckbox" type="checkbox">
+					</div>
+					<div style="display: block;" class="jiajian">
+						<img src="img/VIPdengji/-.png" />
+						<img src="img/VIPdengji/add.png" />
+					</div>
+				</div>
+			</div>
+
 		</section>
-
-		
-		
-
-		
 
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -248,8 +339,8 @@
 		<script type="text/javascript" src="js/H-ui.js"></script>
 		<script type="text/javascript" src="js/H-ui.admin.page.js"></script>
 		<script type="text/javascript" src="js/paging.js"></script>
-		<script type="text/javascript" src="js/toastr.js" ></script>
-		<script type="text/javascript" src="My97DatePicker/WdatePicker.js" ></script>
+		<script type="text/javascript" src="js/toastr.js"></script>
+		<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
@@ -257,18 +348,7 @@
 		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
 		<!--<script type="text/javascript" src="js/VIPManage.js"></script>-->
 		<script>
-			vipSave()
-			
-			////////保存新增会员
-			function vipSave () {
-				$('.vipAdd-save').click(function () {
-					console.log('1')
-					toastr.success("保存成功");
-				})
-			}
 		</script>
-		<!--/请在上方写此页面业务相关的脚本-->
-
 	</body>
 
 </html>

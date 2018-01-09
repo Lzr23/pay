@@ -12,7 +12,7 @@
 		<link rel="Bookmark" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
 		<link rel="Shortcut Icon" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
 		<!--[if lt IE 9]>
-<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5shiv.js"></script>
 <script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
 <![endif]-->
 		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
@@ -112,8 +112,8 @@
 					</div>
 					<div class="left-bottom">
 						<div class="left-button">
-							<button class="zekou" data-toggle="modal" data-target="#discount">折扣</button>
-							<button class="gaijia" data-toggle="modal" data-target="#changePrice">改价</button>
+							<button class="zekou">折扣</button>
+							<button class="gaijia">改价</button>
 							<button class="xiadan" data-toggle="modal" data-target="#quguadan">取挂单</button>
 							<button class="jiaoyi" data-toggle="modal" data-target="#history">交易记录</button>
 						</div>
@@ -264,25 +264,25 @@
 					</div>
 					<div class="modal-body changePrice-body">
 						<div class="changePrice-input">
-							<input /><i></i>
+							<input id="changePriceInput" type="text" /><i class="couterClear"></i>
 						</div>
 						<div class="counter">
 							<div class="counter-left">
-								<img src="img/VIPRecharge/vipRecharge-num7.png" />
-								<img src="img/VIPRecharge/vipRecharge-num8.png" />
-								<img src="img/VIPRecharge/vipRecharge-num9.png" />
-								<img src="img/VIPRecharge/vipRecharge-num4.png" />
-								<img src="img/VIPRecharge/vipRecharge-num5.png" />
-								<img src="img/VIPRecharge/vipRecharge-num6.png" />
-								<img src="img/VIPRecharge/vipRecharge-num1.png" />
-								<img src="img/VIPRecharge/vipRecharge-num2.png" />
-								<img src="img/VIPRecharge/vipRecharge-num3.png" />
-								<img style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png" />
-								<img src="img/VIPRecharge/vipRecharge-num10.png" />
+								<img class="num-7" src="img/VIPRecharge/vipRecharge-num7.png" />
+								<img class="num-8" src="img/VIPRecharge/vipRecharge-num8.png" />
+								<img class="num-9" src="img/VIPRecharge/vipRecharge-num9.png" />
+								<img class="num-4" src="img/VIPRecharge/vipRecharge-num4.png" />
+								<img class="num-5" src="img/VIPRecharge/vipRecharge-num5.png" />
+								<img class="num-6" src="img/VIPRecharge/vipRecharge-num6.png" />
+								<img class="num-1" src="img/VIPRecharge/vipRecharge-num1.png" />
+								<img class="num-2" src="img/VIPRecharge/vipRecharge-num2.png" />
+								<img class="num-3" src="img/VIPRecharge/vipRecharge-num3.png" />
+								<img class="num-0" style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png" />
+								<img class="num-dot" src="img/VIPRecharge/vipRecharge-num10.png" />
 							</div>
 							<div class="counter-right">
-								<img src="img/VIPRecharge/vipRecharge-num12.png" />
-								<img src="img/VIPRecharge/vipRecharge-num11.png" />
+								<img data-dismiss="modal" src="img/VIPRecharge/vipRecharge-num12.png" />
+								<img data-dismiss="modal" class="changePriceConfirm" src="img/VIPRecharge/vipRecharge-num11.png" />
 							</div>
 						</div>
 					</div>
@@ -304,25 +304,25 @@
 					</div>
 					<div class="modal-body changePrice-body">
 						<div class="changePrice-input">
-							<input /><i></i>
+							<input id="discountInput" type="text" /><i class="couterClear"></i>
 						</div>
 						<div class="counter">
 							<div class="counter-left">
-								<img src="img/VIPRecharge/vipRecharge-num7.png" />
-								<img src="img/VIPRecharge/vipRecharge-num8.png" />
-								<img src="img/VIPRecharge/vipRecharge-num9.png" />
-								<img src="img/VIPRecharge/vipRecharge-num4.png" />
-								<img src="img/VIPRecharge/vipRecharge-num5.png" />
-								<img src="img/VIPRecharge/vipRecharge-num6.png" />
-								<img src="img/VIPRecharge/vipRecharge-num1.png" />
-								<img src="img/VIPRecharge/vipRecharge-num2.png" />
-								<img src="img/VIPRecharge/vipRecharge-num3.png" />
-								<img style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png" />
-								<img src="img/VIPRecharge/vipRecharge-num10.png" />
+								<img class="num-7" src="img/VIPRecharge/vipRecharge-num7.png" />
+								<img class="num-8" src="img/VIPRecharge/vipRecharge-num8.png" />
+								<img class="num-9" src="img/VIPRecharge/vipRecharge-num9.png" />
+								<img class="num-4" src="img/VIPRecharge/vipRecharge-num4.png" />
+								<img class="num-5" src="img/VIPRecharge/vipRecharge-num5.png" />
+								<img class="num-6" src="img/VIPRecharge/vipRecharge-num6.png" />
+								<img class="num-1" src="img/VIPRecharge/vipRecharge-num1.png" />
+								<img class="num-2" src="img/VIPRecharge/vipRecharge-num2.png" />
+								<img class="num-3" src="img/VIPRecharge/vipRecharge-num3.png" />
+								<img class="num-0" style="width: 60%;" src="img/VIPRecharge/vipRecharge-num0.png" />
+								<img class="num-dot" src="img/VIPRecharge/vipRecharge-num10.png" />
 							</div>
 							<div class="counter-right">
-								<img src="img/VIPRecharge/vipRecharge-num12.png" />
-								<img src="img/VIPRecharge/vipRecharge-num11.png" />
+								<img data-dismiss="modal" src="img/VIPRecharge/vipRecharge-num12.png" />
+								<img data-dismiss="modal" class="discountConfirm" src="img/VIPRecharge/vipRecharge-num11.png" />
 							</div>
 						</div>
 					</div>
@@ -697,7 +697,6 @@
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="js/jquery.fly.min.js" ></script>
 		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
 		<!--<script type="text/javascript" src="js/VIPManage.js"></script>-->

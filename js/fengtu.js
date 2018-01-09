@@ -23,7 +23,7 @@ $.fn.extend({
 				url: url,
 				success: function(html) {
 					var content = $(html).siblings('div')
-					if (content.attr('class') != undefined && content.attr('class').split(' ')[0] == 'modal') {  //判断请求到的内容是否为弹出框,是则更改id后添加到页面中，否则新建
+					if (content.hasClass('modal')) {  //判断请求到的内容是否为弹出框,是则更改id后添加到页面中，否则新建
 						console.log($('#' + id))
 						if ($('#' + id)[0] == undefined) {  //判断是否已经添加该模态框，没有则添加，否则显示
 							var htmlId = content.attr('id')

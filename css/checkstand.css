@@ -161,7 +161,7 @@ header{
 	background-size: 100% 100%;
 }
 .jiang{
-	background: url(../img/main/jiang.png) no-repeat;
+	background: url(../img/main/sub.png) no-repeat;
 	float: left;
 	cursor: pointer;
 }
@@ -202,6 +202,9 @@ header{
 }
 .total{
 	float: right;
+}
+.cartSelect{
+	background: #CCCCCC;
 }
 .zekou,.gaijia,.xiadan,.jiaoyi{
 	width: 45%;
@@ -592,7 +595,7 @@ header{
 }
 /*交易记录弹框*/
 .history-container{
-	width: 59%;
+	830px
 }
 .history-body{
 	display: flex;
@@ -638,6 +641,7 @@ header{
 }
 .history-tabel-operate{
 	color: #8cdd16;
+	cursor: pointer;
 }
 .history-rtabel th{
 	line-height: 45px;
@@ -673,8 +677,8 @@ header{
 }
 /*取单弹框*/
 .qudan-container{
-	width: 60%;
-	margin-top: 150px;
+	width: 830px;
+	margin-top: 100px;
 }
 .qudan-goodsPrice{
 	color: #FF0000;
