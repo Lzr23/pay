@@ -15,13 +15,13 @@
 <script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
 <script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
 <![endif]-->
-		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
-		<link rel="stylesheet" href="css/H-ui.admin.css" />
-		<link rel="stylesheet" href="css/H-ui.reset.css" />
-		<link rel="stylesheet" href="css/iconfont.css" type="text/css" />
-		<link rel="stylesheet" href="css/paging.css">
-		<link rel="stylesheet" href="css/toastr.css" />
-		<link rel="stylesheet" href="css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.reset.css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
+		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -31,7 +31,7 @@
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
 		<title>会员列表 - 会员新增</title>
-		<link rel="stylesheet" href="css/VIPManage.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/member/css/VIPManage.css" />
 	</head>
 
 	<body>
@@ -155,71 +155,97 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<!--<form >-->
+			<form id="vipAddForm">
 				<div>
 					<article>
 						<div>
 
 					<div class="modal-body vipAdd-body">
 						<div class="vipAdd-left">
-							<img src="img/main/head.png" />
+							<img src="resources/ics-ui/static/biz/cashier/images/head.png" />
 							<p>点击上传头像<br/>建议尺寸：300*300px</p>
 						</div>
 						<div class="vipAdd-right">
-							<div class="myInput"><p><span>*</span>会员姓名：</p><input type="text" /><!--<button id="creatVipId">自动生成</button>-->
-								
+							<div class="myInput">
+								<p><span>*</span>会员姓名：</p>
+								<input name="username" type="text" required/>
 							</div>
-							<div class="myInput"><p><span>*</span>会员卡号：</p><input type="text" /></div>
-							<div class="myInput"><p><span>*</span>手机号码：</p><input type="text" /></div>
-							<div class="myInput"><p>会员生日：</p>
+							<div class="myInput">
+								<p><span>*</span>会员卡号：</p>
+								<input name="card" type="text" required/><!--<button id="creatVipId">自动生成</button>-->
+							</div>
+							<div class="myInput">
+								<p><span>*</span>手机号码：</p>
+								<input name="tel" type="tel" rangelength:[5,5] required/>
+							</div>
+							<div class="myInput">
+								<p>会员生日：</p>
 								<input type="text" onfocus="WdatePicker()" id="birthday" name="birthday"
 									value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate">
 							</div>
-							<div class="myInput"><p>会员等级：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<!--<option style="display: none;" selected="selected"></option>-->
-										<option>默认等级</option>
-										<option>铜卡会员</option>
-									</select>
+							<div class="myInput">
+								<p>会员等级：</p><!--<input type="text" />-->
+								<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
+									<!--<option style="display: none;" selected="selected"></option>-->
+									<option>默认等级</option>
+									<option>铜卡会员</option>
+								</select>
 							</div>
-							<div class="myInput"><p>售卡金额：</p><input type="text" /></div>
-							<div class="myInput"><p>赠送金额：</p><input type="text" /></div>
-							<div class="myInput"><p>会员售价</p><input type="text" /></div>
-							<div class="myInput"><p>会员密码：</p><input type="text" /></div>
+							<div class="myInput">
+								<p>售卡金额：</p>
+								<input type="number" />
+							</div>
+							<div class="myInput">
+								<p>赠送金额：</p>
+								<input type="text" />
+							</div>
+							<div class="myInput">
+								<p>会员售价</p>
+								<input type="text" /></div>
+							<div class="myInput">
+								<p>会员密码：</p>
+								<input name="password" type="text" />
+							</div>
 							
-							<div class="myInput"><p>开卡员工：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
+							<div class="myInput">
+								<p>开卡员工：</p><!--<input type="text" />-->
+								<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
+									<option style="display: none;" selected="selected"></option>
+									<option>小妮</option>
+									<option>小木</option>
+								</select>
 							</div>
 							
 							<div class="myInput"><p>会支付方式：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>支付宝</option>
-										<option>微信支付</option>
-										<option>银行卡</option>
-										<option>现金</option>
-									</select>
+								<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
+									<option style="display: none;" selected="selected"></option>
+									<option>支付宝</option>
+									<option>微信支付</option>
+									<option>银行卡</option>
+									<option>现金</option>
+								</select>
 							</div>
 							
-						<div class="myInput"><p>会员称谓：</p><!--<input type="text" />-->
-							<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
-								
-										<option style="display: none;" selected="selected"></option>
-										<option>先生</option>
-										<option>女士</option>
-										
-									</select>
+							<div class="myInput"><p>会员称谓：</p><!--<input type="text" />-->
+								<select style="width: 63.5%;border: 1px solid #cccccc;outline: none;height: 32px;border-radius: 5px;padding-left: 3%;">
+									<option style="display: none;" selected="selected"></option>
+									<option>先生</option>
+									<option>女士</option>
+									
+								</select>
 							</div>
-							<div class="myInput"><p>推荐人：</p><input type="text" /></div>
-							<div class="myInput"><p>地址：</p><input type="text" /></div>
-							<div class="myInput"><p>备注：</p><input type="text" /></div>
+							<div class="myInput">
+								<p>推荐人：</p>
+								<input type="text" />
+							</div>
+							<div class="myInput">
+								<p>地址：</p>
+								<input type="text" />
+							</div>
+							<div class="myInput">
+								<p>备注：</p>
+								<input type="text" />
+							</div>
 							
 							<div class="vipDelete-bottom vipAdd-bottom">
 								<button class="confirmBt vipAdd-save" >保存</button>
@@ -234,38 +260,28 @@
 					</article>
 
 				</div>
-			<!--</form>-->
+			</form>
 		</section>
-
-		
-		
 
 		
 
 		<!--_footer 作为公共模版分离出去-->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<!--<script type="text/javascript" src="js/layer.js"></script>-->
-		<script type="text/javascript" src="js/H-ui.js"></script>
-		<script type="text/javascript" src="js/H-ui.admin.page.js"></script>
-		<script type="text/javascript" src="js/paging.js"></script>
-		<script type="text/javascript" src="js/toastr.js" ></script>
-		<script type="text/javascript" src="My97DatePicker/WdatePicker.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
-		<!--<script type="text/javascript" src="js/VIPManage.js"></script>-->
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/jquery.validate.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/additional-methods.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/messages_zh.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js" ></script>
+		
 		<script>
-			vipSave()
-			
-			////////保存新增会员
-			function vipSave () {
-				$('.vipAdd-save').click(function () {
-					console.log('1')
-					toastr.success("保存成功");
-				})
-			}
+			$('#vipAddForm').testForm()
 		</script>
 		<!--/请在上方写此页面业务相关的脚本-->
 

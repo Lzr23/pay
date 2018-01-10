@@ -13,13 +13,13 @@
 <script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
 <script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
 <![endif]-->
-		<link rel="stylesheet" href="css/H-ui.css" type="text/css" />
-		<link rel="stylesheet" href="css/H-ui.admin.css" />
-		<link rel="stylesheet" href="css/H-ui.reset.css" />
-		<link rel="stylesheet" href="Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
-		<link rel="stylesheet" href="css/paging.css">
-		<link rel="stylesheet" href="css/toastr.css" />
-		<link rel="stylesheet" href="css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.reset.css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
+		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -29,7 +29,7 @@
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
 		<title>会员列表 - 充值充次</title>
-		<link rel="stylesheet" href="css/VIPManage.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/member/css/VIPManage.css" />
 
 		<style>
 			.xiaoding {
@@ -241,7 +241,7 @@
 				<div class="tabBar clearfix"><span>会员充值</span><span>会员充次</span></div>
 
 					<div class="tabCon">
-						<div style="display: flex;">
+						<div style="display: flex;flex-wrap:wrap;justify-content: center;">
 							<div class="left-xz">
 								<div class="left-search vipRecharge-search">
 									<em></em>
@@ -250,7 +250,7 @@
 								</div>
 
 								<div style="display: flex;margin-bottom: 30px;justify-content: center;">
-									<img class="vipRecharge-head" src="img/main/head.png" />
+									<img class="vipRecharge-head" src="resources/ics-ui/static/biz/cashier/images/head.png" />
 								</div>
 
 								<div class="vipRecharge-leftBottom">
@@ -266,11 +266,11 @@
 
 							<div class="rightxz">
 								<div class="vipRecharge-payWay">
-									<img class="vipRecharge-payWay1" src="img/VIPRecharge/vipRecharge-type1.png" />
-									<img style="margin-top: 2px;" class="vipRecharge-payWay2" src="img/VIPRecharge/vipRecharge-type2.png" />
-									<img style="margin-top: 4px;" class="vipRecharge-payWay3" src="img/VIPRecharge/vipRecharge-type3.png" />
-									<img class="vipRecharge-payWay4" src="img/VIPRecharge/vipRecharge-type4.png" />
-									<img class="vipRecharge-payWay5" src="img/VIPRecharge/vipRecharge-type5.png" />
+									<img class="vipRecharge-payWay1" src="resources/ics-ui/static/biz/member/images/vipRecharge-type1.png" />
+									<img style="margin-top: 2px;" class="vipRecharge-payWay2" src="resources/ics-ui/static/biz/member/images/vipRecharge-type2.png" />
+									<img style="margin-top: 4px;" class="vipRecharge-payWay3" src="resources/ics-ui/static/biz/member/images/vipRecharge-type3.png" />
+									<img class="vipRecharge-payWay4" src="resources/ics-ui/static/biz/member/images/vipRecharge-type4.png" />
+									<img class="vipRecharge-payWay5" src="resources/ics-ui/static/biz/member/images/vipRecharge-type5.png" />
 								</div>
 
 								<div class="input-tx">
@@ -317,19 +317,15 @@
 		</section>
 
 		<!--_footer 作为公共模版分离出去-->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<!--<script type="text/javascript" src="js/layer.js"></script>-->
-		<script type="text/javascript" src="js/H-ui.js"></script>
-		<script type="text/javascript" src="js/H-ui.admin.page.js"></script>
-		<script type="text/javascript" src="js/paging.js"></script>
-		<script type="text/javascript" src="js/toastr.js"></script>
-		<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<!--<script type="text/javascript" src="js/laypage.js"></script>-->
-		<!--<script type="text/javascript" src="js/VIPManage.js"></script>-->
 		<script>
 			$("#vipRechargeTab").Huitab({
 				index: 0
