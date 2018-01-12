@@ -1,0 +1,12 @@
+.product-nav1{
+	width: 17px;
+	height: 15px;
+	background: url(../images/product-nav1.png) no-repeat;
+}
+.vip-nav li:hover .product-nav1{
+	background: url(../images/product-nav1.1.png) no-repeat;
+}
+.productManage-head{
+	display: flex;
+	justify-content: space-between;
+}

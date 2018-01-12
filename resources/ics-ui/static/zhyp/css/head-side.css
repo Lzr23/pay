@@ -88,7 +88,6 @@
 	background: url(../images/side-icon.png);
 }
 
-
 /*组件*/
 .vip-search-content{
 	position: relative;
@@ -220,4 +219,49 @@
     border-radius: 5px;
     color: #808080;
     font-size: 14px;
+}
+.myInput{
+	width: 100%;
+	max-width: 690px;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+.myInput p{
+	height: 32px;
+	line-height: 32px;
+	white-space: nowrap;
+	text-align: center;
+}
+.myInput input{
+	width: 70%;
+	border: 1px solid #cccccc;
+	outline: none;
+	height: 27px;
+	border-radius: 5px;
+	padding-left: 3%;
+}
+.myInput select{
+	width: 70%;
+	border: 1px solid #cccccc;
+	outline: none;
+	height: 27px;
+	border-radius: 5px;
+	padding-left: 3%;
+}
+.myInput span{
+	line-height: 24px;
+	color: #FF0000;
+	margin-right: 3px;
+}
+.myInput button{
+	width: 50px;
+	height: 29px;
+	background: #FFAE01;
+	color: #FFFFFF;
+	position: absolute;
+	right: 16%;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
 }

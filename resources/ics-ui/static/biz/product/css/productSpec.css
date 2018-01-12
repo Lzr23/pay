@@ -1,0 +1,15 @@
+.product-body{
+	padding: 20px 40px 0 40px;
+}
+.productSpec-container{
+	width: 430px;
+}
+.productSpec-input{
+	width: 80%;
+}
+.productSpec-valueAdd{
+	position: absolute;
+	right: -40px;
+	top: 0;
+	cursor: pointer;
+}

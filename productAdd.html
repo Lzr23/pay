@@ -30,8 +30,9 @@
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>会员列表 - 会员新增</title>
+		<title>产品管理 - 产品新增</title>
 		<link rel="stylesheet" href="resources/ics-ui/static/biz/member/css/VIPManage.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/product/css/productAdd.css" />
 	</head>
 
 	<body>
@@ -163,58 +164,70 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<form id="vipAddForm">
+			<form id="theForm">
 				<article>
 					<div>
 
 						<div class="modal-body vipAdd-body">
 							<div class="vipAdd-left">
 								<img src="resources/ics-ui/static/biz/cashier/images/head.png" />
-								<p>点击上传头像<br/>建议尺寸：300*300px</p>
+								<p>点击上传商品图像<br/>建议尺寸：300*300px</p>
 							</div>
 							<div class="vipAdd-right">
-								<div class="myInput">
-									<p><span>*</span>会员姓名：</p>
-									<input class="input-text" name="username" type="text" />
+								<div class="myInput productAdd-classify">
+									<p><span>*</span>产品分类：</p>
+									<select class="input-text">
+										<option style="display: none;" selected="selected">一级分类</option>
+										<option>小妮</option>
+										<option>小木</option>
+									</select>
+									<select class="input-text">
+										<option style="display: none;" selected="selected">二级分类</option>
+										<option>小妮</option>
+										<option>小木</option>
+									</select>
 								</div>
 								<div class="myInput">
-									<p><span>*</span>会员卡号：</p>
-									<input class="input-text" name="card" type="text" />
+									<p><span>*</span>产品编码：</p>
+									<input class="input-text" name="card" type="text" /><br />
+								</div>
+								<div class="productAdd-chekbox codeAuto">
+									<input class="myCheckbox" type="checkbox" /><p>自动生成编码</p>
 								</div>
 								<div class="myInput">
-									<p><span>*</span>手机号码：</p>
+									<p><span>*</span>产品名称：</p>
 									<input class="input-text" name="tel" type="tel" />
 								</div>
 								<div class="myInput">
-									<p>会员生日：</p>
+									<p>产品简码：</p>
 									<input type="text" onclick="WdatePicker()" id="birthday" name="birthday" value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate input-text">
 								</div>
 								<div class="myInput">
-									<p>会员等级：</p>
+									<p><span>*</span>产品属性：</p>
 									<select class="input-text">
-										<!--<option style="display: none;" selected="selected"></option>-->
+										<option style="display: none;" selected="selected"></option>
 										<option>默认等级</option>
 										<option>铜卡会员</option>
 									</select>
 								</div>
 								<div class="myInput">
-									<p>售卡金额：</p>
+									<p><span>*</span>产品进价：</p>
 									<input class="input-text" type="text" />
 								</div>
 								<div class="myInput">
-									<p>赠送金额：</p>
+									<p><span>*</span>零售价格：</p>
 									<input class="input-text" type="text" />
 								</div>
 								<div class="myInput">
 									<p>会员售价：</p>
 									<input class="input-text" type="text" /></div>
 								<div class="myInput">
-									<p>会员密码：</p>
+									<p>产品积分：</p>
 									<input class="input-text" name="password" type="text" />
 								</div>
 
 								<div class="myInput">
-									<p>开卡员工：</p>
+									<p>最低折扣：</p>
 									<select class="input-text">
 										<option style="display: none;" selected="selected"></option>
 										<option>小妮</option>
@@ -223,7 +236,7 @@
 								</div>
 
 								<div class="myInput">
-									<p>支付方式：</p>
+									<p>产品单位：</p>
 									<select class="input-text">
 										<option style="display: none;" selected="selected"></option>
 										<option>支付宝</option>
@@ -234,29 +247,58 @@
 								</div>
 
 								<div class="myInput">
-									<p>会员称谓：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>先生</option>
-										<option>女士</option>
-
-									</select>
+									<p><span>*</span>产品库存：</p>
+									<input name="" class="input-text" type="text" />
 								</div>
 								<div class="myInput">
-									<p>推荐人：</p>
-									<input onfocus="$('#referee').modal('show')" name="referee" class="input-text" type="text" />
+									<p>产品规格：</p>
+									<input name="" class="input-text" type="text" />
 								</div>
-								<div class="myInput">
-									<p>地址：</p>
-									<input class="input-text" type="text" />
+								<div class="productAdd-chekbox showSpec">
+									<input class="myCheckbox" name="showSpec" type="radio" /><p>展示多规格</p>
+									<input class="myCheckbox" name="showSpec" type="radio" /><p>隐藏多规格</p>
 								</div>
 								<div class="myInput">
 									<p>备注：</p>
 									<input class="input-text" type="text" />
 								</div>
-
+								<!--<ul>
+									<li>
+										<div class="myInput">
+											<p>规格名称：</p>
+											<input class="input-text" type="text" />
+										</div>
+										<div>
+											<img src="resources/ics-ui/static/biz/member/images/-.png" />
+											<img src="resources/ics-ui/static/biz/member/images/add.png" />
+										</div>
+									</li>
+								</ul>-->
+								<div class="specTabel">
+									<p>品种</p>
+									<table class="" border="" cellspacing="" cellpadding="">
+										<tr>
+											<th>值</th>
+											<th>规格图片</th>
+											<th>货号</th>
+											<th>库存</th>
+											<th>原价</th>
+											<th>零售价</th>
+											<th>操作</th>
+										</tr>
+										<tr>
+											<td>大龙虾</td>
+											<td><img class="specImg" src="resources/ics-ui/static/biz/cashier/images/head.png"/></td>
+											<td>2021541</td>
+											<td>200</td>
+											<td>280</td>
+											<td>248</td>
+											<td><img src="resources/ics-ui/static/biz/product/images/product-delete.png"/></td>
+										</tr>
+									</table>
+								</div>
 								<div class="vipDelete-bottom vipAdd-bottom">
-									<button class="confirmBt vipAdd-save">保存</button>
+									<button class="confirmBt">保存</button>
 									<button class="cancelBt">取消</button>
 								</div>
 							</div>
@@ -265,68 +307,6 @@
 				</article>
 			</form>
 			
-			
-			<!-- 推荐人选择弹框开始 -->
-			<div class="modal fade" id="referee" tabindex="-1" role="dialog" aria-labelledby="referee">
-				<div class="modal-dialog vipChoice-container" role="document">
-					<div class="modal-content">
-	
-						<div class="modal-header vip-tital vipChoice-tital">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title">推荐人选择</h4>
-						</div>
-						<div class="modal-body vipChoice-body">
-							<div class="vipManage-search" style="margin-bottom: 20px;">
-								<div class="vip-search-content" style="width: 100%;">
-									<input class="vip-search vipChoice-search" type="text" placeholder="手机号码" />
-									<i class="vip-search-icon"></i>
-								</div>
-							</div>
-							<div style="height: 300px;overflow-y: auto;">
-								<table class="vip-info vipChoice-info" style="border: none;max-height: 300px;" border="0" cellspacing="" cellpadding="">
-									<tr>
-										<th>会员卡号</th>
-										<th>会员姓名</th>
-										<th>电话号码</th>
-										<th>会员等级等级</th>
-										<th>卡内积分</th>
-										<th>卡内余额</th>
-										<th>操作</th>
-									</tr>
-									<tr>
-										<td>25456897</td>
-										<td>李稀松</td>
-										<td>13014528521</td>
-										<td>金卡</td>
-										<td>12465</td>
-										<td class="vip-balance">￥：245</td>
-										<td class="referee-handle">选择</td>
-									</tr>
-									<tr>
-										<td>25456897</td>
-										<td>李稀松</td>
-										<td>13014528521</td>
-										<td>金卡</td>
-										<td>12465</td>
-										<td class="vip-balance">￥：245</td>
-										<td class="referee-handle">选择</td>
-									</tr>
-									<tr>
-										<td>25456897</td>
-										<td>李稀松</td>
-										<td>13014528521</td>
-										<td>金卡</td>
-										<td>12465</td>
-										<td class="vip-balance">￥：245</td>
-										<td class="referee-handle">选择</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 推荐人选择弹框结束 -->
 		</section>
 
 		<!--_footer 作为公共模版分离出去-->
@@ -337,7 +317,6 @@
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/additional-methods.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/messages_zh.js"></script>
@@ -347,7 +326,7 @@
 			///////////////////表单验证提交
 			$.validator.setDefaults({
 				submitHandler: function() {
-					$('#vipAddForm').ajaxSubmit({
+					$('#theForm').ajaxSubmit({
 						type:"get",
 						url:"",
 						data: {},

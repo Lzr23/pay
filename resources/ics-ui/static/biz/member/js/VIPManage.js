@@ -1,8 +1,5 @@
 $(function() {
-	var isVipLabelShow = false //标识新增会员标签是否可见
-
 	closeVIPModal()
-	
 	haveChecked()
 	deleteConfirm()
 	vipLoss()
@@ -10,9 +7,12 @@ $(function() {
 	
 	isShowVipLabel()
 	vipLabelAdd()
-	vipSelectAll()
-	vipSave()
 
+	
+	/////////选项卡
+	$("#viptManageTab").Huitab({
+		index:0
+	});
 	
 	////////分页器
 	var totalPage = parseInt($(".total-pages span").text())
@@ -24,6 +24,8 @@ $(function() {
 		callback: function(page) { // 回调函数 
 		}
 	})
+	
+	
 	
 	////////重置密码等弹框前确认是否已经选中元素
 	function haveChecked () {
@@ -52,12 +54,6 @@ $(function() {
 		})
 	}
 
-	////////保存新增会员
-	function vipSave () {
-		$('.vipAdd-save').click(function () {
-			toastr.success("保存成功");
-		})
-	}
 	
 	////////确认删除会员
 	function deleteConfirm () {
@@ -95,6 +91,7 @@ $(function() {
 	}
 
 	//////////新增会员标签
+	var isVipLabelShow = false //标识新增会员标签是否可见
 	function isShowVipLabel () {  /////显示隐藏操作框
 		$('.VIPLabelBt').click(function() {
 			if(!isVipLabelShow) {
@@ -147,26 +144,7 @@ $(function() {
 	}
 	
 	//////////会员全选或者全不选
-	function vipSelectAll () {
-		var oInput = document.querySelectorAll('.vip-info .myCheckbox')
-		for (var i = 1; i < oInput.length; i++) {
-				oInput[i].onclick = function () {
-					for (var i = 1; i< oInput.length; i++) {
-						if (oInput[i].checked == false) {
-							$('.vipSelectAll').removeAttr('checked')
-							return
-						}
-					}
-					$('.vipSelectAll').prop('checked', true)
-				}
-		}
-		
-		document.querySelector('.vipSelectAll').onclick = function () {
-			for (var i = 1; i < oInput.length; i++) {
-				oInput[i].checked = $(this).prop('checked') 
-			}
-		}
-	}
+	$('.vip-info').SelectAll()
 	
 	////////////////////关闭会员管理时同时关闭所有子级弹框
 	function closeVIPModal() {

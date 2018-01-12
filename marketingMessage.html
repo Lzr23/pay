@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<link rel="Bookmark" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<link rel="Shortcut Icon" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.reset.css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
+		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+		<!--/meta 作为公共模版分离出去-->
+		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+
+		<title>营销 - 短信营销</title>
+		<!--请在下方写此页面业务相关的样式-->
+		<style>
+			.sendknow p{
+				width:90%;
+				font-size: 10px;
+				line-height: 20px;
+				letter-spacing: 1px;
+			}
+			.mark-img{
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+			.mark-img img{
+				cursor: pointer;
+				position: relative;
+				margin-right: 10px;
+				margin-bottom: 5px;
+			}
+			.smsmak{			
+				width: 50%;
+			}
+			.numbersms{
+				font-size: 10px;
+				height: 35px;
+				margin-bottom: 10px;
+			}
+			.numberp{
+				position: relative;
+				float: right;
+			}
+			.numbersms span{
+				font-size: 20px;
+			}
+			.numbersms img{
+				cursor: pointer;
+			}
+			.mark-content{
+				margin-left: 5px;
+				width: 100%;
+				height: 40px;
+			}
+			.vip-tel{
+				height: 32px;
+    			width: 100%;
+    			border: 1px solid #CCCCCC;
+    			border-radius: 5px;
+			}
+			.vip-serach{
+				width: 39px;
+    			height: 34px;
+    			right: -12px;
+    			top: 0;
+    			position: relative;
+    			float: right;
+    			top: -34px;
+			}
+			.edition-content{
+				width: 100%;
+				margin-top: 20px;
+			}
+			.edition{
+				font-size: 15px;
+				font-weight: bold;
+				position: relative;
+				margin-bottom: 10px;
+			}
+			.edition-contains{
+				border-radius: 5px;
+				width: 100%;
+				height: 70px;
+				border: 1px solid #bfbfbf;
+			}
+			.editon-p{
+				position: relative;
+				margin-top: 10px;
+			}
+			.must-check{
+				color: #FF0000;
+                font-size: 16px;
+			}
+			.SendMakTime-input{
+				border-radius: 5px;
+				height: 28px;
+				width: 200px;
+				text-align: center;
+				border: none;
+				background: #FFAE01;
+				font-size: 14px;
+				color: #FFFFFF;
+				position: relative;
+				float: right;
+				margin-top: -20px;
+				margin-right: 15px;
+				display: none;
+			}
+			.markcouponsms-bottom{
+				width: 100%;
+				position: relative;
+				margin-top: 15%;
+			}
+			.confirm {
+				padding: 5px 25px;
+    			border: none;
+    			border-radius: 5px;
+    			cursor: pointer;
+    			background: #ffae01;
+    			color: #FFFFFF;
+    			font-size: 15px;
+			}
+			.confirmBt{
+				background: #FFFFFF;
+    			color: #ffae01;
+    			border: 1px solid #dcdcdc;
+    			margin-left: 20px;
+    			padding: 5px 25px;
+    			font-size: 15px;
+			}
+			.markmyright{
+				width: 20%;
+				position: absolute;
+			    left:70%;
+				top: 22%;
+			}
+			.markmyright img{
+				width: 95%;
+			}
+			.configuration{
+				width: 100%;
+				font-size: 15px;
+			}
+			.con-check{
+				color: #FFAE01;
+                font-size: 15px;
+			}
+			.concheck-text{
+				color: #CCCCCC;
+			}
+			.checks-config{
+				position: relative;
+				margin-top: 20px;
+			}
+			.checks-config span{
+				position: relative;
+				margin-right: 35px;
+			}
+			.config-table{
+				border: solid 1px;
+				text-align: center;
+				width: 100%;
+				position: relative;
+				margin-top: 25px;
+			}
+			.config-table th{
+				height: 30px;
+				padding: 5px;
+				border-right: solid 1px #CCCCCC;
+				border-bottom: solid 1px;
+				text-align: center;
+				font-size: 17px;
+			}
+			.config-table td{
+				padding: 5px;
+				border-right: solid 1px #CCCCCC;
+				border-bottom: solid 1px;
+				font-size: 15px;
+			}
+			.config-table span{
+				color: #FFAE01;
+			}
+			.record-checkbutton{
+				background: #8CDD16;
+   				border: 1px solid #dcdcdc;
+    			padding: 3px 15px;
+    			font-size: 15px;
+    			border-radius: 5px;
+    			margin-left: -4px;
+			}
+			.record-unselect{
+				background: #FFFFFF;
+   				border: 1px solid #dcdcdc;
+    			padding: 3px 15px;
+    			font-size: 15px;
+    			border-radius: 5px;
+    			margin-left: -5px;
+			}
+			.record-table{
+				border: solid 1px #CCCCCC;
+				text-align: center;
+				width: 100%;
+				position: relative;
+				margin-top: 20px;
+			}
+			.record-table th{
+				height: 30px;
+				padding: 5px;
+				border-right: solid 1px #CCCCCC;
+				border-bottom: solid 1px #CCCCCC;
+				text-align: center;
+				font-size: 18px;
+			}
+			.record-table td{
+				padding: 6px;
+				border-right: solid 1px #CCCCCC;
+				border-bottom: solid 1px #CCCCCC;
+				font-size: 15px;
+			}
+			.record-table span{
+				color: #FFAE01;
+			}
+			.marketingMessage-history{
+				max-height: 65vh;
+				overflow: auto;
+			}
+		</style>
+		<!--请在上方写此页面业务相关的样式-->
+	</head>
+	<body>
+		<!--_header 作为公共模版分离出去-->
+		<header class="navbar-wrapper">
+			<div class="navbar navbar-fixed-top">
+				<div class="container-fluid cl">
+					<a class="logo navbar-logo f-l mr-10 hidden-xs head-logo" href="http://192.168.1.104:8080/aboutHui.shtml"></a>
+					<a class="logo navbar-logo-m f-l mr-10 visible-xs" href="http://192.168.1.104:8080/aboutHui.shtml">烽途</a>
+					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
+					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+						<ul class="cl">
+							<li class="f-l mr-30"><i class="checkstand-icon"></i><a href="#">收银台</a></li>
+							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
+							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
+							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!--/_header 作为公共模版分离出去-->
+
+		<!--_menu 作为公共模版分离出去-->
+		<aside class="Hui-aside">
+
+			<div class="menu_dropdown bk_2">
+				<dl id="menu-home">
+					<dt><i class="home-icon"></i> 首页</dt>
+				</dl>
+				<dl id="menu-vip">
+					<dt><i class="vipManage-icon"></i> 会员</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">新增会员</a>
+							</li>
+							<li>
+								<a href="#">会员管理</a>
+							</li>
+							<li>
+								<a href="#">会员等级</a>
+							</li>
+							<li>
+								<a href="#">充值充次</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-goods">
+					<dt><i class="weixin-icon"></i> 商品</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">新增商品</a>
+							</li>
+							<li>
+								<a href="#">商品管理</a>
+							</li>
+							<li>
+								<a href="#">商品分类</a>
+							</li>
+							<li>
+								<a href="#">商品规格</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-weixin">
+					<dt><i class="weixin-icon"></i> 微信</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">公众号授权</a>
+							</li>
+							<li>
+								<a href="#">自定义菜单</a>
+							</li>
+							<li>
+								<a href="#">消息回复管理</a>
+							</li>
+							<li>
+								<a href="#">消息群发</a>
+							</li>
+							<li>
+								<a href="#">图文素材管理</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="menu-market">
+					<dt><i class="market-icon"></i> 营销</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">优惠券</a>
+							</li>
+							<li>
+								<a href="#">短信营销</a>
+							</li>
+							<li>
+								<a href="#">开卡有礼</a>
+							</li>
+							<li>
+								<a href="#">消费满减</a>
+							</li>
+							<li>
+								<a href="#">满减送</a>
+							</li>
+							<li>
+								<a href="#">积分商城</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</aside>
+		<div class="dislpayArrow hidden-xs">
+			<a class="pngfix" href="javascript:void(0);" onclick="displaynavbar(this)"></a>
+		</div>
+		<!--/_menu 作为公共模版分离出去-->
+		
+		<section class="Hui-article-box">
+			<!--<form >-->
+					<article>
+						<div>
+						<div id="weixinReplyTab" class="HuiTab">
+						  <div class="tabBar clearfix"><span>短信发送</span><span>发送记录</span><span>短信配置</span></div>
+						  
+						  <!--  短信发送 -->
+						  <div class="tabCon">
+							  	<div class="sendknow">
+								  	<p>发送须知：</p>
+								  	<p>1、根据工信部《通信短信息服务管理规定》要求，所有营销短信需在结尾加&nbsp;【退订回T】&nbsp;的退订机制，智慧云铺已在短信内预置&nbsp;【退订回T】&nbsp;，无需重复添加；</p>
+								  	<p>2、短信发送时间：08:00-20:00，如有未收到的情况，请48小时内及时联系客服电话：13080513399/QQ：504780515；</p>
+								  	<p>3、手动输入手机号码，请后面加半角&nbsp;';'&nbsp;，请勿重复。</p>
+								  	<p>4、达到时间：测试短信30分钟左右，群发短信1小时25分钟左右</p>
+								  	<p>5、短信内容：必须正规合法</p>
+							  	</div>
+							  	<div class="smsmak">
+								  	<div class="mark-img">
+								  		<div>
+									  		<img src="resources/ics-ui/static/biz/marketing/images/sustomsms.png" />
+									  		<img src="resources/ics-ui/static/biz/marketing/images/bestsms.png" />
+									  		<img src="resources/ics-ui/static/biz/marketing/images/marksms.png" />
+								  		</div>
+								  	</div>
+							  		<div class="numbersms">
+							  			<p class="numberp">
+							  			您还剩<span name="smsnumber">0</span>条短信
+							  			<img src="resources/ics-ui/static/biz/marketing/images/show.png" />
+							  			</p>
+							  		</div>
+							  		<div class="mark-content">
+							  			<input class="vip-tel" type="text" placeholder="会员手机号">
+							  			<img class="vip-serach" src="resources/ics-ui/static/biz/marketing/images/vip-search.png"></img>
+							  		</div>
+							  		<div class="edition-content">
+							  			<p class="edition">内容编辑：</p>
+							  			<textarea class="edition-contains"></textarea>
+							  			<p class="editon-p ">
+							  				<span class="must-check">*</span>
+							  				发送时间：
+							  				<input class="myCheckbox" type="radio" name="SendMessageTime" id="SendMessageTime-now" />
+											<label for="SendMessageTime-now">立即发送</label>
+											<input class="myCheckbox" type="radio" name="SendMessageTime" id="SendMessageTime-specify" />
+											<label for="SendMessageTime-specify">指定时间发送</label><br />
+											<input class="SendMakTime-input" type="button" onclick="WdatePicker()" id="birthday" name="birthday" value="请选择发送日期与时间">
+							  		</p>
+							  		</div>
+							  		<div class="markcouponsms-bottom">
+											<button class="confirm">发送</button>
+											<button class="confirmBt">取消</button>
+									</div>
+							  	</div>
+							  	<div class="markmyright">
+								  <img src="resources/ics-ui/static/biz/marketing/images/phone.png" />
+							  	 </div>
+						  </div>
+						  
+						  <!--  发送记录 -->
+						  <div class="tabCon">
+						  	<div class="marketingMessage-history">
+						  	<p class="record-check">
+						  	<span class="record-checkbutton" id="sel">全部</span>
+						  	<span class="record-unselect" id="today">今日</span>
+						  	<span class="record-unselect" id="lasttoday">昨日</span>
+						  	<span class="record-unselect" id="thistoday">这周</span>
+						  	</p>
+						  	<table class="record-table">
+						  		<tr><th>发送对象</th><th>会员号码</th><th>发送内容</th><th>发送时间</th><th>信息详情</th></tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  		<tr>
+						  			<td>小轩轩</td><td>13025871463</td><td>亲爱的会员：本店现推出满一百减50优惠活动……</td><td>2017-12.3</td><td><span>查看</span></td>
+						  		</tr>
+						  	</table>
+						  	</div>
+						  </div>
+						  
+						  <!--  短信配置 -->
+						  <div class="tabCon">
+						  	<div class="configuration">
+						  		<p>
+						  		<span class="con-check">●</span>
+						  		关怀短信智能发送
+						  		<span class="concheck-text">--选择对应条件下短信的将自动发送</span>
+						  	</p>
+						  	<p class="checks-config">
+						  		<span>
+							  		<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-new" />
+									<label for="configTime-new">新会员开卡</label>
+								</span>
+								<span>
+									<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-deposit" />
+									<label for="configTime-deposit">充值成功</label>
+								</span>
+								<span>
+									<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-num" />
+									<label for="configTime-num">充次成功</label>
+								</span>
+								<span>
+									<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-birthday" />
+									<label for="configTime-birthday">会员生日祝福</label>
+								</span>
+								<span>
+									<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-reset" />
+									<label for="configTime-reset">密码重置</label>
+								</span>
+								<span>
+									<input class="myCheckbox" type="radio" name="SendMessageTime" id="configTime-lev" />
+									<label for="configTime-lev">会员升级成功</label>
+								</span>
+						  	</p>
+						  	<table class="config-table">
+						  		<tr><th>短信类别</th><th>短信内容</th><th>操作</th></tr>
+						  		<tr><td>新会员开卡</td><td>尊敬的【会员名称】【先生/女士】，感谢您成为我们的会员，我们将持续为您提供优质产品和贴心服务。</td><td><span>更换模板</span></td></tr>
+						  		<tr><td>充值成功</td><td>尊敬的【会员名称】【先生/女士】，您在【店铺名称】成功充值【充值金额】元，感谢您的支持和信任！</td><td><span>更换模板</span></td></tr>
+						  		<tr><td>充次成功</td><td>尊敬的【会员名称】【先生/女士】，感谢您成为我们的会员，我们将持续为您提供优质产品和贴心服务。</td><td><span>更换模板</span></td></tr>
+						  		<tr><td>会员生日祝福</td><td>尊敬的【会员名称】【先生/女士】，感谢您成为我们的会员，我们将持续为您提供优质产品和贴心服务。</td><td><span>更换模板</span></td></tr>
+						  		<tr><td>密码重置</td><td>尊敬的【会员名称】【先生/女士】，感谢您成为我们的会员，我们将持续为您提供优质产品和贴心服务。</td><td><span>更换模板</span></td></tr>
+						  		<tr><td>会员升级成功</td><td>尊敬的【会员名称】【先生/女士】，感谢您成为我们的会员，我们将持续为您提供优质产品和贴心服务。</td><td><span>更换模板</span></td></tr>
+						  	</table>
+						  	</div>
+						  </div>
+						  
+						 </div>
+						</div>
+						</article>
+
+				</div>
+			<!--</form>-->
+		</section>
+
+		
+		
+
+		
+
+		<!--_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
+		<!--/_footer /作为公共模版分离出去-->
+		
+		<!--请在下方写此页面业务相关的脚本-->
+		<script>
+			$("#weixinReplyTab").Huitab({
+				index:0
+			});
+			//时间选择
+			$('.editon-p .myCheckbox[name=SendMessageTime]').click(function () {
+				if ($(this).attr('id') == 'SendMessageTime-specify') {
+					$('.SendMakTime-input').css('display', 'block')
+				} else {
+					$('.SendMakTime-input').css('display', 'none')
+				}
+			})
+		</script>
+		<!--/请在上方写此页面业务相关的脚本-->
+	</body>
+</html>

@@ -1,0 +1,71 @@
+.quantable {
+	border: solid #9DA0A4 1px;
+	text-align: center;
+}
+
+.quantable td {
+	border: solid #d2d2d2 1px;
+	font-size: 15px;
+	line-height: 32px;
+}
+
+.quantd {
+	border: none;
+}
+
+.quanspan {
+	color: red;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 35px;
+	cursor: pointer;
+}
+
+.quancheck-span {
+	line-height: 40px;
+	font-size: 15px;
+	margin-left: 25px;
+}
+
+.span-check {
+	color: #FF0000;
+	font-size: 16px;
+}
+
+.quanspan-check {
+	background: #ffae01;
+	color: #FFFFFF;
+	padding: 5px;
+}
+
+.quanspan-bor {
+	background: white;
+	color: black;
+	padding: 5px;
+}
+
+.span-color-send {
+	color: #FFAE01;
+}
+
+.span-color-edit {
+	color: #00FF00;
+}
+
+.span-color-del {
+	color: #AFB5BF;
+}
+input {
+	height: 22px;
+	border: 1px solid #d9d9d9;
+	margin-left: 10px;
+}
+.couponManage {
+	max-height: 75vh;
+	overflow: auto;
+}
+.table-operate img{
+	padding: 10px;
+	margin: 0 5px;
+	cursor: pointer;
+}

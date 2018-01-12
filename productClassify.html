@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)http://192.168.1.104:8080/ics-web/seller/member_list.htm -->
 <html>
 
 	<head>
@@ -26,13 +25,14 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
 		<!--/meta 作为公共模版分离出去-->
-
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>微信 - 微信图文素材管理</title>
-		<!--<link rel="stylesheet" href="css/layer.css" />-->
-		<link rel="stylesheet" href="resources/ics-ui/static/biz/weixin/css/weixinArticle.css" />
+		<title>产品 - 分类</title>
+		<!--请在下方写此页面业务相关的样式-->
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/marketing/css/marketingCoupon.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/product/css/productClassify.css" />
+		<!--/请在上方写此页面业务相关的样式-->
 	</head>
 
 	<body>
@@ -45,10 +45,18 @@
 					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
 					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 						<ul class="cl">
-							<li class="f-l mr-30"><i class="checkstand-icon"></i><a href="#">收银台</a></li>
-							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
-							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
-							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+							<li class="f-l mr-30"><i class="checkstand-icon"></i>
+								<a href="#">收银台</a>
+							</li>
+							<li class="f-l mr-30"><i class="message-icon"></i>
+								<a href="#">消息</a>
+							</li>
+							<li class="f-l mr-30"><i class="help-icon"></i>
+								<a href="#">帮助</a>
+							</li>
+							<li class="f-l mr-30">
+								<a href="#" class="user-icon"></a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -156,54 +164,126 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<!--<form name="ListForm" id="ListForm" action="#" method="post">-->
-				<article>
-					<div class="modal-body weixin-body">
-						<div class="weixinArticle-container">
-							<div class="weixinArticle-head">
-								<div class="vip-search-content weixinArticle-search">
-									<input class="vip-search vipChoice-search" type="text" placeholder="搜索标题/作者/摘要" />
-									<i class="vip-search-icon"></i>
-								</div>
-								<button class="weixinArticle-add">+ 新建图文信息</button>
-							</div>
-							<div class="weixinArticle-main">
-								<table class="weixinArticle-table" border="" cellspacing="" cellpadding="">
-									<tr>
-										<th>封面图</th>
-										<th>标题</th>
-										<th>编辑时间</th>
-										<th>操作</th>
-									</tr>
-									<tr>
-										<td><img src="resources/ics-ui/static/biz/weixin/images/weixinArticle.png"/></td>
-										<td>元旦大促销</td>
-										<td>2017-12-28</td>
-										<td class="weixinArticle-table-operate">
-											<span class="weixinArticle-operate1" title="修改"></span>
-											<span class="weixinArticle-operate2" title="删除"></span>
-										</td>
-									</tr>
+			<article>
+				<div class="product-body">
+					<span class="quanspan" data-toggle="modal" data-target="#productClassify-add">+ 新增产品分类</span>
+
+					<table class="quantable productClassify-table">
+						<tr>
+							<td>序号</td>
+							<td>类别名称</td>
+							<td>类别类型</td>
+							<td>操作</td>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<thead>
+										<tr>
+											<td>1</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="classifyTwo-num">1-1</span></td>
+										</tr>
+									</tbody>
 								</table>
+							</td>
+							<td>
+								<table>
+									<thead>
+										<tr>
+											<td>洗护一套</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>清洗</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td>
+								<table>
+									<thead>
+										<tr>
+											<td>普通类型</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>普通类型</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td>
+								<table>
+									<thead>
+										<tr>
+											<td class="table-operate">
+												<img class="productSpec-edit" src="resources/ics-ui/static/biz/product/images/product-edit.png" />
+												<img class="productSpec-delete" src="resources/ics-ui/static/biz/product/images/product-delete.png" />
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="table-operate">
+												<span class="classifyTwo-operate">
+													<img class="productSpec-edit" src="resources/ics-ui/static/biz/product/images/productClassfy-edit.png" />
+													<img class="productSpec-delete" src="resources/ics-ui/static/biz/product/images/productClassfy-delete.png" />
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+			</article>
+			<!-- 新建产品分类弹框开始 -->
+			<div style="top: 100px;left: 200px;" class="modal fade" id="productClassify-add" tabindex="-1" role="dialog" aria-labelledby="productClassify-add">
+				<div class="modal-dialog productClassify-container" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="productClassify-input">
+								<p>产品等级：</p>
+								<input class="myCheckbox" name="productGrade" type="radio" /><span>父级</span>
+								<input class="myCheckbox" name="productGrade" type="radio" /><span>子级</span>
+							</div>
+							<div class="myInput">
+								<p>类别名称：</p>
+								<input class="input-text" type="text" />
 							</div>
 						</div>
+						<div class="modal-footer">
+							<button class="confirmBt" data-dismiss="modal">保存</button>
+							<button class="cancelBt" data-dismiss="modal">取消</button>
+						</div>
 					</div>
-				</article>
-			<!--</form>-->
+				</div>
+			</div>
+			<!-- 新建产品分类弹框结束 -->
 		</section>
 
-		
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-
+		<script>
+		</script>
+		<!--/请在上方写此页面业务相关的脚本-->
 	</body>
 
 </html>

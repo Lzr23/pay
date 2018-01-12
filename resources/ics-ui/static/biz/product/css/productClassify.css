@@ -1,0 +1,43 @@
+.product-body{
+	padding: 20px 40px 0 40px;
+}
+.productClassify-table table td{
+	border: none;
+}
+.productClassify-table table tbody td{
+	color: #666666;
+}
+.classifyTwo-num{
+	position: relative;
+	right: -20px;
+}
+.classifyTwo-operate{
+	position: relative;
+	right: -40px;
+}
+.productClassify-container{
+	width: 400px;
+}
+.productClassify-container .modal-body{
+	padding: 20px 40px 0 40px;
+}
+.productClassify-container .modal-footer{
+	background: #FFFFFF;
+	border: none;
+	padding-top: 10px;
+}
+.productClassify-input{
+	display: flex;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+.productClassify-input p{
+	font-size: 15px;
+	margin: 0;
+}
+.productClassify-input .myCheckbox{
+	margin: 0 10px;
+}
+.productClassify-container .myInput p{
+	font-size: 15px;
+}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)http://192.168.1.104:8080/ics-web/seller/member_list.htm -->
 <html>
 
 	<head>
@@ -26,13 +25,13 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
 		<!--/meta 作为公共模版分离出去-->
-
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>微信 - 微信图文素材管理</title>
-		<!--<link rel="stylesheet" href="css/layer.css" />-->
-		<link rel="stylesheet" href="resources/ics-ui/static/biz/weixin/css/weixinArticle.css" />
+		<title>营销 - 优惠券</title>
+		<!--请在下方写此页面业务相关的样式-->
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/marketing/css/marketingCoupon.css" />
+		<!--/请在上方写此页面业务相关的样式-->
 	</head>
 
 	<body>
@@ -45,10 +44,18 @@
 					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
 					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 						<ul class="cl">
-							<li class="f-l mr-30"><i class="checkstand-icon"></i><a href="#">收银台</a></li>
-							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
-							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
-							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+							<li class="f-l mr-30"><i class="checkstand-icon"></i>
+								<a href="#">收银台</a>
+							</li>
+							<li class="f-l mr-30"><i class="message-icon"></i>
+								<a href="#">消息</a>
+							</li>
+							<li class="f-l mr-30"><i class="help-icon"></i>
+								<a href="#">帮助</a>
+							</li>
+							<li class="f-l mr-30">
+								<a href="#" class="user-icon"></a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -156,54 +163,135 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<!--<form name="ListForm" id="ListForm" action="#" method="post">-->
-				<article>
-					<div class="modal-body weixin-body">
-						<div class="weixinArticle-container">
-							<div class="weixinArticle-head">
-								<div class="vip-search-content weixinArticle-search">
-									<input class="vip-search vipChoice-search" type="text" placeholder="搜索标题/作者/摘要" />
-									<i class="vip-search-icon"></i>
+			<article>
+				<div>
+					<div id="marketingCouponTab" class="HuiTab">
+						<div class="tabBar clearfix"><span>优惠券管理</span><span>发放记录</span></div>
+
+						<!--  优惠券管理 -->
+						<div class="tabCon couponManage">
+							<span class="quanspan" data-toggle="modal" data-target="#youhuiquan-articleSelect">+新建</span>
+
+							<table class="quantable">
+								<tr>
+									<td>优惠券名称</td>
+									<td>类型</td>
+									<td>面值</td>
+									<td>使用条件</td>
+									<td style="width: 18%;">有效期</td>
+									<td>是否叠加</td>
+									<td>总数量</td>
+									<td>已发放数量</td>
+									<td>状态</td>
+									<td>操作</td>
+								</tr>
+								<tr>
+									<td>优惠满减</td>
+									<td>代金券</td>
+									<td>10</td>
+									<td>满100</td>
+									<td>7</td>
+									<td>是</td>
+									<td>100</td>
+									<td>50</td>
+									<td>已发放</td>
+									<td><span class="span-color-send">发送</span>&nbsp;&nbsp;&nbsp;<span class="span-color-edit">修改</span>&nbsp;&nbsp;&nbsp;<span class="span-color-del">删除</span></td>
+								</tr>
+								<tr>
+									<td>优惠满减</td>
+									<td>代金券</td>
+									<td>50</td>
+									<td>满100</td>
+									<td>2017.12.6——2017.12.31</td>
+									<td>是</td>
+									<td>1000</td>
+									<td>1000</td>
+									<td>已发放</td>
+									<td><span class="span-color-send">发送</span>&nbsp;&nbsp;&nbsp;<span class="span-color-edit">修改</span>&nbsp;&nbsp;&nbsp;<span class="span-color-del">删除</span></td>
+								</tr>
+							</table>
+						</div>
+
+						<!-- 新建选择弹框开始 -->
+						<div style="top: 150px;" class="modal fade" id="youhuiquan-articleSelect" tabindex="-1" role="dialog" aria-labelledby="youhuiquan-articleSelect">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title">新建优惠券</h4>
+									</div>
+									<div class="modal-body">
+										<div class="quancheck-span">
+											<span class="span-check">*</span>类型：<span id="daijin" class="quanspan-check">代金券</span><span id="zhekou" class="quanspan-bor">折扣券</span><br>
+											<span class="span-check">*</span>名称：<input type="text" style="width: 300px;" /><br>
+											<span class="span-check">*</span>面值：<input type="text" style="width: 110px;" /><br>
+											<span class="span-check">*</span>使用条件：满<input type="text" style="width: 60px;" />&nbsp;&nbsp;元使用<br>
+											<span class="span-check">*</span>是否叠加：
+											<input class="myCheckbox" type="radio" name="CouponAddTime" id="MessageTime-yes" />
+											<label for="MessageTime-yes">是</label>
+											<input class="myCheckbox" type="radio" name="CouponAddTime" id="MessageTime-no" />
+											<label for="MessageTime-no">否</label><br>
+											<span class="span-check">*</span>发放数量：<input type="text" style="width: 100px;" /><br>
+											<span class="span-check">*</span>有效日期：<input type="date" />&nbsp;<input type="text" />&nbsp;至&nbsp;<input type="text" />
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button class="confirmBt delete-confirm" data-dismiss="modal">保存</button>
+										<button class="cancelBt" data-dismiss="modal">取消</button>
+									</div>
 								</div>
-								<button class="weixinArticle-add">+ 新建图文信息</button>
-							</div>
-							<div class="weixinArticle-main">
-								<table class="weixinArticle-table" border="" cellspacing="" cellpadding="">
-									<tr>
-										<th>封面图</th>
-										<th>标题</th>
-										<th>编辑时间</th>
-										<th>操作</th>
-									</tr>
-									<tr>
-										<td><img src="resources/ics-ui/static/biz/weixin/images/weixinArticle.png"/></td>
-										<td>元旦大促销</td>
-										<td>2017-12-28</td>
-										<td class="weixinArticle-table-operate">
-											<span class="weixinArticle-operate1" title="修改"></span>
-											<span class="weixinArticle-operate2" title="删除"></span>
-										</td>
-									</tr>
-								</table>
 							</div>
 						</div>
+						<!-- 新建选择弹框结束 -->
+
+						<!--发放记录-->
+						<div class="tabCon">
+
+						</div>
+						<!--发放记录结束 -->
+
 					</div>
-				</article>
-			<!--</form>-->
+				</div>
+			</article>
 		</section>
 
-		
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-
+		<script>
+			$("#marketingCouponTab").Huitab({
+				index: 0
+			});
+			$("#daijin").click(function() {
+				if($(this).hasClass("quanspan-bor")) {
+					$(this).removeClass("quanspan-bor");
+				}
+				$(this).addClass("quanspan-check");
+				if($("#zhekou").hasClass("quanspan-check")) {
+					$("#zhekou").removeClass("quanspan-check");
+					$("#zhekou").addClass("quanspan-bor");
+				}
+			});
+			$("#zhekou").click(function() {
+				if($(this).hasClass("quanspan-bor")) {
+					$(this).removeClass("quanspan-bor");
+				}
+				$(this).addClass("quanspan-check");
+				if($("#daijin").hasClass("quanspan-check")) {
+					$("#daijin").removeClass("quanspan-check");
+					$("#daijin").addClass("quanspan-bor");
+				}
+			});
+		</script>
+		<!--/请在上方写此页面业务相关的脚本-->
 	</body>
 
 </html>

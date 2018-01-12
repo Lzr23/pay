@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href="resources/ics-ui/lib/Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
 		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
 		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/layer/2.4/skin/layer.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
@@ -30,9 +31,9 @@
 		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
-		<title>微信 - 消息群发</title>
-		<!--<link rel="stylesheet" href="css/layer.css" />-->
-		<link rel="stylesheet" href="resources/ics-ui/static/biz/weixin/css/weixinSendMessage.css" />
+		<title>产品列表 - 产品管理 </title>
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/member/css/VIPManage.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/product/css/productManage.css" />
 	</head>
 
 	<body>
@@ -58,6 +59,7 @@
 
 		<!--_menu 作为公共模版分离出去-->
 		<aside class="Hui-aside">
+
 			<div class="menu_dropdown bk_2">
 				<dl id="menu-home">
 					<dt><i class="home-icon"></i> 首页</dt>
@@ -155,124 +157,108 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<!--<form name="ListForm" id="ListForm" action="#" method="post">-->
-				<article>
-					<div class="modal-body weixinReply-body">
-						<div id="weixinSendMessageTab" class="HuiTab">
-						  <div class="tabBar clearfix">
-						  	<span><img src="resources/ics-ui/static/biz/weixin/images/weixinReply.png"/></span>
-						  	<span><img src="resources/ics-ui/static/biz/weixin/images/weixinReply3.png"/></span>
-						  </div>
-						  
-						  <div class="tabCon">
-							<div class="weixinReply-content">
-								<textarea class="weixinReply-text"></textarea>
-							</div>
-						  </div>
-						  
-						  <div class="tabCon">
-						  	<div class="">
-								<div class="weixinReply-content">
-									<div class="weixinReply-pic">
-										<img data-toggle="modal" data-target="#weixinReply-articleSelect" src="resources/ics-ui/static/biz/weixin/images/weixinReply4.png" />
-										<img src="resources/ics-ui/static/biz/weixin/images/weixinReply5.png" />
+			<form name="ListForm" id="ListForm" action="http://192.168.1.104:8080/ics-web/seller/member_list.htm" method="post">
+				<div>
+					<article>
+						<div id="productManageTab" class="HuiTab">
+							<div class="tabBar clearfix"><span>产品列表</span><span>新增产品</span></div>
+							
+							<div class="tabCon">
+							<div>
+								<div class="productManage-head">
+									<ul class="vip-nav">
+										<li id="export">导出<i class="vip-nav5"></i></li>
+										<li id="import">导入<i class="vip-nav6"></i></li>
+										<li>刷新<i class="vip-nav10"></i></li>
+										<li id="productOff"><span>下架</span><i class="product-nav1"></i></li>
+									</ul>
+									<div class="vipManage-search">
+										<div class="vipManage-searchLeft">
+											<div class="vip-search-content  vipManage-search-content">
+												<input class="vip-search" type="text" placeholder="产品名称/编码" />
+												<i class="vip-search-icon"></i>
+											</div>
+										</div>
 									</div>
 								</div>
-						  	</div>
-						  </div>
-						</div>
-						<div class="weixinSendMessage-option">
-							<div class="SendMessageWay">
-								<span>*</span>消息群发方式: 
-								<select class="mySelect" name="SendMessageWay">
-									<option value="allFans">全部粉丝</option>
-									<option value="specifyFans">指定粉丝</option>
-								</select>
-								<div class="specifyFansBt">
-									<span>*</span>请选择粉丝: 
-									<button data-toggle="modal" data-target="#weixinSendMessage-fansSelect" class="confirmBt fansSelect">选择粉丝</button>
+
+								<div class="vipInfo-container">
+									<table id="productInfo" class="vip-info vipManage-info" border="" cellspacing="" cellpadding="">
+										<tr>
+											<th><input class="myCheckbox vipSelectAll" type="checkbox" title="全选" /></th>
+											<th>商品编码</th>
+											<th>商品名称</th>
+											<th>简码</th>
+											<th>产品分类</th>
+											<th>产品规格</th>
+											<th>零售价</th>
+											<th>所属店铺</th>
+											<th>积分</th>
+											<th>库存数量</th>
+											<th>入库时间</th>
+											<th>单位</th>
+											<th>操作</th>
+										</tr>
+										<tr>
+											<td><input class="myCheckbox" type="checkbox" /></td>
+											<td>25456897</td>
+											<td>洗护</td>
+											<td>JM</td>
+											<td>护理</td>
+											<td></td>
+											<td>￥：288</td>
+											<td>总店</td>
+											<td>288</td>
+											<td class="vip-balance">245</td>
+											<td>2017.12.3</td>
+											<td>套</td>
+											<td class="vip-handle">
+												<img src="resources/ics-ui/static/biz/member/images/vip-operate3.png" />
+												<img src="resources/ics-ui/static/biz/member/images/vip-operate2.png" />
+												<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="resources/ics-ui/static/biz/member/images/vip-operate1.png" />
+											</td>
+										</tr>
+									</table>
 								</div>
+								<div class="pagination">
+									<div class="box" id="box">
+										<div class="pagination-left">
+											<p class="total-pages">共&nbsp;<span>6</span>&nbsp;页</p>
+											<p class="total-count">合计300条数据</p>
+										</div>
+										<div class="pagination-right">
+											<a href="#" type="button" id="firstPage" class="turnPage first-page">首页</a>
+											<a href="#" class="turnPage" id="prePage">上一页</a>
+											<div class="pageWrap" style="max-width: 120px;">
+												<ul id="pageSelect" style="transition:all 600ms;">
+													<li><a style="display:block;width:100%;height:100%" href="#">1</a></li>
+													<li><a style="display:block;width:100%;height:100%" href="#">2</a></li>
+													<li><a style="display:block;width:100%;height:100%" href="#">3</a></li>
+													<li><a style="display:block;width:100%;height:100%" href="#">4</a></li>
+													<li><a style="display:block;width:100%;height:100%" href="#">5</a></li>
+													<li><a style="display:block;width:100%;height:100%" href="#">6</a></li>
+												</ul>
+											</div>
+											<a href="#" class="turnPage" id="nextPage">下一页</a>
+											<a href="#" type="button" id="lastPage" class="last-page">尾页</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+							
+							<div class="tabCon">
 								
 							</div>
-							<div class="SendMessageTime">
-								<span>*</span>发送时间:
-								<input class="myCheckbox" type="radio" name="SendMessageTime" id="SendMessageTime-now" />
-								<label for="SendMessageTime-now">立即发送</label>
-								<input class="myCheckbox" type="radio" name="SendMessageTime" id="SendMessageTime-specify" />
-								<label for="SendMessageTime-specify">指定时间发送</label><br />
-								<input class="SendMessageTime-input" type="button" onclick="WdatePicker()" id="birthday" name="birthday"
-									value="请选择发送日期与时间" class="Wdate">
-							</div>
 						</div>
-						<div class="weixinReply-bottom">
-							<button class="confirmBt delete-confirm">保存</button>
-							<button class="cancelBt">取消</button>
-						</div>
-					</div>
-				</article>
-			<!--</form>-->
+					</article>
+
+				</div>
+			</form>
+			
 		</section>
 
-		<!-- 图文选择弹框开始 -->
-		<div class="modal fade" id="weixinSendMessage-fansSelect" tabindex="-1" role="dialog" aria-labelledby="weixinSendMessage-fansSelect">
-			<div class="modal-dialog articleSelect-container" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header articleSelect-tital">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">图文选择添加</h4>
-					</div>
-					<div class="modal-body">
-						<div class="weixinArticle-head">
-							<div class="vip-search-content weixinArticle-search">
-								<input class="vip-search vipChoice-search" type="text" placeholder="请输入用户昵称" />
-								<i class="vip-search-icon"></i>
-							</div>
-							<select style="margin-right: -40px;" class="mySelect" name="fansSex">
-								<option style="display: none;" value="">性别</option>
-								<option value="male">男</option>
-								<option value="female">女</option>
-							</select>
-							
-							<!---------------------------------------------------------------------->
-							<div id="fansAddress">
-								
-								<!--此处为省市二级联动选择框，option元素由js插入，源文件为jquery.provincesCity.js-->
-								<!--省级select选择框name值为'fansProvince',市级name值为'fansCity'-->
-							</div>
-							<!---------------------------------------------------------------------->
-						</div>
-						<div class="articleSelect-main">
-							<p class="fansTotal">已经选择粉丝<span>0</span>个</p>
-							<table class="weixin-table fans-table" border="" cellspacing="" cellpadding="">
-								<tr>
-									<th><input class="myCheckbox vipSelectAll" type="checkbox" title="全选" /></th>
-									<th>粉丝昵称</th>
-								</tr>
-								<tr>
-									<td><input class="myCheckbox" type="checkbox" /></td>
-									<td>阿斯蒂好</td>
-								</tr>
-								<tr>
-									<td><input class="myCheckbox" type="checkbox" /></td>
-									<td>阿斯蒂好</td>
-								</tr>
-								<tr>
-									<td><input class="myCheckbox" type="checkbox" /></td>
-									<td>阿斯蒂好</td>
-								</tr>
-							</table>
-							<div class="articleSelect-pagination">
-								共<span>20</span>条
-								<a> < </a>
-								<a> > </a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 图文选择弹框结束 -->
+		
 
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
@@ -281,41 +267,15 @@
 		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/layer/2.4/layer.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="resources/ics-ui/lib/jquery.provinceCity/jquery.provincesCity.js" ></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/jquery.provinceCity/provincesData.js" ></script>
-		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js" ></script>
-		<script>
-			//////////头部选项卡
-			$("#weixinSendMessageTab").Huitab({
-				index:0
-			});
-			
-			///////////////显示、隐藏粉丝选择、时间选择
-			$('select[name=SendMessageWay]').click(function () {
-				if ($(this).val() == 'specifyFans') {
-					$('.specifyFansBt').css('display', 'block')
-				} else {
-					$('.specifyFansBt').css('display', 'none')
-				}
-			})
-			$('.SendMessageTime .myCheckbox[name=SendMessageTime]').click(function () {
-				if ($(this).attr('id') == 'SendMessageTime-specify') {
-					$('.SendMessageTime-input').css('display', 'block')
-				} else {
-					$('.SendMessageTime-input').css('display', 'none')
-				}
-			})
-			
-			
-			//////////////////////////粉丝全选功能
-			$('.fans-table').SelectAll()
-			
-			//////////////省市二级联动
-			$('#fansAddress').ProvinceCity()
-		</script>
+		<script type="text/javascript" src="resources/ics-ui/static/biz/product/js/productManage.js" ></script>
+		
+		<!--/请在上方写此页面业务相关的脚本-->
+
 	</body>
 
 </html>
