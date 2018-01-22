@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
 		<link rel="stylesheet" href="resources/ics-ui/lib/layer/2.4/skin/layer.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/fengtu.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -174,18 +175,18 @@
 									</ul>
 									<div class="vipManage-search">
 										<div class="vipManage-searchLeft">
-											<div class="vip-search-content  vipManage-search-content">
-												<input class="vip-search" type="text" placeholder="产品名称/编码" />
-												<i class="vip-search-icon"></i>
+											<div class="ftSearch1-container vipManage-search-content">
+												<input class="ftSearch1" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+												<input class="ftSearch1-icon" type="submit" value=""/>
 											</div>
 										</div>
 									</div>
 								</div>
 
 								<div class="vipInfo-container">
-									<table id="productInfo" class="vip-info vipManage-info" border="" cellspacing="" cellpadding="">
+									<table id="productInfo" class="ftTable-border vipManage-info" border="" cellspacing="" cellpadding="">
 										<tr>
-											<th><input class="myCheckbox vipSelectAll" type="checkbox" title="全选" /></th>
+											<th><input class="ftCheckbox selectAll" type="checkbox" title="全选" /></th>
 											<th>商品编码</th>
 											<th>商品名称</th>
 											<th>简码</th>
@@ -200,7 +201,7 @@
 											<th>操作</th>
 										</tr>
 										<tr>
-											<td><input class="myCheckbox" type="checkbox" /></td>
+											<td><input class="ftCheckbox" type="checkbox" /></td>
 											<td>25456897</td>
 											<td>洗护</td>
 											<td>JM</td>
@@ -213,9 +214,9 @@
 											<td>2017.12.3</td>
 											<td>套</td>
 											<td class="vip-handle">
-												<img src="resources/ics-ui/static/biz/member/images/vip-operate3.png" />
-												<img src="resources/ics-ui/static/biz/member/images/vip-operate2.png" />
-												<img class="vipHandle-delete" data-toggle="modal" data-target="#VIPManage-delete" src="resources/ics-ui/static/biz/member/images/vip-operate1.png" />
+												<span><img src="resources/ics-ui/static/zhyp/images/components/tableOperate3.png" /></span>
+												<span><img src="resources/ics-ui/static/zhyp/images/components/tableOperate2.png" /></span>
+												<span><img class="vipHandle-delete" onclick="vipDelete()" src="resources/ics-ui/static/zhyp/images/components/tableOperate1.png" /></span>
 											</td>
 										</tr>
 									</table>
@@ -229,14 +230,26 @@
 										<div class="pagination-right">
 											<a href="#" type="button" id="firstPage" class="turnPage first-page">首页</a>
 											<a href="#" class="turnPage" id="prePage">上一页</a>
-											<div class="pageWrap" style="max-width: 120px;">
-												<ul id="pageSelect" style="transition:all 600ms;">
-													<li><a style="display:block;width:100%;height:100%" href="#">1</a></li>
-													<li><a style="display:block;width:100%;height:100%" href="#">2</a></li>
-													<li><a style="display:block;width:100%;height:100%" href="#">3</a></li>
-													<li><a style="display:block;width:100%;height:100%" href="#">4</a></li>
-													<li><a style="display:block;width:100%;height:100%" href="#">5</a></li>
-													<li><a style="display:block;width:100%;height:100%" href="#">6</a></li>
+											<div class="pageWrap">
+												<ul id="pageSelect">
+													<li>
+														<a href="#">1</a>
+													</li>
+													<li>
+														<a href="#">2</a>
+													</li>
+													<li>
+														<a href="#">3</a>
+													</li>
+													<li>
+														<a href="#">4</a>
+													</li>
+													<li>
+														<a href="#">5</a>
+													</li>
+													<li>
+														<a href="#">6</a>
+													</li>
 												</ul>
 											</div>
 											<a href="#" class="turnPage" id="nextPage">下一页</a>
@@ -255,10 +268,7 @@
 
 				</div>
 			</form>
-			
 		</section>
-
-		
 
 		<!--_footer 作为公共模版分离出去-->
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
@@ -273,7 +283,8 @@
 
 		<!--请在下方写此页面业务相关的脚本-->
 		<script type="text/javascript" src="resources/ics-ui/static/biz/product/js/productManage.js" ></script>
-		
+		<script>
+		</script>
 		<!--/请在上方写此页面业务相关的脚本-->
 
 	</body>

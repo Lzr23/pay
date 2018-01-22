@@ -1,13 +1,4 @@
 $(function () {
-	showCartNum()
-	navToggle()
-	vipChoiceSearch()
-	goodsToCart()
-	cartDiscount()
-	cartChangePrice()
-	clearCart()
-	iframeLoad()
-	
 	////////////////计算购物车总价
 	function cartTotalPrice () {
 		var totalPrice = 0
@@ -17,65 +8,42 @@ $(function () {
 		$('.cart-totalPrice').text(totalPrice.toFixed(2))
 	}
 	
-	////////////////清空购物车
-	function clearCart () {
-		$('#clearBt').click(function () {
-			$('.cart-item').remove()
-			$('.head-cart-num').text('0').css('display', 'none')
-			$('.cart-totalPrice').text('0')
-		})
-	}
-	
-	////////////////监听是否显示购物车数量
-	function showCartNum () {
-		var num = parseInt($('.head-cart-num').text())
-		if (num == 0) {
-			$('.head-cart-num').css('display', 'none')
-		} else {
-			$('.head-cart-num').css('display', 'inline')
-		}
-	}
-	
 	////////////////将商品添加到购物车
-	function goodsToCart () {
-		$('.goods').on('click', function () {
-			var goodsId = $(this).attr('id')
-			var goodsName = $(this).eq(0).find('.goods-name').text()
-			var goodsPrice = parseFloat($(this).find('.goods-price').text())
-			var cartGoods = $('.cart-goods tr')
-			
-			for (var i = 1; i < cartGoods.length; i++) {  ////遍历购物车有没有该商品，有则数量加1，否则购物车添加新商品
-				if ($(cartGoods).eq(i).attr('id') == goodsId) {
-					var cartGoodsNum = parseInt($(cartGoods).eq(i).find('.cart-goodsNum').text())
-					$(cartGoods).eq(i).find('.cart-goodsNum').text(cartGoodsNum + 1)
-					$('.head-cart-num').text(parseInt($('.head-cart-num').text()) + 1)
-					showCartNum()
-					cartTotalPrice()
-					return
-				}
+	$('.goods').on('click', function () {
+		var goodsId = $(this).attr('id')
+		var goodsName = $(this).eq(0).find('.goods-name').text()
+		var goodsNo = $(this).find('.goods-num').text()
+		var goodsPrice = parseFloat($(this).find('.goods-price').text())
+		var cartGoods = $('.cart-goods tr')
+		
+		for (var i = 1; i < cartGoods.length; i++) {  ////遍历购物车有没有该商品，有则数量加1，否则购物车添加新商品
+			if ($(cartGoods).eq(i).attr('id') == goodsId) {
+				var cartGoodsNum = parseInt($(cartGoods).eq(i).find('.cart-goodsNum').text())
+				$(cartGoods).eq(i).find('.cart-goodsNum').text(cartGoodsNum + 1)
+				$('.head-cart-num').text(parseInt($('.head-cart-num').text()) + 1)
+				cartTotalPrice()
+				return
 			}
-			var newGoods = $('<tr class="cart-item" id=' + goodsId + '>'+
-							'<td class="cart-goodsName">' + goodsName + '</td>'+
-							'<td>'+
-							'<i class="jiang"></i>'+
-							'<span class="cart-goodsNum">1</span>'+
-							'<i class="jia">+</i>'+
-							'</td>'+
-							'<td class="cart-goodsPrice">' + goodsPrice + '</td>'+
-							'<td class="cart-vipPrice">118</td>'+
-							'<td><button class="left-delete">X</button></td>'+
-							'</tr>')
-			goodsNumSub(newGoods.find('.jiang'))
-			goodsNumAdd(newGoods.find('.jia'))
-			goodsDelete(newGoods.find('.left-delete'))
-			cartSelect(newGoods)
-			fly(newGoods.find('.jia'))
-			$('.cart-goods').append(newGoods)
-			$('.head-cart-num').text(parseInt($('.head-cart-num').text()) + 1)
-			showCartNum()
-			cartTotalPrice()
-		})
-	}
+		}
+		var newGoods = $('<tr class="cart-item" id=' + goodsId + '>'+
+						'<td><spanclass="cart-goodsName">' + goodsName + '</span><span class="cart-goodsNo">' + goodsNo + '</span></td>'+
+						'<td>'+
+						'<i class="jiang"></i>'+
+						'<span class="cart-goodsNum">1</span>'+
+						'<i class="jia">+</i>'+
+						'</td>'+
+						'<td class="cart-goodsPrice">' + goodsPrice + '</td>'+
+						'<td class="cart-vipPrice">118</td>'+
+						'<td><button class="left-delete">X</button></td>'+
+						'</tr>')
+		goodsNumSub(newGoods.find('.jiang'))
+		goodsNumAdd(newGoods.find('.jia'))
+		goodsDelete(newGoods.find('.left-delete'))
+		cartSelect(newGoods)
+		$('.cart-goods').append(newGoods)
+		$('.head-cart-num').text(parseInt($('.head-cart-num').text()) + 1)
+		cartTotalPrice()
+	})
 	
 	/////////////////购物车商品数量加、减、删除功能
 	function goodsNumSub (obj) {
@@ -110,7 +78,6 @@ $(function () {
 			var num = parseInt(obj.closest('td').siblings().children('.cart-goodsNum').text())
 			$('.head-cart-num').text(parseInt($('.head-cart-num').text()) - num)
 			$(this).closest("tr").remove()
-			showCartNum()
 			cartTotalPrice()
 		})
 	}
@@ -128,7 +95,7 @@ $(function () {
 	}
 	
 	////////////////////购物车商品 折扣
-	function cartDiscount () {
+	(function () {
 		var selectedGoods
 		$('.zekou').click(function () {
 			var goods = $('.cart-goods tr')
@@ -158,10 +125,9 @@ $(function () {
 				toastr.success('折扣成功')
 			}
 		})
-	}
-	
+	})();
 	/////////////////////购物车商品改价
-	function cartChangePrice () {
+	(function () {
 		var selectedGoods
 		$('.gaijia').click(function () {
 			var goods = $('.cart-goods tr')
@@ -188,7 +154,7 @@ $(function () {
 				toastr.success('改价成功')
 			}
 		})
-	}
+	})()
 	
 	
 	//////////////////////点击数字键盘输入
@@ -218,36 +184,8 @@ $(function () {
 		})
 	}
 	
-	
-	///////////////////加入购物车小球动画
-	function fly(obj) {
-		var offset = $('.head-cart').offset();
-		obj.click(function (event) {
-			event = event || window.event
-			var thisItem = $(this);
-			var flyer = thisItem.clone().text('');
-			flyer.fly({
-				start: {
-					left: event.pageX,
-					top: event.pageY
-				},
-				end: {
-					left: offset.left + 10,
-					top: offset.top + 10,
-				},
-				onEnd: function() {
-					var num = parseInt($('.head-cart-num').text())+1
-					$('.head-cart-num').text(num)
-					showCartNum()
-					cartTotalPrice()
-					this.destroy()
-				}
-			});
-		});
-	}
-	
 	////////////////////快速选择会员搜索
-	function vipChoiceSearch () {
+	(function () {
 		var searchTimer
 		$('.vipChoice-search').keyup(function () {
 			$('.vipChoice-info tr').css('display', 'none')
@@ -256,8 +194,8 @@ $(function () {
 				$('.vipChoice-info tr').css('display', 'table-row')
 			},700)
 		})
+	})()
 		
-	}
 	
 	///////////////////////////////////////结账
 	var dealInput  //结账弹框当前输入框对象
@@ -470,23 +408,29 @@ $(function () {
 		
 	})
 	
-	///////////////////商品导航栏切换
-	function navToggle() {
-		$(".classify li").click(function () {
-			$(this).siblings().children().removeClass("current")
-			$(this).children().addClass("current")
-		})
-	}
-	
-	/////////////////////改变加载iframe的页面初始状态
-	function iframeLoad () {
-		if ($('#vipIframe').attr('src').split('?')[1].substr(-1) == 0) {
-			$(window.frames["vipIframe"].document).find("header").css('display', 'none')
-			$(window.frames["vipIframe"].document).find('.pngfix').addClass('open')
-			$(window.frames["vipIframe"].document).find('body').addClass('big-page')
-			$(window.frames["vipIframe"].document).find('.Hui-article-box').css('top', 0)
-			$(window.frames["vipIframe"].document).find('.Hui-aside').css('top', 0)
-		}
-		
-	}
 })
+////////////////清空购物车
+function cartClear () {
+	layer.confirm('确认清空购物车？', function (index) {
+		$('.cart-item').remove()
+		$('.head-cart-num').text('0').css('display', 'none')
+		$('.cart-totalPrice').text('0')
+		layer.close(index)
+	})
+}
+
+FT.couterInput('vipChoiceInput', function () {
+	alert('点击确认')
+})
+/////////////会员选择编辑
+function vipChoiceEdit (obj) {
+	$('.vipChoice-edit').prop('disabled',false)
+	$(obj).css('display', 'none')
+	$(obj).next().css('display', 'inline-block')
+	
+}
+function vipChoiceEditDone (obj) {
+	$('.vipChoice-edit').prop('disabled',true)
+	$(obj).css('display', 'none')
+	$(obj).prev().css('display', 'inline-block')
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<link rel="Bookmark" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<link rel="Shortcut Icon" href="http://192.168.1.104:8080/ics-web/seller/favicon.ico">
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/html5.js"></script>
+<script type="text/javascript" src="http://192.168.1.104:8080/ics-web/resources/ics-ui/lib/respond.min.js"></script>
+<![endif]-->
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui.admin/css/H-ui.admin.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/h-ui/css/H-ui.reset.css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/Hui-iconfont/1.0.8/iconfont.css" type="text/css" />
+		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
+		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/fengtu.css" />
+		<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+		<!--/meta 作为公共模版分离出去-->
+		<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+
+		<!--请在下方写此页面业务相关的样式-->
+		<!--/请在上方写此页面业务相关的样式-->
+	</head>
+	<body>
+		<ul class="ftSection-function">
+			<li>新增<i class="ftFunction2"></i></li>
+		</ul>
+		<table class="ftTable-border">
+			<tr>
+				<th>计次产品</th>
+				<th>分店名称</th>
+				<th>部门名称</th>
+				<th>会员等级</th>
+				<th>产品提成</th>
+				<th>备注</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>套</td>
+				<td>护理</td>
+				<td>套</td>
+				<td>护理</td>
+				<td>套</td>
+				<td>护理</td>
+				<td class="vip-handle">
+					<span><img src="resources/ics-ui/static/zhyp/images/components/tableOperate2.png" /></span>
+					<span><img src="resources/ics-ui/static/zhyp/images/components/tableOperate1.png" /></span>
+				</td>
+			</tr>
+		</table>
+		<div class="pagination">
+			<div class="box" id="box">
+				<div class="pagination-left">
+					<p class="total-pages">共&nbsp;<span>6</span>&nbsp;页</p>
+					<p class="total-count">合计300条数据</p>
+				</div>
+				<div class="pagination-right">
+					<a href="#" type="button" id="firstPage" class="turnPage first-page">首页</a>
+					<a href="#" class="turnPage" id="prePage">上一页</a>
+					<div class="pageWrap">
+						<ul id="pageSelect">
+							<li>
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">6</a>
+							</li>
+						</ul>
+					</div>
+					<a href="#" class="turnPage" id="nextPage">下一页</a>
+					<a href="#" type="button" id="lastPage" class="last-page">尾页</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js" ></script>
+		<!--/_footer /作为公共模版分离出去-->
+		<script>
+			$('#box').paging({
+				initPageNo: 1, // 初始页码
+				totalPages: parseInt($(".total-pages span").text()), //总页数
+				totalCount: '', // 条目总数
+				slideSpeed: 600, // 缓动速度。单位毫秒 
+				callback: function(page) { // 回调函数 
+				}
+			})
+		</script>
+	</body>
+</html>

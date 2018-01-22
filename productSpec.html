@@ -166,7 +166,7 @@
 		<section class="Hui-article-box">
 			<article>
 				<div class="product-body">
-					<span class="quanspan" data-toggle="modal" data-target="#youhuiquan-articleSelect">+ 新增产品规格</span>
+					<span class="quanspan" data-toggle="modal" data-target="#productSpec-add">+ 新增产品规格</span>
 
 					<table class="quantable">
 						<tr>
@@ -188,17 +188,17 @@
 
 			</article>
 			<!-- 新建选择弹框开始 -->
-			<div style="top: 150px;left: 200px;" class="modal fade" id="youhuiquan-articleSelect" tabindex="-1" role="dialog" aria-labelledby="youhuiquan-articleSelect">
+			<div style="top: 100px;left: 200px;" class="modal fade" id="productSpec-add" tabindex="-1" role="dialog" aria-labelledby="youhuiquan-articleSelect">
 				<div class="modal-dialog productSpec-container" role="document">
 					<div class="modal-content">
 						<div class="modal-body">
 							<div class="myInput productSpec-input">
 								<p>规格名称：</p>
-								<input class="input-text" type="text" />
+								<input class="input-text" type="text" id="SpecAddName" />
 							</div>
 							<div class="myInput productSpec-input">
 								<p>规格值：</p>
-								<input class="input-text" type="text" />
+								<input class="input-text" type="text" name="SpecAddValue"/>
 							<span class="productSpec-valueAdd"><img src="resources/ics-ui/static/biz/member/images/add.png" /></span>
 							</div>
 						</div>
@@ -219,11 +219,11 @@
 		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/layer/2.4/layer.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script>
-		</script>
+		<script type="text/javascript" src="resources/ics-ui/static/biz/product/js/productSpec.js" ></script>
 		<!--/请在上方写此页面业务相关的脚本-->
 	</body>
 

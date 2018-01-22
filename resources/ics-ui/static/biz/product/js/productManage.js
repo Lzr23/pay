@@ -4,21 +4,18 @@ $(function () {
 		index:0
 	});
 	
-	//////////产品全选或者全不选
-	$('.vip-info').SelectAll()
-	
-	////////////分页器
+	////调用分页器初始化方法
 	var totalPage = parseInt($(".total-pages span").text())
 	$('#box').paging({
 		initPageNo: 1, // 初始页码
 		totalPages: totalPage, //总页数
-		totalCount: '合计300条数据', // 条目总数
+		totalCount: '', // 条目总数
 		slideSpeed: 600, // 缓动速度。单位毫秒 
 		callback: function(page) { // 回调函数 
 		}
 	})
 	
-	////////确认删除会员
+	////////删除会员
 	$(".vipHandle-delete").click(function() {
 		var self = this
 		layer.confirm('删除商品将删除掉该商品所有信息，确定删除吗？', function(index){

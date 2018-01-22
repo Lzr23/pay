@@ -12,8 +12,8 @@ $.fn.ProvinceCity = function(){
 	_self.data("city1",["城市", "请选择"]);
 	_self.data("city2",["请选择", "请选择"]);
 	//插入3个空的下拉框
-	_self.append("<select style='margin-right:10px' class='mySelect' name='fansProvince'></select>");
-	_self.append("<select class='mySelect' name='fansCity'></select>");
+	_self.append("<select style='margin-right:10px' class='ftSelect' name='province'></select>");
+	_self.append("<select class='ftSelect' name='city'></select>");
 	_self.append("<select style='display:none'></select>");
 	//分别获取3个下拉框
 	var $sel1 = _self.find("select").eq(0);

@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
 		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/fengtu.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -163,9 +164,11 @@
 		<!--/_menu 作为公共模版分离出去-->
 
 		<section class="Hui-article-box">
-			<form id="vipAddForm">
+			<form id="theForm">
 				<article>
-					<div>
+					<div id="viptAddTab" class="HuiTab">
+							<div class="tabBar clearfix"><span>新增会员</span></div>
+					<div class="tabCon">
 
 						<div class="modal-body vipAdd-body">
 							<div class="vipAdd-left">
@@ -173,94 +176,116 @@
 								<p>点击上传头像<br/>建议尺寸：300*300px</p>
 							</div>
 							<div class="vipAdd-right">
-								<div class="myInput">
-									<p><span>*</span>会员姓名：</p>
-									<input class="input-text" name="username" type="text" />
-								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>会员卡号：</p>
-									<input class="input-text" name="card" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" name="cardnu" type="text" required digits='true'/>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>手机号码：</p>
-									<input class="input-text" name="tel" type="tel" />
+									<div class="ftInput-container">
+										<input class="input-text" name="tel" type="text" required rangelength='[5,10]' digits='true'/>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>会员生日：</p>
-									<input type="text" onclick="WdatePicker()" id="birthday" name="birthday" value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate input-text">
+									<div class="ftInput-container">
+										<input type="text" onclick="WdatePicker()" id="birthday" name="birthday" value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate input-text">
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>会员等级：</p>
-									<select class="input-text">
-										<!--<option style="display: none;" selected="selected"></option>-->
-										<option>默认等级</option>
-										<option>铜卡会员</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option>默认等级</option>
+											<option>铜卡会员</option>
+										</select>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>售卡金额：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>赠送金额：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>会员售价：</p>
-									<input class="input-text" type="text" /></div>
-								<div class="myInput">
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
+								</div>
+								<div class="ftInput">
 									<p>会员密码：</p>
-									<input class="input-text" name="password" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p>开卡员工：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected"></option>
+											<option>小妮</option>
+											<option>小木</option>
+										</select>
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p>支付方式：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>支付宝</option>
-										<option>微信支付</option>
-										<option>银行卡</option>
-										<option>现金</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected"></option>
+											<option>支付宝</option>
+											<option>微信支付</option>
+											<option>银行卡</option>
+											<option>现金</option>
+										</select>
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p>会员称谓：</p>
-									<select class="input-text">
+									<div class="ftInput-container">
+										<select class="input-text">
 										<option style="display: none;" selected="selected"></option>
 										<option>先生</option>
 										<option>女士</option>
-
 									</select>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>推荐人：</p>
-									<input onfocus="$('#referee').modal('show')" name="referee" class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input onfocus="$('#referee').modal('show')" name="referee" class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>地址：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>备注：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-
-								<div class="vipDelete-bottom vipAdd-bottom">
-									<button class="confirmBt vipAdd-save">保存</button>
-									<button class="cancelBt">取消</button>
+								<div class="ftInput vipAdd-bottom">
+									<div class="ftInput-container">
+										<input class="confirmBt" type="submit" value="提交"/>
+										<input class="cancelBt" type="reset" value="重置"/>
+									</div>
 								</div>
 							</div>
 						</div>
+					</div>
 					</div>
 				</article>
 			</form>
@@ -334,75 +359,78 @@
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/layer/2.4/layer.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/additional-methods.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js"></script>
-
 		<script>
-			///////////////////表单验证提交
-			$.validator.setDefaults({
-				submitHandler: function() {
-					$('#vipAddForm').ajaxSubmit({
-						type:"get",
-						url:"",
-						data: {},
-						success: function (data) {
-							
-							toastr.success("提交成功");
-						},
-						error: function () {
-							toastr.warning("提交失败");
-						},
-						resetForm: function () {
-						}
-					});
-				}
-			})
-			$('#vipAddForm').validate({
-				rules: {
-					username: {
-						required: true,
-						minlength: 2
+		
+		$("#viptAddTab").Huitab({
+			index: 0
+		})
+		$.validator.setDefaults({
+			submitHandler: function() {
+				$('#theForm').ajaxSubmit({
+					type:"get",
+					url:"",
+					data: {},
+					success: function (data) {
+						
+					layer.msg("提交成功");
 					},
-					card: {
-						required: true,
-						minlength: 3
+					error: function () {
+						layer.msg("提交失败");
 					},
-					password: {
-						required: false,
-						minlength: 5
-					},
-					tel: {
-						required: true,
-						digits: true,
-						rangelength: [5, 11]
+					resetForm: function () { /////重置表单
 					}
+				});
+			}
+		})
+		$('#theForm').validate({  ///////根据输入框的name值配置,rule可在input中配置，可在下面js配置;messages可自定义配置，否则使用默认
+			//////////////验证规则文档http://www.h-ui.net/Hui-3.4-form.shtml
+// 				rules: {
+// 					username: {
+// 						required: true,
+// 						minlength: 2
+// 					},
+// 					card: {
+// 						required: true,
+// 						minlength: 3
+// 					},
+// 					password: {
+// 						required: false,
+// 						minlength: 5
+// 					},
+// 					tel: {
+// 						required: true,
+// 						digits: true,
+// 						rangelength: [5, 11]
+// 					}
+// 				},
+			messages: {
+				username: {
+					required: "请输入用户名",
+					minlength: "用户名必需由两个以上字符组成"
 				},
-				messages: {
-					username: {
-						required: "请输入用户名",
-						minlength: "用户名必需由两个以上字符组成"
-					},
-					card: {
-						required: '请输入卡号',
-						minlength: "卡号必需由三个以上字符组成"
-					},
-					tel: {
-						required: '请输入电话号码',
-						digits: '请输入数字',
-						rangelength: "号码长度在5到11之间"
-					},
-					password: {
-						required: "请输入密码",
-						minlength: "密码长度不能小于 5 个字母"
-					}
+				card: {
+					required: '请输入卡号',
+					minlength: "卡号必需由三个以上字符组成"
+				},
+				tel: {
+					required: '请输入电话号码',
+					digits: '请输入数字',
+					rangelength: "号码长度在5到11之间"
+				},
+				password: {
+					required: "请输入密码",
+					minlength: "密码长度不能小于 5 个字母"
 				}
-			})
+			}
+		})
 			
 		</script>
 		<!--/请在上方写此页面业务相关的脚本-->

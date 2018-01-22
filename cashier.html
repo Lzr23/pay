@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
 		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/fengtu.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -31,57 +32,66 @@
 		<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 
 		<title>收银台</title>
-		<link rel="stylesheet" href="resources/ics-ui/static/biz/cashier/css/cashier.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/biz/member/css/VIPManage.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/biz/cashier/css/cashier.css" />
 	</head>
 
 	<body>
 		<!--头部开始-->
-		<header>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-7 col-sm-7 head-left">
-						<div class="head-user">
-							<img class="img-responsive center-block user-head" src="resources/ics-ui/static/biz/cashier/images/head.png" />
-							<p class="user-name">李小建</p>
-						</div>
-						<div class="user-info">
-							<img src="resources/ics-ui/static/biz/cashier/images/xingxing.png" class="user-info-img" />
-							<span class="user-grade">金卡会员</span> 积分：
-							<span>1025</span> ￥:
-							<span>588.00</span>
-						</div>
-						<div class="head-button">
-							<img src="resources/ics-ui/static/biz/cashier/images/huiyuan.png" data-toggle="modal" data-target="#backEnd" />
-							<img src="resources/ics-ui/static/biz/cashier/images/kuaishou.png" />
-						</div>
-					</div>
-					<div class="col-md-5 col-sm-5 head-right">
-						<div class="store-info">
-							<span class="store-name">三毛流浪记店</span>
-							<span class="store-time">2017-12-2 13:24</span>
-							<p>单号：<span class="order-number">25</span></p>
-						</div>
-						<div class="head-cart">
-							<div style="position: relative;display: inline-block">
-								<span class="head-cart-num">0</span>
-								<img src="resources/ics-ui/static/biz/cashier/images/cart.png" />
-							</div>
-						</div>
-					</div>
+		<header class="navbar-wrapper">
+			<div class="navbar navbar-fixed-top">
+				<div class="container-fluid cl">
+					<a class="logo navbar-logo f-l mr-10 hidden-xs head-logo" href="http://192.168.1.104:8080/aboutHui.shtml"></a>
+					<a class="logo navbar-logo-m f-l mr-10 visible-xs" href="http://192.168.1.104:8080/aboutHui.shtml">烽途</a>
+					<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;"></a>
+					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+						<ul class="cl">
+							<li class="f-l mr-30"><i class="backEnd-icon"></i><a href="#">进入后台</a></li>
+							<li class="f-l mr-30"><i class="message-icon"></i><a href="#">消息</a></li>
+							<li class="f-l mr-30"><i class="help-icon"></i><a href="#">帮助</a></li>
+							<li class="f-l mr-30"><a href="#" class="user-icon"></a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</header>
 		<!--头部结束-->
-
+		
 		<div class="container-fluid">
 			<div class="row" style="height: 100%;">
 
 				<!--主题内容左侧开始-->
 				<div class="col-xs-12 col-lg-3 col-md-3 col-sm-4 main-left">
-					<div class="left-search">
-						<input type="text" placeholder="会员手机号码/卡号/快速扫码" />
-						<i data-toggle="modal" data-target="#vipChoice"></i>
+					<div class="ftSearch2-container cashier-goodsSearch">
+						<input type="text" placeholder="条码/助记码 (大写) 价格在100-200" list="goodsList" />
+						<span>x</span>
+						<datalist id="goodsList">
+							<option value="110">
+							<option value="111">
+							<option value="112">
+							<option value="113">
+							<option value="114">
+							<option value="115">
+						</datalist>
+					</div>
+					<div class="cashier-vipInfo">
+						<div class="head-user">
+							<img class="user-head" src="resources/ics-ui/static/biz/cashier/images/head.png" />
+							<p class="user-name">李小建</p>
+						</div>
+						<div class="user-info">
+							<div>
+								<p>
+									<span class="user-grade">金卡会员</span><sub class="user-grade1">7.8</sub>
+								</p>
+								<span class="user-num">No.13025877412</span>
+							</div>
+							<div>积分：<span class="user-points">2052</span>余额：<span class="user-balance">888</span></div>
+							<div><p>次卡：</p><p class="user-time"><span>洗护</span>(<span>10</span>)</p></div>
+						</div>
+					</div>
+					<div class="cashier-opInfo">
+						操作员：<span class="operate-name">小妮</span>时间：<span>2018/1/19 11:12</span>
 					</div>
 					<div class="left-main">
 						<div class="left-info">
@@ -93,13 +103,16 @@
 									<th>会员单价</th>
 								</thead>
 								<!--<tr class="cart-item" id="goods0">
-									<td class="cart-goodsName">机身清洗</td>
+									<td>
+										<span class="cart-goodsName">机身清洗</span>
+										<span class="cart-goodsNo">32132132132132132</span>
+									</td>
 									<td>
 										<i class="jiang"></i>
-										<span class="cart-goodsNum">1</span>
+										<span class="cart-goodsNum">12</span>
 										<i class="jia">+</i>
 									</td>
-									<td class="cart-goodsPrice">128</td>
+									<td class="cart-goodsPrice">12890.00</td>
 									<td class="cart-discountPrice">118</td>
 									<td><button class="left-delete">X</button></td>
 								</tr>-->
@@ -111,12 +124,15 @@
 					</div>
 					<div class="left-bottom">
 						<div class="left-button">
-							<button class="zekou">折扣</button>
-							<button class="gaijia">改价</button>
-							<button class="xiadan" data-toggle="modal" data-target="#quguadan">取挂单</button>
-							<button class="jiaoyi" data-toggle="modal" data-target="#history">交易记录</button>
+							<div>
+								<button class="zekou">折扣</button>
+								<button class="gaijia">改价</button>
+								<button class="xiadan" data-toggle="modal" data-target="#quguadan">取挂单</button>
+								<button class="jiaoyi" data-toggle="modal" data-target="#history">交易记录</button>
+							</div>
+								<button class="vipChoice" data-toggle="modal" data-target="#vipChoice">选择<br/>会员</button>
 						</div>
-						<p class="qingchu" data-toggle="modal" data-target="#clear">清除</p>
+						<p class="qingchu" onclick="cartClear()">清除</p>
 						<p class="jiezhang">结账</p>
 					</div>
 
@@ -126,7 +142,6 @@
 				<!--主题内容右侧开始-->
 				<div class="col-xs-12 col-lg-9 col-md-9 col-sm-8 main-right">
 					<div class="right-head">
-						<input type="text" class="right-search" placeholder="输入产品名称/编号/简码" />
 						<ul class="classify">
 							<li><span class="current">所有商品</span></li>
 							<li><span>洗护一体</span></li>
@@ -141,29 +156,36 @@
 							<img src="resources/ics-ui/static/biz/cashier/images/goods.png" />
 							<div class="goods-info">
 								<h4 class="goods-name" title="机身全清洗51">机身全清洗51</h4>
+								<p class="goods-num">7418529631236548</p>
 								<p>￥<span class="goods-price">50.1</span></p>
+								<p>库存:<span>102</span></p>
 							</div>
 						</div>
-
 						<div class="goods" id="goods2">
 							<img src="resources/ics-ui/static/biz/cashier/images/goods.png" />
 							<div class="goods-info">
-								<h4 class="goods-name" title="机身全清洗6987">机身全清洗6987</h4>
-								<p>￥<span class="goods-price">100.2</span></p>
+								<h4 class="goods-name" title="机身全清洗51">机身全清洗51</h4>
+								<p class="goods-num">7418529631236548</p>
+								<p>￥<span class="goods-price">50.1</span></p>
+								<p>库存:<span>102</span></p>
 							</div>
 						</div>
 						<div class="goods" id="goods3">
 							<img src="resources/ics-ui/static/biz/cashier/images/goods.png" />
 							<div class="goods-info">
-								<h4 class="goods-name">机身全清洗31</h4>
-								<p>￥<span class="goods-price">200.3</span></p>
+								<h4 class="goods-name" title="机身全清洗51">机身全清洗51</h4>
+								<p class="goods-num">7418529631236548</p>
+								<p>￥<span class="goods-price">50.1</span></p>
+								<p>库存:<span>102</span></p>
 							</div>
 						</div>
 						<div class="goods" id="goods4">
 							<img src="resources/ics-ui/static/biz/cashier/images/goods.png" />
 							<div class="goods-info">
-								<h4 class="goods-name" title="机身全清洗987">机身全清洗987</h4>
-								<p>￥<span class="goods-price">300.5</span></p>
+								<h4 class="goods-name" title="机身全清洗51">机身全清洗51</h4>
+								<p class="goods-num">7418529631236548</p>
+								<p>￥<span class="goods-price">50.1</span></p>
+								<p>库存:<span>102</span></p>
 							</div>
 						</div>
 					</div>
@@ -171,25 +193,76 @@
 				<!--主题内容右侧结束-->
 			</div>
 		</div>
-
-		<!--后台弹框开始-->
-		<div class="modal fade" id="backEnd"  role="dialog" aria-labelledby="backEnd">
-			<div class="modal-dialog backEnd-container" role="document">
+		
+		<!-- 会员选择弹框开始 -->
+		<div style="overflow: auto;top: 70px;" class="modal fade" id="vipChoice" tabindex="-1" role="dialog" aria-labelledby="vipRecharge">
+			<div class="modal-dialog vipRecharge-container" role="document">
 				<div class="modal-content">
 
-					<div class="modal-header quguadan-tital">
-						<button type="button" class="close backEndClose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-header vip-tital vipRecharge-tital">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">会员充值</h4>
 					</div>
-					<div class="modal-body backEnd-body">
-						<iframe src="vipManage.html?headSide=0" id="vipIframe" name="vipIframe" frameborder="0" width="100%" height="700"></iframe>
+					<div class="modal-body vipRecharge-body">
+						<div class="vipRecharge-left">
+							<div class="ftSearch3-container vipChoiceSearch">
+								<em></em>
+								<input id="vipChoiceInput" type="text" placeholder="手机号/卡号/快速扫码" />
+								<i data-toggle="modal" data-target="#vipFind"></i>
+							</div>
+							<div class="vipChoice-head">
+								<img class="vipRecharge-head" src="resources/ics-ui/static/biz/cashier/images/head.png" />
+								<div>
+									<p class="vipChoice-name">李希</p>
+									<p>金卡会员<sub>7.8</sub></p>
+								</div>
+							</div>
+							<div class="vipChoice-main">
+								<p>会员卡号：2135464</p>
+								<p>手机号码：<input class="vipChoice-edit" disabled type="text" value="18349852156"/></p>
+								<p>会员生日：1996-5-21</p>
+								<p>卡内余额：￥245.00</p>
+								<p>累计消费：20178.00</p>
+								<p>会员积分：2345</p>
+								<p>过期时间：永久有效</p>
+								<p>会员次卡：洗护10</p>
+							</div>
+							<div class="vipChoice-bottom">
+								<button class="confirmBt">新增</button>
+								<button class="confirmBt">充值</button>
+								<button class="confirmBt" onclick="vipChoiceEdit(this)">编辑</button>
+								<button class="confirmBt" style="display: none;" onclick="vipChoiceEditDone(this)">完成</button>
+							</div>
+						</div>
+						<div class="vipRecharge-right">
+							<div class="counter">
+								<div class="counter-left">
+									<img class="num-7" src="resources/ics-ui/static/zhyp/images/components/num7.png" />
+									<img class="num-8" src="resources/ics-ui/static/zhyp/images/components/num8.png" />
+									<img class="num-9" src="resources/ics-ui/static/zhyp/images/components/num9.png" />
+									<img class="num-4" src="resources/ics-ui/static/zhyp/images/components/num4.png" />
+									<img class="num-5" src="resources/ics-ui/static/zhyp/images/components/num5.png" />
+									<img class="num-6" src="resources/ics-ui/static/zhyp/images/components/num6.png" />
+									<img class="num-1" src="resources/ics-ui/static/zhyp/images/components/num1.png" />
+									<img class="num-2" src="resources/ics-ui/static/zhyp/images/components/num2.png" />
+									<img class="num-3" src="resources/ics-ui/static/zhyp/images/components/num3.png" />
+									<img class="num-0"  src="resources/ics-ui/static/zhyp/images/components/num0.png" />
+									<img class="num-dot" src="resources/ics-ui/static/zhyp/images/components/num10.png" />
+								</div>
+								<div class="counter-right">
+									<img class="couterClear" src="resources/ics-ui/static/zhyp/images/components/num12.png" />
+									<img class="couterConfirm" src="resources/ics-ui/static/zhyp/images/components/num11.png" />
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--后台弹框结束-->
+		<!-- 会员选择弹框结束 -->
 		
-		<!-- 会员选择弹框开始 -->
-		<div style="z-index: 1050;" class="modal fade" id="vipChoice"  role="dialog" aria-labelledby="vipChoice">
+		<!-- 会员查询弹框开始 -->
+		<div style="z-index: 1050;" class="modal fade lowModal" id="vipFind"  role="dialog" aria-labelledby="vipChoice">
 			<div class="modal-dialog vipChoice-container" role="document">
 				<div class="modal-content">
 
@@ -198,11 +271,9 @@
 						<h4 class="modal-title">会员快速选择</h4>
 					</div>
 					<div class="modal-body vipChoice-body">
-						<div class="vipManage-search" style="margin-bottom: 20px;">
-							<div class="vip-search-content" style="width: 100%;">
-								<input class="vip-search vipChoice-search" type="text" placeholder="会员手机号码/卡号/快速扫描" />
-								<i class="vip-search-icon"></i>
-							</div>
+						<div class="ftSearch1-container vipFindSearch">
+							<input class="ftSearch1" type="text" placeholder="会员手机号码/卡号/快速扫描" />
+							<input class="ftSearch1-icon" type="submit" value=""/>
 						</div>
 						<div style="height: 300px;overflow-y: auto;">
 							<table class="vip-info vipChoice-info" style="border: none;max-height: 300px;" border="0" cellspacing="" cellpadding="">
@@ -248,7 +319,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- 会员选择弹框结束 -->
+		<!-- 会员查询弹框结束 -->
 
 		<!--改价弹框开始-->
 		<div class="modal fade" id="changePrice"  role="dialog" aria-labelledby="deal">
@@ -263,25 +334,25 @@
 					</div>
 					<div class="modal-body changePrice-body">
 						<div class="changePrice-input">
-							<input id="changePriceInput" type="text" /><i class="couterClear"></i>
+							<input id="changePriceInput" type="text" />
 						</div>
 						<div class="counter">
 							<div class="counter-left">
-								<img class="num-7" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num7.png" />
-								<img class="num-8" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num8.png" />
-								<img class="num-9" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num9.png" />
-								<img class="num-4" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num4.png" />
-								<img class="num-5" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num5.png" />
-								<img class="num-6" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num6.png" />
-								<img class="num-1" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num1.png" />
-								<img class="num-2" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num2.png" />
-								<img class="num-3" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num3.png" />
-								<img class="num-0" style="width: 60%;" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num0.png" />
-								<img class="num-dot" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num10.png" />
+								<img class="num-7" src="resources/ics-ui/static/zhyp/images/components/num7.png" />
+								<img class="num-8" src="resources/ics-ui/static/zhyp/images/components/num8.png" />
+								<img class="num-9" src="resources/ics-ui/static/zhyp/images/components/num9.png" />
+								<img class="num-4" src="resources/ics-ui/static/zhyp/images/components/num4.png" />
+								<img class="num-5" src="resources/ics-ui/static/zhyp/images/components/num5.png" />
+								<img class="num-6" src="resources/ics-ui/static/zhyp/images/components/num6.png" />
+								<img class="num-1" src="resources/ics-ui/static/zhyp/images/components/num1.png" />
+								<img class="num-2" src="resources/ics-ui/static/zhyp/images/components/num2.png" />
+								<img class="num-3" src="resources/ics-ui/static/zhyp/images/components/num3.png" />
+								<img class="num-0"  src="resources/ics-ui/static/zhyp/images/components/num0.png" />
+								<img class="num-dot" src="resources/ics-ui/static/zhyp/images/components/num10.png" />
 							</div>
 							<div class="counter-right">
-								<img data-dismiss="modal" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num12.png" />
-								<img data-dismiss="modal" class="changePriceConfirm" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num11.png" />
+								<img class="couterClear" src="resources/ics-ui/static/zhyp/images/components/num12.png" />
+								<img data-dismiss="modal" class="couterConfirm" src="resources/ics-ui/static/zhyp/images/components/num11.png" />
 							</div>
 						</div>
 					</div>
@@ -303,25 +374,25 @@
 					</div>
 					<div class="modal-body changePrice-body">
 						<div class="changePrice-input">
-							<input id="discountInput" type="text" /><i class="couterClear"></i>
+							<input id="discountInput" type="text" />
 						</div>
 						<div class="counter">
 							<div class="counter-left">
-								<img class="num-7" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num7.png" />
-								<img class="num-8" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num8.png" />
-								<img class="num-9" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num9.png" />
-								<img class="num-4" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num4.png" />
-								<img class="num-5" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num5.png" />
-								<img class="num-6" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num6.png" />
-								<img class="num-1" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num1.png" />
-								<img class="num-2" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num2.png" />
-								<img class="num-3" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num3.png" />
-								<img class="num-0" style="width: 60%;" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num0.png" />
-								<img class="num-dot" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num10.png" />
+								<img class="num-7" src="resources/ics-ui/static/zhyp/images/components/num7.png" />
+								<img class="num-8" src="resources/ics-ui/static/zhyp/images/components/num8.png" />
+								<img class="num-9" src="resources/ics-ui/static/zhyp/images/components/num9.png" />
+								<img class="num-4" src="resources/ics-ui/static/zhyp/images/components/num4.png" />
+								<img class="num-5" src="resources/ics-ui/static/zhyp/images/components/num5.png" />
+								<img class="num-6" src="resources/ics-ui/static/zhyp/images/components/num6.png" />
+								<img class="num-1" src="resources/ics-ui/static/zhyp/images/components/num1.png" />
+								<img class="num-2" src="resources/ics-ui/static/zhyp/images/components/num2.png" />
+								<img class="num-3" src="resources/ics-ui/static/zhyp/images/components/num3.png" />
+								<img class="num-0"  src="resources/ics-ui/static/zhyp/images/components/num0.png" />
+								<img class="num-dot" src="resources/ics-ui/static/zhyp/images/components/num10.png" />
 							</div>
 							<div class="counter-right">
-								<img data-dismiss="modal" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num12.png" />
-								<img data-dismiss="modal" class="discountConfirm" src="resources/ics-ui/static/biz/cashier/images/vipRecharge-num11.png" />
+								<img class="couterClear" src="resources/ics-ui/static/zhyp/images/components/num12.png" />
+								<img data-dismiss="modal" class="couterConfirm" src="resources/ics-ui/static/zhyp/images/components/num11.png" />
 							</div>
 						</div>
 					</div>
@@ -356,27 +427,6 @@
 		</div>
 		<!--取挂单弹框结束-->
 
-		<!-- 清空弹框开始 -->
-		<div style="overflow: visible;top: 200px;" class="modal fade" id="clear" role="dialog" aria-labelledby="clear">
-			<div class="modal-dialog clear-container" role="document">
-				<div class="modal-content">
-
-					<div class="modal-header vip-tital vipDelete-tital">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">信息</h4>
-					</div>
-					<div class="modal-body vipDelete-body">
-						<p>确认清空购物车？</p>
-						<div class="vipDelete-bottom">
-							<button class="confirmBt" id="clearBt" data-dismiss="modal">确认</button>
-							<button class="cancelBt" data-dismiss="modal">取消</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 清空弹框结束 -->
-		
 		<!--结账弹框开始-->
 		<div class="modal fade" id="deal" role="dialog" aria-labelledby="deal">
 			<div class="modal-dialog deal-container" role="document">
@@ -689,14 +739,16 @@
 		<script type="text/javascript" src="resources/ics-ui/lib/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui/js/H-ui.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/static/h-ui.admin/js/H-ui.admin.page.js"></script>
-		<script type="text/javascript" src="resources/ics-ui/lib/paging/paging.js"></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/toastr/toastr.js" ></script>
 		<script type="text/javascript" src="resources/ics-ui/lib/My97DatePicker/4.8/WdatePicker.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/lib/layer/2.4/layer.js" ></script>
+		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js" ></script>
 		<!--/_footer /作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="resources/ics-ui/lib/jquery.fly.min.js" ></script>
-		<script type="text/javascript" src="resources/ics-ui/static/biz/cashier/js/cashier.js"></script>
+		<script type="text/javascript" src="resources/ics-ui/static/biz/cashier/js/cashier.js" ></script>
+		<script>
+		</script>
 	</body>
 
 </html>

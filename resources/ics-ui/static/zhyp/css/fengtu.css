@@ -1,0 +1,473 @@
+.ftTable{
+	padding: 5px 0;
+	text-align: center;
+	border: none;
+}
+.ftTable th{
+	text-align: center;
+	font-weight: 600;
+	height: 30px;
+	font-size: 14px;
+}
+.ftTable td{
+	line-height: 30px;
+	font-size:13px;
+}
+.ftTable-border{
+	text-align: center;
+	border: 1px solid #CCCCCC;
+}
+.ftTable-border th{
+	text-align: center;
+	font-weight: 600;
+	height: 30px;
+	font-size: 14px;
+	border: 1px solid #CCCCCC;
+}
+.ftTable-border td{
+	padding: 5px 0;
+	font-size:13px;
+	border: 1px solid #CCCCCC;
+}
+.ftTable-head{
+	text-align: center;
+	border: 1px solid #e5e5e5;
+}
+.ftTable-head th{
+	padding: 5px 0;
+	text-align: center;
+	font-size: 16px;
+	background: #eeeeee;
+	border: 1px solid #e5e5e5;
+}
+.ftTable-head td{
+	font-size: 16px;
+	padding: 5px 0;
+	border: 1px solid #e5e5e5;
+}
+.ftTable-head td img{
+	width: 62px;
+	height: 62px;
+}
+.ftInput{
+	width: 100%;
+	max-width: 690px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+.ftInput p{
+	height: 32px;
+	line-height: 32px;
+	white-space: nowrap;
+	text-align: center;
+	margin-bottom: 0;
+}
+.ftInput-container{
+	width: 70%;
+	display: flex;
+}
+.ftInput input{
+	outline: none;
+	border-radius: 5px;
+	padding-left: 3%;
+}
+.ftInput select{
+	width: 100%;
+	border: 1px solid #cccccc;
+	outline: none;
+	height: 27px;
+	border-radius: 5px;
+	padding-left: 3%;
+}
+.ftInput span{
+	line-height: 24px;
+	color: #FF0000;
+	margin-right: 3px;
+}
+.ftCheckbox{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: 0;
+	outline: 0 !important;
+	line-height: 20px;
+	color: #d8d8d8;
+}
+.ftCheckbox:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 14px;
+	font-size: 16px;
+	color: #fff;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.ftCheckbox:checked:after {
+	background-color: #ffae01;
+}
+.ftInput .ftCheckbox{
+	padding-left: 0;
+	padding-top: 6px;
+	margin: 0 10px;
+}
+.ftInput .ftInput-submit{
+	font-size: 14px;
+}
+.ftInput .confirmBt{
+	margin-right: 20px;
+}
+.ftInput .confirmBt,.ftInput .cancelBt{
+	padding: 4px 15px;
+}
+.ftSelect{
+	width: 110px;
+    height: 34px;
+    border-radius: 5px;
+    color: #808080;
+    font-size: 14px;
+}
+.confirmBt,.cancelBt{
+	padding: 4px 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+.confirmBt{
+	background: #ffae01;
+	color: #FFFFFF;
+}
+.cancelBt{
+	background: #FFFFFF;
+	color: #ffae01;
+	border: 1px solid #dcdcdc;
+}
+.ftSearch1-container{
+	position: relative;
+}
+.ftSearch1{
+	height: 32px;
+	width: 100%;
+	position: relative;
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+	padding-left: 10px;
+}
+.ftSearch1-icon{
+	width: 39px;
+	height: 34px;
+	border: none;
+	position: absolute;
+	right: -12px;
+	top: 0;
+	background: url(../images/components/ftSearch1.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.ftSearch2-container{
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	padding: 0 5px;
+	position: relative;
+}
+.ftSearch2-container input{
+	height: 34px;
+	width: 80%;
+	outline: none;
+	border: none;
+	padding: 0 10px;
+}
+.ftSearch2-container i{
+	height:29px;
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	background: url(../images/components/ftSearch2.png) no-repeat 0 15px;
+	background-size: 100% 20%;
+	cursor: pointer;
+}
+.ftSearch3-container{
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	padding: 0 5px;
+	padding-left: 30px;
+	position: relative;
+}
+.ftSearch3-container input{
+	height: 34px;
+	width: 80%;
+	outline: none;
+	border: none;
+}
+.ftSearch3-container em{
+	height: 20px;
+	width: 20px;
+	background: url(../images/components/ftSearch3-icon1.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 7px;
+	left: 8px;
+}
+.ftSearch3-container i{
+	height:29px;
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	background: url(../images/components/ftSearch3-icon2.png) no-repeat 0px 14px;
+	background-size: 100% 19%;
+	cursor: pointer;
+}
+.tabBar{
+	border: none;
+	box-shadow:0 4px 4px #EDEDED;
+	padding-left: 40px;
+}
+.tabBar span{
+	background: #FFFFFF;
+	padding-bottom: 10px;
+	font-size: 16px;
+	font-weight: 300;
+}
+.tabBar span.current{
+	background: #FFFFFF;
+	color: #FFAE01;
+	border-bottom: 2px solid #FFAE01;
+}
+.tabCon{
+	padding: 20px 40px 0 40px;
+}
+.counter{
+	display: flex;
+}
+.counter-left{
+	width: 70%;
+}
+.counter-left img{
+	width: 30%;
+	margin: 1% 0;
+	cursor: pointer;
+}
+.counter-right{
+	width: 30%;
+}
+.counter-right img{
+	width: 100%;
+	cursor: pointer;
+}
+.counter-left .num-0{
+	width: 60%;
+}
+.classify{
+	overflow: hidden;
+}
+.classify li{
+	float: left;
+	font-size: 18px;
+	padding: 0 20px;
+	border-right: 1px solid #CCCCCC;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.classify li:last-child{
+	border: none;
+}
+.current{
+	color: #ec6941;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #ec6941;
+}
+.ftPayment{
+	display: flex;
+	flex-wrap: wrap;
+}
+.ftPayment li{
+	margin-right: 20px;
+	margin-bottom: 15px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.ftPayment .Hui-iconfont-xuanzhong1{
+	    position: absolute;
+	    color: #41b035;
+	    top: -20px;
+	    right: -15px;
+	    font-size: 20px;
+}
+.ftIcon-paymentCash{
+	width: 65px;
+	height: 23px;
+	display: inline-block;
+	background: url(../images/ftIcon/ftIcon-paymentCash.png) no-repeat;
+	background-size: 100% 100%;
+}
+.ftIcon-paymentAlipay{
+	width: 51px;
+	height: 16px;
+	display: inline-block;
+	background: url(../images/ftIcon/ftIcon-paymentAlipay.png) no-repeat;
+	background-size: 100% 100%;
+}
+.ftIcon-paymentBank{
+	width: 77px;
+	height: 21px;
+	display: inline-block;
+	background: url(../images/ftIcon/ftIcon-paymentBank.png) no-repeat;
+	background-size: 100% 100%;
+}
+.ftIcon-paymentScan{
+	width: 92px;
+	height: 24px;
+	display: inline-block;
+	background: url(../images/ftIcon/ftIcon-paymentScan.png) no-repeat;
+	background-size: 100% 100%;
+}
+.ftIcon-paymentWeixin{
+	width: 94px;
+	height: 27px;
+	display: inline-block;
+	background: url(../images/ftIcon/ftIcon-paymentWeixin.png) no-repeat;
+	background-size: 100% 100%;
+}
+.ftSection-function{
+	margin: 10px 0;
+	overflow: hidden;
+}
+.ftSection-function li{
+	float: left;
+	font-size: 14px;
+	padding: 0 15px 10px 25px;
+	position: relative;
+	cursor: pointer;
+}
+.ftSection-function li i{
+	position: absolute;
+	left: 1px;
+	top: 3px;
+	background-size: 100% 100%;
+}
+.ftFunction1{
+	height: 18px;
+	width: 16px;
+	background: url(../images/components/ftFunction1.png) no-repeat;
+}
+.ftFunction2{
+	height: 16px;
+	width: 16px;
+	background: url(../images/components/ftFunction2.png) no-repeat;
+}
+.ftFunction3{
+	height: 18px;
+	width: 18px;
+	background: url(../images/components/ftFunction3.png) no-repeat;
+}
+.ftFunction4{
+	height: 17px;
+	width: 20px;
+	background: url(../images/components/ftFunction4.png) no-repeat;
+}
+.ftFunction5{
+	height: 20px;
+	width: 20px;
+	background: url(../images/components/ftFunction5.png) no-repeat;
+}
+.ftFunction6{
+	height: 14px;
+	width: 19px;
+	background: url(../images/components/ftFunction6.png) no-repeat;
+}
+.ftFunction7{
+	height: 18px;
+	width: 17px;
+	background: url(../images/components/ftFunction7.png) no-repeat;
+}
+.ftFunction8{
+	height: 15px;
+	width: 12px;
+	background: url(../images/components/ftFunction8.png) no-repeat;
+}
+.ftFunction9{
+	height: 14px;
+	width: 16px;
+	background: url(../images/components/ftFunction9.png) no-repeat;
+}
+.ftFunction10{
+	height: 16px;
+	width: 20px;
+	background: url(../images/components/ftFunction10.png) no-repeat;
+}
+.ftFunction11{
+	height: 18px;
+	width: 20px;
+	background: url(../images/components/ftFunction11.png) no-repeat;
+}
+.ftSection-function li:hover{
+	color: #ff0000;
+}
+.ftSection-function li:hover .ftFunction1{
+	background: url(../images/components/ftFunction1.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction2{
+	background: url(../images/components/ftFunction2.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction3{
+	background: url(../images/components/ftFunction3.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction4{
+	background: url(../images/components/ftFunction4.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction5{
+	background: url(../images/components/ftFunction5.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction6{
+	background: url(../images/components/ftFunction6.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction7{
+	background: url(../images/components/ftFunction7.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction8{
+	background: url(../images/components/ftFunction8.1.png) no-repeat;
+}
+.ftSection-functionction li:hover .ftFunction9{
+	background: url(../images/components/ftFunction9.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction10{
+	background: url(../images/components/ftFunction10.1.png) no-repeat;
+}
+.ftSection-function li:hover .ftFunction11{
+	background: url(../images/components/ftFunction11.1.png) no-repeat;
+}
+.ftSection1{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.ftSection-search{
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+.ftSection-search>div{
+	margin-left: 10px;
+	width: 200px;
+}
+.ftSection-search .confirmBt{
+	height: 30px;
+	margin-left: 10px;
+}

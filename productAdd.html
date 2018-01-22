@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="resources/ics-ui/lib/paging/paging.css">
 		<link rel="stylesheet" href="resources/ics-ui/lib/toastr/toastr.css" />
 		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/head-side.css" />
+		<link rel="stylesheet" href="resources/ics-ui/static/zhyp/css/fengtu.css" />
 		<!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -166,114 +167,149 @@
 		<section class="Hui-article-box">
 			<form id="theForm">
 				<article>
-					<div>
-
+					<div id="producttAddTab" class="HuiTab">
+							<div class="tabBar clearfix"><span>新增产品</span></div>
+					<div class="tabCon">
 						<div class="modal-body vipAdd-body">
 							<div class="vipAdd-left">
 								<img src="resources/ics-ui/static/biz/cashier/images/head.png" />
 								<p>点击上传商品图像<br/>建议尺寸：300*300px</p>
 							</div>
 							<div class="vipAdd-right">
-								<div class="myInput productAdd-classify">
+								<div class="ftInput productAdd-classify">
 									<p><span>*</span>产品分类：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected">一级分类</option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
-									<select class="input-text">
-										<option style="display: none;" selected="selected">二级分类</option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected">一级分类</option>
+											<option>小妮</option>
+											<option>小木</option>
+										</select>
+										<select class="input-text">
+											<option style="display: none;" selected="selected">二级分类</option>
+											<option>小妮</option>
+											<option>小木</option>
+										</select>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>产品编码：</p>
-									<input class="input-text" name="card" type="text" /><br />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="productAdd-chekbox codeAuto">
-									<input class="myCheckbox" type="checkbox" /><p>自动生成编码</p>
+								<div class="ftInput">
+									<p></p>
+									<div class="ftInput-container">
+										<input class="ftCheckbox" type="checkbox" /><p>自动生成编码</p>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>产品名称：</p>
-									<input class="input-text" name="tel" type="tel" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>产品简码：</p>
-									<input type="text" onclick="WdatePicker()" id="birthday" name="birthday" value="$!CommUtil.formatShortDate($!obj.birthday)" class="Wdate input-text">
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>产品属性：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>默认等级</option>
-										<option>铜卡会员</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected"></option>
+											<option>默认等级</option>
+											<option>铜卡会员</option>
+										</select>
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>产品进价：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>零售价格：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>会员售价：</p>
-									<input class="input-text" type="text" /></div>
-								<div class="myInput">
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
+								</div>
+								<div class="ftInput">
 									<p>产品积分：</p>
-									<input class="input-text" name="password" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p>最低折扣：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>小妮</option>
-										<option>小木</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected"></option>
+											<option>小妮</option>
+											<option>小木</option>
+										</select>
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p>产品单位：</p>
-									<select class="input-text">
-										<option style="display: none;" selected="selected"></option>
-										<option>支付宝</option>
-										<option>微信支付</option>
-										<option>银行卡</option>
-										<option>现金</option>
-									</select>
+									<div class="ftInput-container">
+										<select class="input-text">
+											<option style="display: none;" selected="selected"></option>
+											<option>支付宝</option>
+											<option>微信支付</option>
+											<option>银行卡</option>
+											<option>现金</option>
+										</select>
+									</div>
 								</div>
-
-								<div class="myInput">
+								<div class="ftInput">
 									<p><span>*</span>产品库存：</p>
-									<input name="" class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>产品规格：</p>
-									<input name="" class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
 								</div>
-								<div class="productAdd-chekbox showSpec">
-									<input class="myCheckbox" name="showSpec" type="radio" /><p>展示多规格</p>
-									<input class="myCheckbox" name="showSpec" type="radio" /><p>隐藏多规格</p>
-								</div>
-								<div class="myInput">
+								<div class="ftInput">
 									<p>备注：</p>
-									<input class="input-text" type="text" />
+									<div class="ftInput-container">
+										<input class="ftCheckbox" name="showSpec" type="radio" /><p>展示多规格</p>
+										<input class="ftCheckbox" name="showSpec" type="radio" /><p>隐藏多规格</p>
+									</div>
 								</div>
-								<!--<ul>
+								<div class="ftInput">
+									<p>备注：</p>
+									<div class="ftInput-container">
+										<input class="input-text" type="text" />
+									</div>
+								</div>
+								<ul>
 									<li>
-										<div class="myInput">
+										<div class="ftInput">
 											<p>规格名称：</p>
-											<input class="input-text" type="text" />
+											<div class="ftInput-container">
+												<input class="input-text" type="text" />
+											</div>
 										</div>
 										<div>
 											<img src="resources/ics-ui/static/biz/member/images/-.png" />
 											<img src="resources/ics-ui/static/biz/member/images/add.png" />
 										</div>
 									</li>
-								</ul>-->
+								</ul>
 								<div class="specTabel">
 									<p>品种</p>
 									<table class="" border="" cellspacing="" cellpadding="">
@@ -304,6 +340,7 @@
 							</div>
 						</div>
 					</div>
+					</div>
 				</article>
 			</form>
 			
@@ -323,6 +360,9 @@
 		<script type="text/javascript" src="resources/ics-ui/static/zhyp/js/fengtu.js"></script>
 
 		<script>
+			$('#producttAddTab').Huitab({
+				index: 0
+			})
 			///////////////////表单验证提交
 			$.validator.setDefaults({
 				submitHandler: function() {
@@ -342,7 +382,7 @@
 					});
 				}
 			})
-			$('#vipAddForm').validate({
+			$('#theForm').validate({
 				rules: {
 					username: {
 						required: true,

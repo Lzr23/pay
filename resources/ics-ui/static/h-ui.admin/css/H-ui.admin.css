@@ -111,6 +111,16 @@ h4 {
 .page-container {
 	padding: 20px
 }
+.Validform_wrong{
+	position: absolute;
+	right: 0;
+	top: 2px
+}
+.Validform_right{
+	position: absolute;
+	right: 0;
+	top: 2px
+}
 
 @media (max-width: 767px) {
 	.page-container {
